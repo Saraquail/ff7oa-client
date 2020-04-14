@@ -1,0 +1,24 @@
+ul {
+  list-style-type: none;
+}
+
+li{
+  display: inline;
+  margin: 2rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+button a{
+  color: black;
+}
+
+nav a{
+  color: white;
+}
+
+nav {
+  background-color: #444;
+}
