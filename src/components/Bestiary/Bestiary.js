@@ -36,6 +36,9 @@ class Bestiary extends Component {
         location={mon.location}
         level={mon.level}
         steal={mon.steal}
+        drops={mon.drops}
+        enemy_skill={mon.enemy_skill}
+        user_name={mon.user_name}
       />
     )
   }
@@ -46,9 +49,8 @@ class Bestiary extends Component {
       <div>
         <Nav />
         <OptionsForm />
-        <section className="monsterList">
+        <h1>Bestiary</h1>
           {this.renderMonsters()}
-        </section>
       </div>
     )
   }

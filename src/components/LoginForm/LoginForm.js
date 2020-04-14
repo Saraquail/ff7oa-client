@@ -5,7 +5,7 @@ class LoginForm extends Component {
   render () {
     return(
       <form 
-        class="login-form"
+        className="login-form"
         onSubmit={this.props.handleSubmit}
       >
         <label htmlFor="user_name">Username</label>
