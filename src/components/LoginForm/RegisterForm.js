@@ -3,21 +3,40 @@ import AuthApiService from '../../services/auth-api-service'
 import TokenService from '../../services/token-service'
 import { withRouter } from 'react-router-dom';
 
-class LoginForm extends Component {
 
-  handleSubmitLoginJWT = ev => {    
+class RegisterForm extends Component {
+
+  handleSubmitRegisterJWT = ev => {
     ev.preventDefault()
     const { user_name, password } = ev.target
-    
-    AuthApiService.postLogin({
+
+    AuthApiService.postUser({
       user_name: user_name.value,
       password: password.value
+    })
+      .then(user => { 
+        debugger
+        this.onRegistrationSuccess(user_name.value, password.value)
+        
+
+        //need a function that sends user to bestiary
+      })
+      .catch(res => {
+        this.setState({ error: res.error })
+      })
+  }
+
+  onRegistrationSuccess = (user_name, password) => {
+    AuthApiService.postLogin({
+      user_name: user_name,
+      password: password
     })
       .then(res => {
         user_name.value = ''
         password.value = ''
         TokenService.saveAuthToken(res.authToken)
         this.props.history.push('/bestiary')
+
       })
       .catch(res => {
         this.setState({ error: res.error })
@@ -28,8 +47,8 @@ class LoginForm extends Component {
 
     return (
       <form 
-        className="login-form"
-        onSubmit={this.handleSubmitLoginJWT}
+        className="register-form"
+        onSubmit={this.handleSubmitRegisterJWT}
       >
         <label htmlFor="user_name">Username</label>
           <input type="text" name="user_name" id="user_name" required="" defaultValue="guest" />
@@ -44,4 +63,4 @@ class LoginForm extends Component {
   }
 }
 
-export default withRouter(LoginForm)
+export default withRouter(RegisterForm)
