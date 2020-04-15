@@ -12,7 +12,20 @@ const TokenService = {
   },
   hasAuthToken() {
     return !!TokenService.getAuthToken()
+  },
+  saveUserName(user_name) { 
+    window.localStorage.setItem('user', user_name)
+  },
+  getUserName() {
+    return window.localStorage.getItem('user')
   }
+
+
+
+
+
+
+
   // hasGuestToken() {
   //   let token = TokenService.getAuthToken()
 
