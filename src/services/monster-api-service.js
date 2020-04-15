@@ -56,8 +56,7 @@ const MonsterApiService = {
         )
   },
 
-  postMonster(user_id, monster) {
-console.log(monster)
+  postMonster(user_name, monster) {
     return fetch(`${config.API_ENDPOINT}/monsters`, {
       method: 'POST',
       headers: {
@@ -65,7 +64,7 @@ console.log(monster)
         'Authorization': `Bearer ${TokenService.getAuthToken()}`
       },
       body: JSON.stringify({
-        user_id,
+        user_name,
         monster
       }),
     })

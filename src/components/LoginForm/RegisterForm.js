@@ -15,11 +15,9 @@ class RegisterForm extends Component {
       password: password.value
     })
       .then(user => { 
-        debugger
         this.onRegistrationSuccess(user_name.value, password.value)
-        
-
-        //need a function that sends user to bestiary
+        user_name.value = ''
+        password.value = ''
       })
       .catch(res => {
         this.setState({ error: res.error })
@@ -32,9 +30,8 @@ class RegisterForm extends Component {
       password: password
     })
       .then(res => {
-        user_name.value = ''
-        password.value = ''
         TokenService.saveAuthToken(res.authToken)
+        TokenService.saveUserName(res.user_name)
         this.props.history.push('/bestiary')
 
       })

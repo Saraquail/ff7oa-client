@@ -21,7 +21,6 @@ class Bestiary extends Component {
 
   renderMonsters() {
     const allMonsters = this.state.monsters
-    console.log(allMonsters)
 
     return allMonsters.map(mon =>
       <Monsters
