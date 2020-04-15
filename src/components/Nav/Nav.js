@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import './Nav.css'
+import TokenService from '../../services/token-service'
 
 class Nav extends Component {
   handleLogoutClick = () => {
-    console.log('click')
+    TokenService.clearAuthToken()
   }
   
   render() {

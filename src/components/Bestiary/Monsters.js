@@ -1,15 +1,27 @@
 import React, { Component } from 'react'
 
 class Monsters extends Component {
-
-  // componentDidMount() {
-  //   const { monsters } = this.props
-  //   console.log(this.props)
-  // }
+  state = {
+    showModal: false
+  }
 
   handleExpand = () => {
-    return
+    console.log('expand')
+    //add click here to show ${more/less}
   }
+
+  // handleOpenModal = () => {
+  //   this.setState({
+  //     showModal: true
+  //   })
+  // }
+
+  // handleCloseModal = () => {
+  //   this.setState({
+  //     showModal: false
+  //   })
+  // }
+
 
   render () {
     const mon = this.props
@@ -19,9 +31,11 @@ class Monsters extends Component {
     }
     return (
       <section className="monsterList">
-        <h2>{mon.name}</h2>
-        <button onClick={this.handleExpand()}>Click here for more info</button>
-        <div className="collapsed">
+
+        <div className="collapsed">    
+          <h2>{mon.name}</h2>
+          <button> Add to My PHS</button>
+          <button> Click here for more info</button>
           <p> Level: {mon.level} </p>
           <p> Added By: {mon.user_name} </p>
           <p> HP: {mon.hp} MP: {mon.mp} </p>
@@ -30,10 +44,10 @@ class Monsters extends Component {
           <p> Weakness: {mon.weakness}</p>
         </div>
         <div className="expanded">
-          <p> location: {mon.location} </p>
-          <p> steal: {mon.steal} </p>
-          <p> drop: {mon.drops} </p>
-          <p> enemy_skill: {mon.enemy_skill} </p>
+          <p> Location: {mon.location} </p>
+          <p> Steal: {mon.steal} </p>
+          <p> Drop: {mon.drops} </p>
+          <p> Enemy_skill: {mon.enemy_skill} </p>
         </div>
 
       </section>
