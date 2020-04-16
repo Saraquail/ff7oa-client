@@ -1,24 +1,25 @@
 import React, { Component } from 'react'
-import MonsterApiService from '../../services/monster-api-service'
-import TokenService from '../../services/token-service'
 import SaveGuideForm from '../SaveGuideForm/SaveGuideForm'
+import './Monsters.css'
 
 class Monsters extends Component {
   state = {
     showModal: false,
-    selectedid: ''
+    selectedid: '',
+    expanded: false
   }
 
   handleExpand = () => {
-    console.log('expand')
-    //add click here to show ${more/less}
+    this.setState(prevState => ({
+      expanded: !prevState.expanded
+    }))
   }
 
   handleOpenModal = (e) => {
-    console.log(e)
+    let id = e.target.value
     this.setState({
       showModal: true,
-      selectedid: e
+      selectedid: id
     })
   }
 
@@ -27,32 +28,6 @@ class Monsters extends Component {
       showModal: false
     })
   }
-
-  handleAddGuide = (e) => {
-    const user_name = TokenService.getUserName()
-    //MonsterApiService.postGuide()
-  }
-
-  // renderSaveGuideForm = () =>{
-
-  //   return (
-  //     <SaveGuideForm>
-  //       <div>
-  //         <form name="add-guide" onSubmit={this.handleSubmit}>
-  //           <label htmlFor="save-item-title">Nickname</label>
-  //             <input type="text" name="save-item-title" id="save-item-title"/>
-  //           <label htmlFor="save-item-note">Note</label>
-  //             <input type="text" name="save-item-note" id="save-item-note"/>
-  //           <button onClick={this.handleCloseModal}>Not Interested</button>
-  //           <button onClick={this.handleAddGuide}>OK, add it</button>
-  //         </form>
-  //       </div>
-  //     </SaveGuideForm>
-      
-  //   )
-  // }
-
-    // onClick={(e) => this.handleInput(e,'value')}
 
   render () {
     const mon = this.props
@@ -66,9 +41,9 @@ class Monsters extends Component {
         <div className="collapsed">    
           <h2>{mon.name}</h2>
           <button value={mon.id}
-            onClick={e => this.handleOpenModal(e, value)}
+            onClick={e => this.handleOpenModal(e)}
             > Add to My PHS</button>
-          <button> Click here for more info</button>
+          <button onClick={this.handleExpand}> Click here for more/less info</button>
           <p> Level: {mon.level} </p>
           <p> Added By: {mon.user_name} </p>
           <p> HP: {mon.hp} MP: {mon.mp} </p>
@@ -76,18 +51,19 @@ class Monsters extends Component {
           <p> Strength: {mon.strength}</p>
           <p> Weakness: {mon.weakness}</p>
         </div>
-        <div className="expanded">
-          <p> Location: {mon.location} </p>
-          <p> Steal: {mon.steal} </p>
-          <p> Drop: {mon.drops} </p>
-          <p> Enemy_skill: {mon.enemy_skill} </p>
-        </div>
-      {this.state.showModal ? 
-      
-        <SaveGuideForm selectedid={id} handleCloseModal={this.handleCloseModal} />
-        
-        
-        : ''}
+        {this.state.expanded 
+          ? <div className="expanded">
+            <p> Location: {mon.location} </p>
+            <p> Steal: {mon.steal} </p>
+            <p> Drop: {mon.drops} </p>
+            <p> Enemy_skill: {mon.enemy_skill} </p>
+          </div>
+          : ''}
+
+      {this.state.showModal ?
+        <SaveGuideForm className="modal" overlayClassName="overlay" selectedid={id} handleCloseModal={this.handleCloseModal}   onRequestClose={this.handleCloseModal}
+ />
+      : ''}
       </section>
 
     )

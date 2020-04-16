@@ -41,7 +41,7 @@ const MonsterApiService = {
     )
   },
 
-  postGuide(user_name, name, note, monid) {
+  postGuide(user_name, guide) {
     return fetch(`${config.API_ENDPOINT}/guides/${user_name}`, {
       method: 'POST',
       headers: {
@@ -49,10 +49,7 @@ const MonsterApiService = {
         'Authorization': `Bearer ${TokenService.getAuthToken()}`
       },
       body: JSON.stringify({
-        user_name: user_name,
-        name: name,
-        note: note,
-        mon_id: monid
+        guide
       })
     })
       .then(res => 
