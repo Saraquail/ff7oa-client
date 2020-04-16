@@ -18,7 +18,6 @@ class PHS extends Component {
         this.setState({
           guides: data
         })
-        console.log(data)
       })
       .catch()
   }
@@ -28,6 +27,7 @@ class PHS extends Component {
 
     return guides.map(guide => 
       <Guides
+        monster_id={guide.monster_id}
         key={guide.id}
         name={guide.name}
         note={guide.note}
@@ -36,7 +36,6 @@ class PHS extends Component {
   }
 
   render() {
-
 
     return (
       <div>

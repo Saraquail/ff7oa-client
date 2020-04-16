@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-//import { Link } from 'react-router-dom'
 import Nav from '../Nav/Nav'
 import OptionsForm from '../OptionsForm/OptionsForm'
 import MonsterApiService from '../../services/monster-api-service'
@@ -13,7 +12,6 @@ class Bestiary extends Component {
   componentDidMount() {
     MonsterApiService.getMonsters()
       .then (data => {
-        console.log(data)
         this.setState({ monsters: data })
       })
       .catch()
