@@ -28,25 +28,31 @@ const MonsterApiService = {
       )
   },
 
-  getUserGuides(user_id) {
-    return fetch(`${config.API_ENDPOINT}/guides/${user_id}`, {
+  getUserGuides(user_name) {
+    return fetch(`${config.API_ENDPOINT}/guides/${user_name}`, {
       headers: {
         'Authorization': `Bearer ${TokenService.getAuthToken()}`
       }
     })
+    .then(res => 
+      (!res.ok)
+      ? res.json().then(e => Promise.reject(e))
+      : res.json()
+    )
   },
 
-  postGuide(user_id, name, note) {
-    return fetch(`${config.API_ENDPOINT}/guides/${user_id}`, {
+  postGuide(user_name, name, note, monid) {
+    return fetch(`${config.API_ENDPOINT}/guides/${user_name}`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
         'Authorization': `Bearer ${TokenService.getAuthToken()}`
       },
       body: JSON.stringify({
-        user_id: user_id,
+        user_name: user_name,
         name: name,
-        note: note
+        note: note,
+        mon_id: monid
       })
     })
       .then(res => 

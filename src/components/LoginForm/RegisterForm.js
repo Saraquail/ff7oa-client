@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom';
 import AuthApiService from '../../services/auth-api-service'
 import TokenService from '../../services/token-service'
-import { withRouter } from 'react-router-dom';
 
 
 class RegisterForm extends Component {
