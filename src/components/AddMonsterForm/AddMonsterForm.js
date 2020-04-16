@@ -7,14 +7,14 @@ class AddMonsterForm extends Component {
 
   state = {
     name: '',
-    hp: '5',
-    mp: '2',
-    exp: '3',
-    gil: '2',
+    hp: '',
+    mp: '',
+    exp: '',
+    gil: '',
     weakness: 'none',
     strength: 'none',
-    location: 'here',
-    level: '7',
+    location: '',
+    level: '',
     steal: 'none',
     drops: 'none',
     enemy_skill: 'none'
@@ -54,13 +54,13 @@ class AddMonsterForm extends Component {
         <label htmlFor="name">Name</label>
         <input type="text" name="name" id="name" required onChange={this.handleInputChange} />
         <label htmlFor="hp">HP</label>
-        <input type="text" name="hp" id="hp" required defaultValue = '5' onChange={this.handleInputChange} />
+        <input type="text" name="hp" id="hp" required onChange={this.handleInputChange} />
         <label htmlFor="mp">MP</label>
-        <input type="text" name="mp" id="mp" required defaultValue = '5' onChange={this.handleInputChange} />
+        <input type="text" name="mp" id="mp" required onChange={this.handleInputChange} />
         <label htmlFor="mp">EXP</label>
-        <input type="text" name="exp" id="exp" required defaultValue = '5' onChange={this.handleInputChange} />
+        <input type="text" name="exp" id="exp" required onChange={this.handleInputChange} />
         <label htmlFor="gil">GIL</label>
-        <input type="text" name="gil" id="gil" required defaultValue = '5' onChange={this.handleInputChange} />
+        <input type="text" name="gil" id="gil" required onChange={this.handleInputChange} />
         <label htmlFor="gil">Weakness</label>
         <input type="text" name="weakness" id="weakness" defaultValue = 'none' required onChange={this.handleInputChange} />
         <label htmlFor="strength">Strength</label>

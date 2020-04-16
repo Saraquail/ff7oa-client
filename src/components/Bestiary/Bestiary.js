@@ -6,7 +6,6 @@ import MonsterApiService from '../../services/monster-api-service'
 import Monsters from './Monsters'
 
 class Bestiary extends Component {
-
   state = {
     monsters: []
   }
@@ -14,6 +13,7 @@ class Bestiary extends Component {
   componentDidMount() {
     MonsterApiService.getMonsters()
       .then (data => {
+        console.log(data)
         this.setState({ monsters: data })
       })
       .catch()
@@ -24,6 +24,7 @@ class Bestiary extends Component {
 
     return allMonsters.map(mon =>
       <Monsters
+        id={mon.id}
         key={mon.id}
         name={mon.name}
         hp={mon.hp}

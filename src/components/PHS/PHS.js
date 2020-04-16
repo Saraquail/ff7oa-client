@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Nav from '../Nav/Nav'
 import MonsterApiService from '../../services/monster-api-service'
+import TokenService from '../../services/token-service'
+import Guides from './Guides'
 
 
 class PHS extends Component {
@@ -9,24 +11,39 @@ class PHS extends Component {
   }
 
   componentDidMount() {
-    MonsterApiService.getUserGuides(2)
+    const user_name = TokenService.getUserName()
+    
+    MonsterApiService.getUserGuides(user_name)
       .then(data => {
         this.setState({
           guides: data
         })
+        console.log(data)
       })
       .catch()
   }
 
+  renderGuides() {
+    let guides = this.state.guides
+
+    return guides.map(guide => 
+      <Guides
+        key={guide.id}
+        name={guide.name}
+        note={guide.note}
+      />
+      )
+  }
+
   render() {
 
-    let guides = this.state.guides
-    console.log(guides)
 
     return (
       <div>
         <Nav></Nav>
-        <p></p>
+        <h1>My PHS</h1>
+        <h2>My Saved Guides:</h2>
+        {this.renderGuides()}
       </div>
     )
   }
