@@ -30,6 +30,7 @@ class SaveGuideForm extends Component {
 
     MonsterApiService.postGuide(user_name, guide)
       .then(this.clearForm)
+      .then(this.props.handleCloseModal)
   }
 
   handleInputChange = (ev) => {

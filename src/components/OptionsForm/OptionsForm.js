@@ -1,19 +1,15 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import './OptionsForm.css'
 
 class OptionsForm extends Component {
-
-  // handleOption = ev => {
-  //   let sort = ev.target.value
-  //   console.log(sort)
-
-  // }
 
   render () {
     return (
       <section id="bestiary-options">
       <label htmlFor="sort-by">Sort by:</label>
-      <select defaultValue="Name" onChange={this.props.handleSort}>
+      <select defaultValue="" onChange={this.props.handleSort}>
+        <option></option>
         <option>Name</option>
         <option>GIL</option>
         <option>Location</option>
@@ -32,6 +28,7 @@ class OptionsForm extends Component {
       <label htmlFor="search">Search:</label>
         <input type="text" name="search" id="search" />
         <button type='submit'>Search</button>
+        <button onClick={this.props.handleReset}>Reset</button>
         </form>
       <button>
         <Link to="/monster-form">

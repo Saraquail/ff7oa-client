@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import SingleItemView from '../SingleItemView/SingleItemView'
 
+
 class Guides extends Component {
   state = {
     showModal: false,

@@ -3,6 +3,7 @@ import Nav from '../Nav/Nav'
 import MonsterApiService from '../../services/monster-api-service'
 import TokenService from '../../services/token-service'
 import Guides from './Guides'
+import './PHS.css'
 
 
 class PHS extends Component {

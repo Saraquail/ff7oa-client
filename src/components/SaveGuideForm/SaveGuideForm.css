@@ -6,7 +6,6 @@
   padding: 2em;
   min-width: 20em;
   max-width: 70%;
-  color: #f00;
   background-color: #fff;
   border-radius: 1em;
   transform: translate(-50%, -50%);
@@ -14,9 +13,9 @@
 }
 .overlay {
   position: fixed;
-  top: 0;
+  top: 50%;
   right: 0;
   bottom: 0;
-  left: 0;
+  left: 50%;
   background-color: rgba(0,0,0,.4);
 }
