@@ -9,7 +9,7 @@ class OptionsForm extends Component {
       <section id="bestiary-options">
       <label htmlFor="sort-by">Sort by:</label>
       <select defaultValue="" onChange={this.props.handleSort}>
-        <option></option>
+        <option>-select-</option>
         <option>Name</option>
         <option>GIL</option>
         <option>Location</option>
@@ -18,7 +18,8 @@ class OptionsForm extends Component {
 
       <form name="search-form" id="search-form" onSubmit={this.props.handleSearch}>
       <label htmlFor="filter-by">Search by:</label>
-      <select name="filter-by" id="filter-by">
+      <select defaultValue="" name="filter-by" id="filter-by">
+        <option>-select-</option>
         <option>Location</option>
         <option>Name</option>
         <option>Drops</option>
