@@ -85,31 +85,11 @@ class Bestiary extends Component {
   renderSorted = (sort) => {
     let allMonsters = this.state.monsters
     let sortby = sort.toLowerCase()
-    console.log(sortby)
 
-  //  if (sortby === 'name' || sortby === 'location' ) {
-      allMonsters.sort((a, b) => {
-          return a[sortby] > b[sortby] ? 1 : a[sortby] < b[sortby] ? -1 : 0
-      })
-    // }
-
+    allMonsters.sort((a, b) => {
+        return a[sortby] > b[sortby] ? 1 : a[sortby] < b[sortby] ? -1 : 0
+    })
     return allMonsters
-
-
-    // if (sort) {
-    //   results.sort((a, b) => {
-    //     return a[sort] > b[sort] ? 1 : a[sort] < b[sort] ? -1 : 0;
-    //   });
-    // }
-    
-    // return allMonsters
-    // if (sort === 'Gil' || sort === 'EXP') {
-    //   allMonsters
-    //     .sort((a, b) => {
-    //       return a['Rating'] < b['Rating'] ? 1 : 
-    //         a['Rating'] > b['Rating'] ? -1 : 0
-    //     })
-    // }
   }
 
   handleSort = ev => {
