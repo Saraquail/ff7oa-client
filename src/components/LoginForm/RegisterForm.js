@@ -5,6 +5,9 @@ import TokenService from '../../services/token-service'
 
 
 class RegisterForm extends Component {
+  state ={
+    passwordMessage: ''
+  }
 
   handleSubmitRegisterJWT = ev => {
     ev.preventDefault()
@@ -40,17 +43,47 @@ class RegisterForm extends Component {
       })
   }
 
+  handlePassword = ev => {
+    let str = ev.target.value
+    if(str) {
+      this.setState({
+          passwordMessage: this.validatePassword(str)
+      })
+    }
+  }
+
+validatePassword(str) {
+  if (str.length === 0) {
+    return 'Password is required'
+  } 
+  else if (str.length < 6 || str.length > 72) {
+    return 'Password must be between 6 and 72 characters'
+  } 
+  else if (!str.match(/[0-9]/)) {
+    return 'Password must contain at least one number'
+  } 
+  else if (!str.match(/[~`!#$%^&*+=\-[\]\\';,/{}|\\":<>?]/)) {
+    return 'Password must contain a special character'
+  }
+  else if (!str.match(/^[A-Z]/)) {
+    return 'Password must contain at least uppercase letter'
+  }
+}
+
+
+
   render () {
 
     return (
       <form 
         className="register-form"
         onSubmit={this.handleSubmitRegisterJWT}
-      >
+      > <p>Your password must be longer than 8 characters, and include at least one of the following: lowercase letter, uppercase letter, number, special character </p>
         <label htmlFor="user_name">Username</label>
           <input type="text" name="user_name" id="user_name" required="" />
         <label htmlFor="password">Password</label>
-          <input type="password" name="password" id="password" required="" />
+          <input type="password" name="password" id="password" required="" onChange={this.handlePassword}/>
+          {this.state.passwordMessage}
         <button 
           type="submit">
             Let's Mosey
