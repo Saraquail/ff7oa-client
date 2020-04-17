@@ -6,7 +6,8 @@ class Monsters extends Component {
   state = {
     showModal: false,
     selectedid: '',
-    expanded: false
+    expanded: false,
+    sort: ''
   }
 
   handleExpand = () => {
@@ -29,13 +30,15 @@ class Monsters extends Component {
     })
   }
 
-  render () {
+  renderAllMons = () => {
+
     const mon = this.props
     let id = this.state.selectedid
     if(!mon) {
       return <p>Loading Monsters</p>
     }
-    return (
+
+    return(
       <section className="monsterList">
 
         <div className="collapsed">    
@@ -61,11 +64,22 @@ class Monsters extends Component {
           : ''}
 
       {this.state.showModal ?
-        <SaveGuideForm className="modal" overlayClassName="overlay" selectedid={id} handleCloseModal={this.handleCloseModal}   onRequestClose={this.handleCloseModal}
- />
+        <SaveGuideForm className="modal overlay"  selectedid={id} handleCloseModal={this.handleCloseModal}   onRequestClose={this.handleCloseModal}
+        />
       : ''}
       </section>
 
+    )
+  }
+
+
+  render () {
+
+    return (
+      <div>
+      
+      {this.renderAllMons()}
+      </div>
     )
     
 

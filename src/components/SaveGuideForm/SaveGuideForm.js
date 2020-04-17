@@ -46,7 +46,7 @@ class SaveGuideForm extends Component {
 
   render () {
     return (
-      <div className="modal" overlayClassName="overlay">
+      <div className="modal overlay" >
         <form name="add-guide-form" id="add-guide-form" onSubmit={this.handleSubmit}>
           <label htmlFor="nickname">Nickname</label>
             <input type="text" name="nickname" id="nickname" required onChange={this.handleInputChange}/>
