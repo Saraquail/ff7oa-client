@@ -22,17 +22,20 @@ class Bestiary extends Component {
   renderMonsters = () => {
     let { sort, param, term } = this.state    
     let allMonsters = this.state.monsters
-    console.log(allMonsters)
-    // if(!sort && !param) {
-    //   allMonsters = this.state.monsters
-    // }
+    if(!sort && !term) {
+      allMonsters = this.state.monsters
+    }
 
-    // if(sort) {
-    //   allMonsters = this.renderSorted(sort)
-    // }
+    if(sort) {
+      allMonsters = this.renderSorted(sort)
+    }
 
     if(term) {
       allMonsters = this.renderSearched(param, term)
+    }
+
+    if(!allMonsters) {
+      return 'No Results Found'
     }
 
     return allMonsters.map(mon =>
@@ -53,7 +56,7 @@ class Bestiary extends Component {
         enemy_skill={mon.enemy_skill}
         user_name={mon.user_name}
       />
-  )
+    )
   }
 
   renderSearched = (param, term) => {
@@ -66,11 +69,11 @@ class Bestiary extends Component {
 
     if(term) {
       param = param.toLowerCase()
-      console.log(param)
+      term = term.toLowerCase()
 
       for(let i=0; i < allMonsters.length; i++) {
         for (let [key, value] of Object.entries(allMonsters[i])) {
-          if(key === param && value.includes(term)) {
+          if(key === param && value.toLowerCase().includes(term)) {
             mons.push(allMonsters[i])
             return mons
           }
@@ -79,33 +82,51 @@ class Bestiary extends Component {
     }
   }
 
-
   renderSorted = (sort) => {
     let allMonsters = this.state.monsters
     let sortby = sort.toLowerCase()
-    // if (sortby === 'Name' || sortby === 'Location') {
-    //   allMonsters.sort((a, b) => {
-    //       return a.sortby.toLowerCase() > b.sortby.toLowerCase() ? 1 : 
-    //         a.sortby.toLowerCase() < b.sortby.toLowerCase() ? -1 : 0
-    //     })
+    console.log(sortby)
+
+  //  if (sortby === 'name' || sortby === 'location' ) {
+      allMonsters.sort((a, b) => {
+          return a[sortby] > b[sortby] ? 1 : a[sortby] < b[sortby] ? -1 : 0
+      })
     // }
 
     return allMonsters
+
+
+    // if (sort) {
+    //   results.sort((a, b) => {
+    //     return a[sort] > b[sort] ? 1 : a[sort] < b[sort] ? -1 : 0;
+    //   });
+    // }
+    
+    // return allMonsters
     // if (sort === 'Gil' || sort === 'EXP') {
     //   allMonsters
     //     .sort((a, b) => {
     //       return a['Rating'] < b['Rating'] ? 1 : 
     //         a['Rating'] > b['Rating'] ? -1 : 0
     //     })
-    //   return allMonsters.sort()
     // }
   }
 
-  handleSort = ev =>  {
+  handleSort = ev => {
     let sort = ev.target.value
     this.setState({
       sort: sort
     })
+  }
+
+  handleReset = () => {
+    this.setState({
+      params: '',
+      sort: ''
+    })
+    this.renderMonsters()
+    document.getElementById("search-form").reset();
+
   }
 
   handleSearch = ev => {
@@ -119,11 +140,10 @@ class Bestiary extends Component {
   }
 
   render() {
-    // this.renderMonsters()
     return (
       <div>
         <Nav />
-        <OptionsForm handleSort={this.handleSort} handleSearch={this.handleSearch} />
+        <OptionsForm handleReset={this.handleReset} handleSort={this.handleSort} handleSearch={this.handleSearch} />
         <h1>Bestiary</h1>
           {this.renderMonsters()}
       </div>
