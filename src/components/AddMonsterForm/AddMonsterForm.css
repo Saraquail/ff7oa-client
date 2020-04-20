@@ -1,5 +1,6 @@
 .add-monster-container {
-  background-color: #4334b3;
+background-image: linear-gradient(to bottom, rgba(51,99,180,1), rgba(3, 3, 27, 0.8));
+color: whitesmoke;
 }
 
 form {
@@ -7,11 +8,23 @@ form {
   flex-direction: column;
   margin-left: 20%;
   margin-right: 20%;
+  font-size: 16px;
 }
 
 input {
-  margin-bottom: 2em;
+  margin-bottom: 1.5em;
   margin-top: .5em;
-  width: 15em;
+  width: 10em;
+  background-color: #696969;
+  color: #50243e;
+  border: solid 1px #b6b1b1;
+  box-shadow: #6d6360;
+  font-size: 16px;
+
+}
+
+input:focus {
+background-color: #f1b1c5;
+border: solid 1px #807e80;
 }
 
