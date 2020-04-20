@@ -14,6 +14,8 @@ class Landing extends Component {
         <p>If you register for an account, you can bookmark monsters to your own personal list for quick reference. You can find this by going to My PHS. When you add a monster a field "Added by" will be added to your monster with your username.</p>
         <p>If you'd like to sign in as a guest, simply hit Login, and then Let's Mosey without changing the text in the fields.</p>
         <p>If you'd like to register for an account, simply hit Register, and input your desired username and password, and then hit Let's Mosey.</p>
+
+        <h5>Please fill out this survey! <a href="https://forms.gle/CSgMdqyqkMYMb4wv6" rel="noopener noreferrer" target="_blank">Click Here</a></h5>
         <LoginorRegister />
       </section>
     )

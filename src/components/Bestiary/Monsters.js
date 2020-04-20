@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { HashLink as Link } from 'react-router-hash-link';
 import SaveGuideForm from '../SaveGuideForm/SaveGuideForm'
 import './Monsters.css'
 
@@ -40,13 +41,16 @@ class Monsters extends Component {
 
     return(
       <section className="monsterList">
-
         <div className="collapsed">    
-          <h2>{mon.name}</h2>
+          <h2 id={mon.id}>{mon.name}</h2>
           <button value={mon.id}
             onClick={e => this.handleOpenModal(e)}
             > Add to My PHS</button>
-          <button onClick={this.handleExpand}> Click here for more/less info</button>
+          <button onClick={this.handleExpand}>
+          <Link to={'#' + mon.id}>
+          Click here for more/less info
+          </Link> 
+          </button>
           <p> Level: {mon.level} </p>
           <p> Added By: {mon.user_name} </p>
           <p> HP: {mon.hp} MP: {mon.mp} </p>

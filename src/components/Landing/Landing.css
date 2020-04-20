@@ -1,8 +1,14 @@
 .landing-page {
   background-color: #26437a;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
-  color: whitesmoke
+  color: whitesmoke;
+  padding-top: .5em;
+}
+
+h1 {
+  border: solid 1px;
+  padding: .3em
 }
 
 .login-button {
@@ -12,4 +18,9 @@
 
 p {
   margin: 2em;
+}
+
+a {
+  color: lightblue;
+  text-decoration: underline;
 }

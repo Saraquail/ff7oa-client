@@ -1,0 +1,15 @@
+button {
+  background-color: #234177;
+  color: whitesmoke;
+}
+
+.message {
+  margin: auto;
+  margin-bottom: .5em;
+  color: #b043b0;
+}
+
+.password-instructions {
+  margin: auto;
+  margin-bottom: 1em;
+}
