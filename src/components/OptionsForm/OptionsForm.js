@@ -7,14 +7,6 @@ class OptionsForm extends Component {
   render () {
     return (
       <section id="bestiary-options">
-      <label htmlFor="sort-by">Sort by:</label>
-      <select defaultValue="" onChange={this.props.handleSort}>
-        <option>-select-</option>
-        <option>Name</option>
-        <option>GIL</option>
-        <option>Location</option>
-        <option>EXP</option>
-      </select>
 
       <form name="search-form" id="search-form" onSubmit={this.props.handleSearch}>
       <label htmlFor="filter-by">Search by:</label>
@@ -31,11 +23,24 @@ class OptionsForm extends Component {
         <button type='submit'>Search</button>
         <button onClick={this.props.handleReset}>Reset</button>
         </form>
-      <button>
+
+        <div className="sort-and-add">
+        <label htmlFor="sort-by">Sort by:</label>
+        <select name="sort-by" id="sort-by"   defaultValue="" onChange={this.props.handleSort}>
+          <option>-select-</option>
+          <option>Name</option>
+          <option>GIL</option>
+          <option>Location</option>
+          <option>EXP</option>
+        </select>
+        <button>
         <Link to="/monster-form">
           Add New
         </Link>
       </button>
+      </div>
+
+
     </section>
     )
   }

@@ -26,11 +26,11 @@ class LoginorRegister extends Component {
   render () {
     return(
       <section className="LoginOrRegister">
-        <button 
+        <button className="login-button"
           onClick={this.handleRegister}>
           Register 
         </button>
-        <button 
+        <button className="login-button"
           onClick={this.handleLogin}>
           Login 
         </button>

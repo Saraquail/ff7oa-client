@@ -15,6 +15,7 @@ class LoginForm extends Component {
     this.setState({
       loadingMessage: 'Loading, please wait'
     })
+
     AuthApiService.postLogin({
       user_name: user_name.value,
       password: password.value
@@ -35,10 +36,9 @@ class LoginForm extends Component {
   }
 
   render () {
-
     return (
       <div className="login-container">
-        <h2>Login an existing or guest account:</h2>
+        <h2>Login to an existing or guest account:</h2>
         <form 
           className="login-form"
           onSubmit={this.handleSubmitLoginJWT}

@@ -54,8 +54,8 @@ class SaveGuideForm extends Component {
               <input type="text" name="nickname" id="nickname" required onChange={this.handleInputChange}/>
             <label htmlFor="note">Note</label>
               <input type="text" name="note" id="note" required onChange={this.handleInputChange}/>
-            <button onClick={this.props.handleCloseModal}>Not Interested</button>
-            <button type="submit">OK, add it</button>
+            <button className="add-guide-button" onClick={this.props.handleCloseModal}>Not Interested</button>
+            <button className="add-guide-button" type="submit">OK, add it</button>
           </form>
         </div>
       </div>

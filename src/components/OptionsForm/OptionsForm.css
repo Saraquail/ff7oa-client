@@ -1,3 +1,21 @@
 form {
-  display: inline;
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+}
+
+.sort-and-add {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+/* 
+.bestiary-options {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+} */
+
+input, select, button {
+  width: 10em;
+  align-self: center;
 }
