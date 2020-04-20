@@ -8,14 +8,15 @@ form {
   margin-top: 2em;
   margin-bottom: 2em;
 }
-/* 
-.bestiary-options {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-} */
+
 
 input, select, button {
   width: 10em;
   align-self: center;
+}
+
+#add-monster-button {
+  font-size: 12px;
+  width: 7em;
+  color: whitesmoke;
 }

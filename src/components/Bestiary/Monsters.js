@@ -46,8 +46,8 @@ class Monsters extends Component {
           <button value={mon.id}
             onClick={e => this.handleOpenModal(e)}
             > Add to My PHS</button>
-          <button onClick={this.handleExpand}>
-          <Link to={'#' + mon.id}>
+          <button id="expand" onClick={this.handleExpand}>
+          <Link to={'#' + mon.id} id="expand">
           Click here for more/less info
           </Link> 
           </button>
