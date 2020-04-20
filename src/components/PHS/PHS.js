@@ -42,6 +42,7 @@ class PHS extends Component {
       <div>
         <Nav></Nav>
         <h1>My PHS</h1>
+        <p>In FF7, your PHS is your Personal Handheld System. This is basically a cellphone you can use to interact with your party members. Here, your PHS is a list of monsters you've saved for quick reference. </p>
         <h2>My Saved Guides:</h2>
         {this.renderGuides()}
       </div>

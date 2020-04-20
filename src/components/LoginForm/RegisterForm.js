@@ -14,6 +14,9 @@ class RegisterForm extends Component {
   handleSubmitRegisterJWT = ev => {
     ev.preventDefault()
     const { user_name, password } = ev.target
+    this.setState({
+      loadingMessage: 'Loading, please wait'
+    })
 
     AuthApiService.postUser({
       user_name: user_name.value,
@@ -34,7 +37,7 @@ class RegisterForm extends Component {
       user_name: user_name,
       password: password
     })
-      .then(res => {
+    .then(res => {
         TokenService.saveAuthToken(res.authToken)
         TokenService.saveUserName(res.user_name)
         this.props.history.push('/bestiary')

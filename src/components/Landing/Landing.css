@@ -1,0 +1,15 @@
+.landing-page {
+  background-color: #26437a;
+  height: 100vh;
+  width: 100vw;
+  color: whitesmoke
+}
+
+.login-button {
+  background-color: #234177;
+  color: whitesmoke;
+}
+
+p {
+  margin: 2em;
+}

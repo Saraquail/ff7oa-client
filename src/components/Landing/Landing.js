@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import LoginorRegister from '../LoginForm/LoginorRegister'
+import './Landing.css'
 
 class Landing extends Component {
 

@@ -1,14 +1,17 @@
 ul {
+  display: flex;
+  justify-content: space-evenly;
   list-style-type: none;
 }
 
 li{
   display: inline;
-  margin: 2rem;
 }
 
 a {
   text-decoration: none;
+  font-size: 20px;
+
 }
 
 button a{
@@ -16,9 +19,10 @@ button a{
 }
 
 nav a{
-  color: white;
+  color: whitesmoke;
 }
 
 nav {
-  background-color: #444;
+  background-color: #234177;
+  padding: .5em;
 }
