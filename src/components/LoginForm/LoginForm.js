@@ -4,11 +4,17 @@ import TokenService from '../../services/token-service'
 import { withRouter } from 'react-router-dom';
 
 class LoginForm extends Component {
+  state ={
+    loadingMessage: '',
+    error: ''
+  }
 
   handleSubmitLoginJWT = ev => {    
     ev.preventDefault()
     const { user_name, password } = ev.target
-    
+    this.setState({
+      loadingMessage: 'Loading, please wait'
+    })
     AuthApiService.postLogin({
       user_name: user_name.value,
       password: password.value
@@ -19,28 +25,38 @@ class LoginForm extends Component {
         TokenService.saveAuthToken(res.authToken)
         TokenService.saveUserName(res.user_name)
         this.props.history.push('/bestiary')
+        
       })
       .catch(res => {
-        this.setState({ error: res.error })
+        this.setState({ 
+          loadingMessage: '',
+          error: res.error })
       })
   }
 
   render () {
 
     return (
-      <form 
-        className="login-form"
-        onSubmit={this.handleSubmitLoginJWT}
-      >
-        <label htmlFor="user_name">Username</label>
-          <input type="text" name="user_name" id="user_name" required="" defaultValue="guest" />
-        <label htmlFor="password">Password</label>
-          <input type="password" name="password" id="password" required="" defaultValue="guest" />
-        <button 
-          type="submit">
-            Let's Mosey
-        </button>
-      </form>
+      <div className="login-container">
+        <h2>Login an existing or guest account:</h2>
+        <form 
+          className="login-form"
+          onSubmit={this.handleSubmitLoginJWT}
+        >
+          <label htmlFor="user_name">Username</label>
+            <input type="text" name="user_name" id="user_name" required="" defaultValue="guest" />
+          <label htmlFor="password">Password</label>
+            <input type="password" name="password" id="password" required="" defaultValue="guest" />
+            <p className="message">
+              {this.state.loadingMessage}
+              {this.state.error}
+            </p>
+          <button 
+            type="submit">
+              Let's Mosey
+          </button>
+        </form>
+      </div>
     )
   }
 }

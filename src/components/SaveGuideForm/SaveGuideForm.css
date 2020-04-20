@@ -11,6 +11,7 @@ body {
   padding: 2em;
   min-width: 20em;
   max-width: 70%;
+  min-height: 40em;
   background-color: #04009d;
   border-radius: 1em;
   transform: translate(-50%, -50%);

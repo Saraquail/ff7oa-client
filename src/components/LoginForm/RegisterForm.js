@@ -6,7 +6,9 @@ import TokenService from '../../services/token-service'
 
 class RegisterForm extends Component {
   state ={
-    passwordMessage: ''
+    passwordMessage: '',
+    loadingMessage: '',
+    error: ''
   }
 
   handleSubmitRegisterJWT = ev => {
@@ -62,11 +64,14 @@ validatePassword(str) {
   else if (!str.match(/[0-9]/)) {
     return 'Password must contain at least one number'
   } 
-  else if (!str.match(/[~`!#$%^&*+=\-[\]\\';,/{}|\\":<>?]/)) {
-    return 'Password must contain a special character'
+  else if (!str.match(/^[a-z]/)) {
+    return 'Password must contain at least one lowercase letter'
   }
-  else if (!str.match(/^[A-Z]/)) {
-    return 'Password must contain at least uppercase letter'
+  else if (!str.match(/(?=.*[A-Z])/)) {
+    return 'Password must contain at least one uppercase letter'
+  }
+  else {
+    return ''
   }
 }
 
@@ -75,20 +80,27 @@ validatePassword(str) {
   render () {
 
     return (
-      <form 
-        className="register-form"
-        onSubmit={this.handleSubmitRegisterJWT}
-      > <p>Your password must be longer than 8 characters, and include at least one of the following: lowercase letter, uppercase letter, number, special character </p>
-        <label htmlFor="user_name">Username</label>
-          <input type="text" name="user_name" id="user_name" required="" />
-        <label htmlFor="password">Password</label>
-          <input type="password" name="password" id="password" required="" onChange={this.handlePassword}/>
-          {this.state.passwordMessage}
-        <button 
-          type="submit">
-            Let's Mosey
-        </button>
-      </form>
+      <div className="register-container">
+        <h2>Register a new account:</h2>
+        <form 
+          className="register-form"
+          onSubmit={this.handleSubmitRegisterJWT}
+        > <p className="password-instructions">Your password must be longer than 6 characters, and include at least one of the following: lowercase letter, uppercase letter number. </p>
+          <label htmlFor="user_name">Username</label>
+            <input type="text" name="user_name" id="user_name" required="" />
+          <label htmlFor="password">Password</label>
+            <input type="password" name="password" id="password" required="" onChange={this.handlePassword}/>
+            <p className="message">
+              {this.state.passwordMessage}
+              {this.state.loadingMessage}
+              {this.state.error}
+            </p>
+          <button 
+            type="submit">
+              Let's Mosey
+          </button>
+          </form>
+      </div>
     )
   }
 }

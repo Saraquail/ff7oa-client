@@ -14,7 +14,7 @@ class Nav extends Component {
     <ul>
       <li>
         <Link to='/bestiary'>
-          Besitary
+          Bestiary
         </Link>
       </li>
       <li>
