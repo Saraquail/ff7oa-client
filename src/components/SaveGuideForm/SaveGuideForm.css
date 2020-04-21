@@ -16,7 +16,7 @@ body {
   background-image: linear-gradient(to bottom right, rgba(4,0,157,1), rgba(4, 3, 44, 0.7));
   border-radius: 1em;
   transform: translate(-50%, -50%);
-  border: solid 1px #424542;
+  border: solid 1px #e7dfe7;
   box-shadow: 1px 1px #e7dfe7,
               -1px -1px #e7dfe7,
               1px -1px #e7dfe7,

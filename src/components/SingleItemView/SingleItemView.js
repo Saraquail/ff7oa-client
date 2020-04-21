@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import MonsterApiService from '../../services/monster-api-service'
+import './SingleItemView.css'
 
 class SingleItemView extends Component {
   state = {
@@ -23,7 +24,7 @@ class SingleItemView extends Component {
     let mon = this.state.mon
     
     return (
-      <div className="singleMonster">
+      <div  className="single-monster">
         <h2>{mon.name}</h2>
         <p> Level: {mon.level} </p>
         <p> Added By: {mon.user_name} </p>

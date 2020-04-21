@@ -20,11 +20,11 @@ button {
 }
 
 #message {
+  font-family: 'Almarai', sans-serif;
   margin: auto;
   margin-bottom: .5em;
   color: #b043b0;
   font-weight: 800;
-  border: solid #b043b0;
   padding: .5em;
 }
 
