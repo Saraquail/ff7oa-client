@@ -1,0 +1,19 @@
+
+
+.page-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.holy-left, .holy-right {
+  width: 3em;
+  height: 3em;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.holy-right {
+  transform: scaleX(-1);
+}

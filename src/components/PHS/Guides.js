@@ -27,7 +27,7 @@ class Guides extends Component {
         <h3 id={guides.monster_id}>name: {guides.name}</h3>
         <p>note: {guides.note}</p>
         <button value={guides.monster_id} onClick={(ev) => this.handleClick(ev)}>
-        {this.state.showModal ? 'Close' : 'Open' }
+        {this.state.showModal ? 'Close' : 'Open Below' } 
         </button>
         {this.state.showModal 
         ? <SingleItemView monster_id={this.state.monster_id} /> 
