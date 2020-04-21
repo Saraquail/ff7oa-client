@@ -18,7 +18,8 @@ class AddMonsterForm extends Component {
     level: '',
     steal: 'N/A',
     drops: 'N/A',
-    enemy_skill: 'N/A'
+    enemy_skill: 'N/A',
+    message: ''
   }
 
   handleInputChange = (ev) => {
@@ -41,9 +42,42 @@ class AddMonsterForm extends Component {
     ev.preventDefault()
     let monster = this.state
     let user = TokenService.getUserName()
-    MonsterApiService.postMonster(user, monster)
-      .then(this.props.history.goBack())
-      .catch()
+    this.validateMonster(user, monster)
+    }
+
+    validateMonster = (user, monster) => {
+      let { hp, mp, gil, exp, level }  = this.state
+      
+      if (hp < 1 || hp > 1000000) {
+        this.setState({
+          message: 'HP must be between 1 - 1,000,000'
+        })
+      }
+      else if (mp < 1 || mp > 200000) {
+        this.setState({
+          message: 'MP must be between 1 - 200,000'
+        })
+      }
+      else if (gil < 1 || mp > 200000) {
+        this.setState({
+          message: 'GIL must be between 1 - 200,000'
+        })
+      }
+      else if (exp < 1 || exp > 500000) {
+        this.setState({
+          message: 'EXP must be between 1 - 500,000'
+        })
+      }
+      else if (level < 1 || level > 99) {
+        this.setState({
+          message: 'Level must be between 1 - 99'
+        })
+      }
+      else {
+        MonsterApiService.postMonster(user, monster)
+        .then(this.props.history.goBack())
+        .catch()
+      }
     }
 
   render () {
@@ -78,6 +112,7 @@ class AddMonsterForm extends Component {
           required onChange={this.handleInputChange} />
           <label htmlFor="enemy_skill">Enemy Skill</label>
           <input type="text" name="enemy_skill" id="enemy_skill" defaultValue = 'N/A' required onChange={this.handleInputChange} />
+          <p id="message">{this.state.message}</p>
           <button type="reset" onClick={this.handleCancelForm}>Not Interested</button>
           <button type="submit">OK, add it</button>
         </form>

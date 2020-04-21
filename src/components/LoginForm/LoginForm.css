@@ -3,12 +3,7 @@ button {
   color: whitesmoke;
 }
 
-p .message {
-  margin: auto;
-  margin-bottom: .5em;
-  color: #b043b0;
 
-}
 
 .register-container, .login-container, .LoginOrRegister {
   background-color: #26437a;
@@ -24,7 +19,16 @@ p .message {
   margin-bottom: 1em;
 }
 
+#message {
+  margin: auto;
+  margin-bottom: .5em;
+  color: #b043b0;
+  font-weight: 800;
+  border: solid #b043b0;
+  padding: .5em;
+}
+
 .login-button {
   margin: 1em;
-  font-size: medium;
+  font-size: 16px;
 }

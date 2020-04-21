@@ -12,10 +12,13 @@ font-family: 'Athiti', sans-serif; */
 }
 
 h1 {
-  border: solid 2px #e7dfe7;
+  border-top: solid 2px #e7dfe7;
+  border-bottom: solid 2px #e7dfe7;
   padding: .3em;
   border-radius: .5em;
   box-shadow: 1px 1px #e7dfe7,
+  -1px -2px #e7dfe7,
+
 }
 
 .login-button {
@@ -25,7 +28,7 @@ h1 {
 
 .onboarding  {
   margin: 2em;
-  background-image: linear-gradient(to bottom, rgba(107,44,81,1), rgb(90, 35, 67));
+  background-image: linear-gradient(to bottom, rgb(128, 47, 94), rgb(90, 35, 67));
   padding: .25em;
   border-radius: .5em;
   border: solid 1px #424542;
@@ -46,4 +49,7 @@ button {
   border-radius: 1em;
 }
 
+.lets-mosey {
+  font-size: 16px;
+}
 

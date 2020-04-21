@@ -93,13 +93,13 @@ validatePassword(str) {
             <input type="text" name="user_name" id="user_name" required="" />
           <label htmlFor="password">Password</label>
             <input type="password" name="password" id="password" required="" onChange={this.handlePassword}/>
-            <p className="message">
+            <p id="message">
               {this.state.passwordMessage}
               {this.state.loadingMessage}
               {this.state.error}
             </p>
           <button 
-            type="submit">
+            type="submit" className="lets-mosey">
               Let's Mosey
           </button>
           </form>
