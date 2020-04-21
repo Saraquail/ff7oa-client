@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import { HashLink as Link } from 'react-router-hash-link';
+import { HashLink } from 'react-router-hash-link';
+import { Link } from 'react-router-dom'
+
 import LoginForm from './LoginForm'
 import RegisterForm from './RegisterForm'
 
@@ -26,18 +28,23 @@ class LoginorRegister extends Component {
   render () {
     return(
       <section className="LoginOrRegister">
-      <Link to="#register-header">
-      <button className="login-button"
-      onClick={this.handleRegister}>
-      Register
-      </button>
+        <div>
+        <Link to="/bestiary">
+          <button>Continue as a guest</button>
         </Link>
-        <Link to="#login-header">
+        </div>
+        <HashLink to="#register-header">
+        <button className="login-button"
+        onClick={this.handleRegister}>
+        Register
+        </button>
+        </HashLink>
+        <HashLink to="#login-header">
           <button className="login-button"
             onClick={this.handleLogin}>
             Login
           </button>
-        </Link>
+        </HashLink>
         {this.state.login ? <LoginForm /> : ''}
         {this.state.register ? <RegisterForm /> : ''}
       </section>
