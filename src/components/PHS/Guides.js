@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import SingleItemView from '../SingleItemView/SingleItemView'
-
+import './Guides.css'
 
 class Guides extends Component {
   state = {
@@ -17,10 +17,6 @@ class Guides extends Component {
     }))
   }
 
-  // renderSingleItem = () => {
-  //   return 
-  // }
-
   render () {
     const guides = this.props
     if(!guides) {
@@ -28,7 +24,7 @@ class Guides extends Component {
     }
     return(
       <div className="guides-list">
-        <h3>name: {guides.name}</h3>
+        <h3 id={guides.monster_id}>name: {guides.name}</h3>
         <p>note: {guides.note}</p>
         <button value={guides.monster_id} onClick={(ev) => this.handleClick(ev)}>
         {this.state.showModal ? 'Close' : 'Open' }

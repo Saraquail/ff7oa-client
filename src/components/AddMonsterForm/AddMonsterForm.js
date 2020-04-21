@@ -75,18 +75,21 @@ class AddMonsterForm extends Component {
       }
       else {
         MonsterApiService.postMonster(user, monster)
-        .then(this.props.history.goBack())
-        .catch()
+        .then(res => res.id ? this.props.history.goBack()
+        : '')
+        .catch(e => this.setState({ message: e.error }))
       }
     }
 
   render () {
     return (
       <div className="add-monster-container">
+      <h1>Add a new monster </h1>
         <form name="add-monster-form" id="add-monster-form" onSubmit={this.handleSubmitForm}>
-        <div className='form description'>
+        <div className='form-description'>
           All fields are required. If monster has no weakness/strength/drop/steal, simply put N/A as the value for that field.
         </div>
+          <button type="reset" onClick={this.handleCancelForm}>Not Interested</button>
           <label htmlFor="name">Name</label>
           <input type="text" name="name" id="name" required onChange={this.handleInputChange} />
           <label htmlFor="hp">HP (number)</label>
@@ -113,8 +116,8 @@ class AddMonsterForm extends Component {
           <label htmlFor="enemy_skill">Enemy Skill</label>
           <input type="text" name="enemy_skill" id="enemy_skill" defaultValue = 'N/A' required onChange={this.handleInputChange} />
           <p id="message">{this.state.message}</p>
-          <button type="reset" onClick={this.handleCancelForm}>Not Interested</button>
           <button type="submit">OK, add it</button>
+          <button type="reset" onClick={this.handleCancelForm}>Not Interested</button>
         </form>
       </div>
     )
