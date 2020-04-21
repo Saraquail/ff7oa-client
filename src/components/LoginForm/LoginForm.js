@@ -45,9 +45,9 @@ class LoginForm extends Component {
           onSubmit={this.handleSubmitLoginJWT}>
           <p className="onboarding">If you'd like to sign in as a guest, simply hit Let's Mosey without changing the text in the fields.</p>
           <label htmlFor="user_name">Username</label>
-            <input type="text" name="user_name" id="user_name" required="" defaultValue="guest" />
+            <input type="text" name="user_name" id="user_name" required="" defaultValue="test" />
           <label htmlFor="password">Password</label>
-            <input type="password" name="password" id="password" required="" defaultValue="guest" />
+            <input type="password" name="password" id="password" required="" defaultValue="testuser" />
             <p className="message">
               {this.state.message}
               {this.state.error}
