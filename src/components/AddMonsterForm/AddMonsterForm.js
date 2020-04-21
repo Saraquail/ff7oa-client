@@ -126,7 +126,3 @@ class AddMonsterForm extends Component {
 
 export default withRouter(AddMonsterForm)
 
-
-// for(let i = 0; i < ev.target.length; i++){
-//   monster.push(ev.target[i].value)
-// }
