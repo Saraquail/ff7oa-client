@@ -43,7 +43,7 @@ class LoginForm extends Component {
         <form 
           className="login-form"
           onSubmit={this.handleSubmitLoginJWT}>
-          <p className="onboarding">If you'd like to sign in as a guest, simply hit Login, and then Let's Mosey without changing the text in the fields.</p>
+          <p className="onboarding">If you'd like to sign in as a guest, simply hit Let's Mosey without changing the text in the fields.</p>
           <label htmlFor="user_name">Username</label>
             <input type="text" name="user_name" id="user_name" required="" defaultValue="guest" />
           <label htmlFor="password">Password</label>
@@ -53,7 +53,7 @@ class LoginForm extends Component {
               {this.state.error}
             </p>
           <button 
-            type="submit">
+            type="submit" className="lets-mosey">
               Let's Mosey
           </button>
         </form>
