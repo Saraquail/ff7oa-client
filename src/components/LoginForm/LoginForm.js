@@ -6,7 +6,7 @@ import './LoginForm.css'
 
 class LoginForm extends Component {
   state ={
-    loadingMessage: '',
+    message: '',
     error: ''
   }
 
@@ -14,7 +14,7 @@ class LoginForm extends Component {
     ev.preventDefault()
     const { user_name, password } = ev.target
     this.setState({
-      loadingMessage: 'Loading, please wait'
+      message: 'Loading, please wait'
     })
 
     AuthApiService.postLogin({
@@ -31,7 +31,7 @@ class LoginForm extends Component {
       })
       .catch(res => {
         this.setState({ 
-          loadingMessage: '',
+          message: '',
           error: res.error })
       })
   }
@@ -49,7 +49,7 @@ class LoginForm extends Component {
           <label htmlFor="password">Password</label>
             <input type="password" name="password" id="password" required="" defaultValue="guest" />
             <p className="message">
-              {this.state.loadingMessage}
+              {this.state.message}
               {this.state.error}
             </p>
           <button 

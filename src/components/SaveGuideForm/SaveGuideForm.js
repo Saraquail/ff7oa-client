@@ -7,7 +7,8 @@ import './SaveGuideForm.css'
 class SaveGuideForm extends Component {
   state = {
     nickname: '',
-    note: ''
+    note: '',
+    message: ''
   }
 
   clearForm = () => {
@@ -31,6 +32,7 @@ class SaveGuideForm extends Component {
     MonsterApiService.postGuide(user_name, guide)
       .then(this.clearForm)
       .then(this.props.handleCloseModal)
+      .catch(e => this.setState({ message: e.error }))
   }
 
   handleInputChange = (ev) => {
@@ -54,8 +56,9 @@ class SaveGuideForm extends Component {
               <input type="text" name="nickname" id="nickname" required onChange={this.handleInputChange}/>
             <label htmlFor="note">Note</label>
               <input type="text" name="note" id="note" required onChange={this.handleInputChange}/>
-            <button className="add-guide-button" onClick={this.props.handleCloseModal}>Not Interested</button>
             <button className="add-guide-button" type="submit">OK, add it</button>
+            <button className="add-guide-button" onClick={this.props.handleCloseModal}>Not Interested</button>
+            <p id="message">{this.state.message}</p>
           </form>
         </div>
       </div>
