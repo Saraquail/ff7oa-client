@@ -3,6 +3,8 @@ import Nav from '../Nav/Nav'
 import OptionsForm from '../OptionsForm/OptionsForm'
 import MonsterApiService from '../../services/monster-api-service'
 import Monsters from './Monsters'
+import holy from '../../images/White_Materia.png'
+import './Bestiary.css'
 
 class Bestiary extends Component {
   state = {
@@ -124,7 +126,11 @@ class Bestiary extends Component {
       <div>
         <Nav />
         <OptionsForm handleReset={this.handleReset} handleSort={this.handleSort} handleSearch={this.handleSearch} />
-        <h1>Bestiary</h1>
+        <div className="page-title">
+          <img src={holy} alt="a pale green orb of holy materia from final fantasy 7" className="materia-img holy-left" />
+          <h1>Bestiary</h1>
+          <img src={holy} alt="a pale green orb of holy materia from final fantasy 7" className="materia-img holy-right" />
+        </div>
           {this.renderMonsters()}
       </div>
     )

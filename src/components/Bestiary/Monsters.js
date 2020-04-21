@@ -41,32 +41,33 @@ class Monsters extends Component {
 
     return(
       <section className="monsterList">
-        <div className="collapsed">    
-          <h2 id={mon.id}>{mon.name}</h2>
-          <button value={mon.id}
-            onClick={e => this.handleOpenModal(e)}
-            > Add to My PHS</button>
-          <Link to={'#' + mon.id} id="expand">
-            <button id="expand" onClick={this.handleExpand}>
-            Click here for more/less info
-            </button>
-          </Link> 
-          <p> Level: {mon.level} </p>
-          <p> Added By: {mon.user_name} </p>
-          <p> HP: {mon.hp} MP: {mon.mp} </p>
-          <p> Exp: {mon.exp} Gil: {mon.gil} </p>
-          <p> Strength: {mon.strength}</p>
-          <p> Weakness: {mon.weakness}</p>
-        </div>
-        {this.state.expanded 
-          ? <div className="expanded">
-            <p> Location: {mon.location} </p>
-            <p> Steal: {mon.steal} </p>
-            <p> Drop: {mon.drops} </p>
-            <p> Enemy_skill: {mon.enemy_skill} </p>
+        <div className="monster">
+          <div className="collapsed">    
+            <h2 id={mon.id}>{mon.name}</h2>
+            <button value={mon.id}
+              onClick={e => this.handleOpenModal(e)}
+              > Add to My PHS</button>
+            <Link to={'#' + mon.id} id="expand">
+              <button id="expand" onClick={this.handleExpand}>
+              Click here for more/less info
+              </button>
+            </Link> 
+            <p> Level: {mon.level} </p>
+            <p> Added By: {mon.user_name} </p>
+            <p> HP: {mon.hp} MP: {mon.mp} </p>
+            <p> Exp: {mon.exp} Gil: {mon.gil} </p>
+            <p> Strength: {mon.strength}</p>
+            <p> Weakness: {mon.weakness}</p>
           </div>
-          : ''}
-
+          {this.state.expanded 
+            ? <div className="expanded">
+              <p> Location: {mon.location} </p>
+              <p> Steal: {mon.steal} </p>
+              <p> Drop: {mon.drops} </p>
+              <p> Enemy_skill: {mon.enemy_skill} </p>
+            </div>
+            : ''}
+        </div>
       {this.state.showModal ?
         <SaveGuideForm className="modal overlay"  selectedid={id} handleCloseModal={this.handleCloseModal}   onRequestClose={this.handleCloseModal}
         />

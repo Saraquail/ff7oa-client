@@ -6,16 +6,14 @@ import './LoginForm.css'
 
 class RegisterForm extends Component {
   state ={
-    passwordMessage: '',
-    loadingMessage: '',
-    error: ''
+    message: '',
   }
 
   handleSubmitRegisterJWT = ev => {
     ev.preventDefault()
     const { user_name, password } = ev.target
     this.setState({
-      loadingMessage: 'Loading, please wait'
+      message: 'Loading, please wait'
     })
 
     AuthApiService.postUser({
@@ -28,7 +26,7 @@ class RegisterForm extends Component {
         password.value = ''
       })
       .catch(res => {
-        this.setState({ error: res.error })
+        this.setState({ message: res.error })
       })
   }
 
@@ -44,7 +42,7 @@ class RegisterForm extends Component {
 
       })
       .catch(res => {
-        this.setState({ error: res.error })
+        this.setState({ message: res.error })
       })
   }
 
@@ -52,7 +50,7 @@ class RegisterForm extends Component {
     let str = ev.target.value
     if(str) {
       this.setState({
-          passwordMessage: this.validatePassword(str)
+          message: this.validatePassword(str)
       })
     }
   }
@@ -94,9 +92,7 @@ validatePassword(str) {
           <label htmlFor="password">Password</label>
             <input type="password" name="password" id="password" required="" onChange={this.handlePassword}/>
             <p id="message">
-              {this.state.passwordMessage}
-              {this.state.loadingMessage}
-              {this.state.error}
+              {this.state.message}
             </p>
           <button 
             type="submit" className="lets-mosey">

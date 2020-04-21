@@ -14,6 +14,10 @@ a {
 
 }
 
+div.header-image-container {
+  border-bottom: solid 1px whitesmoke;
+}
+
 button a{
   color: black;
 }

@@ -27,6 +27,12 @@ button {
   font-weight: 800;
   padding: .5em;
 }
+/* 
+.sword-img {
+  transform: rotate(240deg);
+  position: relative;
+  right: 50%;
+} */
 
 .login-button {
   margin: 1em;

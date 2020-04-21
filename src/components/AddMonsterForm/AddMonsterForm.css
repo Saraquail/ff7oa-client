@@ -21,12 +21,15 @@ input {
   border: solid 2px #555454;
   box-shadow: #5a5350;
   font-size: 16px;
-
+  transition-property: background;
+  transition-duration: .5s;
+  transition-timing-function: linear;
 }
 
 input:focus {
-background-color: #f1b1c5;
-border: solid 1px #807e80;
+  background-color: #f1b1c5;
+  border: solid 1px #807e80;
+  color:  rgb(90, 35, 67);
 }
 
 .add-monster-container #message {

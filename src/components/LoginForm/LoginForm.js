@@ -31,8 +31,7 @@ class LoginForm extends Component {
       })
       .catch(res => {
         this.setState({ 
-          message: '',
-          error: res.error })
+          message: res.error })
       })
   }
 
@@ -50,7 +49,6 @@ class LoginForm extends Component {
             <input type="password" name="password" id="password" required="" defaultValue="testuser" />
             <p className="message">
               {this.state.message}
-              {this.state.error}
             </p>
           <button 
             type="submit" className="lets-mosey">
