@@ -33,11 +33,11 @@ class OptionsForm extends Component {
           <option>Location</option>
           <option>EXP</option>
         </select>
-        <button id="add-monster-button">
         <Link to="/monster-form" id="add-monster-button">
-          Add New
+          <button id="add-monster-button">
+            Add New
+          </button>
         </Link>
-      </button>
       </div>
 
 

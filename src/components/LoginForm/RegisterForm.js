@@ -64,10 +64,10 @@ validatePassword(str) {
   else if (str.length < 6 || str.length > 72) {
     return 'Password must be between 6 and 72 characters'
   } 
-  else if (!str.match(/[0-9]/)) {
+  else if (!str.match(/(?=.*[0-9])/)) {
     return 'Password must contain at least one number'
   } 
-  else if (!str.match(/^[a-z]/)) {
+  else if (!str.match(/(?=.*[a-z])/)) {
     return 'Password must contain at least one lowercase letter'
   }
   else if (!str.match(/(?=.*[A-Z])/)) {
@@ -84,11 +84,11 @@ validatePassword(str) {
 
     return (
       <div className="register-container">
-        <h2>Register a new account:</h2>
+        <h2 id="register-header">Register a new account:</h2>
         <form 
           className="register-form"
           onSubmit={this.handleSubmitRegisterJWT}
-        > <p className="password-instructions">Your password must be longer than 6 characters, and include at least one of the following: lowercase letter, uppercase letter number. </p>
+        > <p className="password-instructions onboarding">Your password must be longer than 6 characters, and include at least one of the following: lowercase letter, uppercase letter number. </p>
           <label htmlFor="user_name">Username</label>
             <input type="text" name="user_name" id="user_name" required="" />
           <label htmlFor="password">Password</label>
