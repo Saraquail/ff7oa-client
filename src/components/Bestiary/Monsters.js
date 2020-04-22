@@ -40,7 +40,7 @@ class Monsters extends Component {
     }
 
     return(
-      <section className="monsterList">
+      <section className="monsterList" >
         <div className="monster">
           <div className="collapsed">    
             <h2 id={mon.id}>{mon.name}</h2>

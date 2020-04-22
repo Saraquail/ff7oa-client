@@ -58,6 +58,7 @@ a {
 button {
   border-radius: 1em;
   transition-duration: .3s;
+  font-size: 14px;
 
 }
 
