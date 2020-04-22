@@ -10,7 +10,8 @@ import './PHS.css'
 
 class PHS extends Component {
   state = {
-    guides: []
+    guides: [],
+    message: ''
   }
 
   componentDidMount() {
@@ -22,7 +23,19 @@ class PHS extends Component {
           guides: data
         })
       })
-      .catch()
+      .catch(e => {
+        this.setState({
+          message: e.error
+        })
+      })
+  }
+
+  deleteGuide = id => {
+    let prevGuides = this.state.guides
+    let filtered = prevGuides.filter(item => item.id != id)
+    this.setState({
+      guides: filtered
+    })
   }
 
   renderGuides() {
@@ -30,6 +43,8 @@ class PHS extends Component {
 
     return guides.map(guide => 
       <Guides
+        deleteGuide={this.deleteGuide}
+        id={guide.id}
         monster_id={guide.monster_id}
         key={guide.id}
         name={guide.name}
@@ -48,8 +63,9 @@ class PHS extends Component {
           <h1>My PHS</h1>
           <img src={holy} alt="a pale green orb of holy materia from final fantasy 7" className="materia-img holy-right" />
         </div>
-        <p>In FF7, your PHS is your Personal Handheld System. This is basically a cellphone you can use to interact with your party members. Here, your PHS is a list of monsters you've saved for quick reference. </p>
+        <p className="onboarding">In FF7, your PHS is your Personal Handheld System. This is basically a cellphone you can use to interact with your party members. Here, your PHS is a list of monsters you've saved for quick reference. </p>
         <h2>My Saved Guides:</h2>
+        <p id="message">{this.state.message}</p>
         {this.renderGuides()}
       </div>
     )

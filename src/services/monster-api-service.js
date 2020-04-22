@@ -59,6 +59,16 @@ const MonsterApiService = {
         )
   },
 
+  deleteGuide(user_name, guide_id) {
+    return fetch(`${config.API_ENDPOINT}/guides/${user_name}/${guide_id}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${TokenService.getAuthToken()}`
+      },
+    })
+
+  },
+
   postMonster(user_name, monster) {
     return fetch(`${config.API_ENDPOINT}/monsters`, {
       method: 'POST',
