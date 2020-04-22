@@ -96,11 +96,11 @@ class AddMonsterForm extends Component {
           <input type="number" name="hp" id="hp" required onChange={this.handleInputChange} />
           <label htmlFor="mp">MP (number)</label>
           <input type="number" name="mp" id="mp" required onChange={this.handleInputChange} />
-          <label htmlFor="mp">EXP (number)</label>
+          <label htmlFor="exp">EXP (number)</label>
           <input type="number" name="exp" id="exp" required onChange={this.handleInputChange} />
           <label htmlFor="gil">GIL (number)</label>
           <input type="number" name="gil" id="gil" required onChange={this.handleInputChange} />
-          <label htmlFor="gil">Weakness</label>
+          <label htmlFor="weakness">Weakness</label>
           <input type="text" name="weakness" id="weakness" defaultValue = 'N/A' required onChange={this.handleInputChange} />
           <label htmlFor="strength">Strength</label>
           <input type="text" name="strength" id="strength" defaultValue = 'N/A' required onChange={this.handleInputChange} />

@@ -31,7 +31,8 @@ body {
   right: 0;
   bottom: 0;
   left: 50%;
-  color: white;
+  color: #4dbdd6;
+  font-weight: 700;
 }
 
 .overlay {
@@ -44,5 +45,6 @@ body {
   background-color: #04009d;
   margin-bottom: .5em;
   color: white;
+  font-size: 14px;
 }
 

@@ -57,6 +57,13 @@ a {
 
 button {
   border-radius: 1em;
+  transition-duration: .3s;
+
+}
+
+button:hover , button:focus {
+  background-color: whitesmoke;
+  color: #234177;
 }
 
 .lets-mosey {

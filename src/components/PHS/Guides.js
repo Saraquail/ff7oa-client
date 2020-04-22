@@ -1,20 +1,36 @@
 import React, { Component } from 'react'
 import SingleItemView from '../SingleItemView/SingleItemView'
+import TokenService from '../../services/token-service'
+import MonsterApiService from '../../services/monster-api-service'
+import { withRouter } from 'react-router-dom'
+
 import './Guides.css'
 
 class Guides extends Component {
   state = {
-    showModal: false,
-    monster_id: ''
+    showMon: false,
+    monster_id: '',
+    message: '',
+    guides: this.props
   }
 
   handleClick = ev => {
     let id = ev.target.value
     console.log(id)
     this.setState(prevState => ({
-      showModal: !prevState.showModal,
+      showMon: !prevState.showMon,
       monster_id: id
     }))
+  }
+
+  handleDelete = ev => {
+    let guide_id = ev.target.value
+    let user_name = TokenService.getUserName()
+    console.log(guide_id)
+    // let guides = this.props
+    MonsterApiService.deleteGuide(user_name, guide_id)
+      .then(this.props.deleteGuide(guide_id))
+      .catch(e => this.setState({ message: e.error }))
   }
 
   render () {
@@ -24,12 +40,15 @@ class Guides extends Component {
     }
     return(
       <div className="guides-list">
-        <h3 id={guides.monster_id}>name: {guides.name}</h3>
-        <p>note: {guides.note}</p>
-        <button value={guides.monster_id} onClick={(ev) => this.handleClick(ev)}>
-        {this.state.showModal ? 'Close' : 'Open Below' } 
+        <h3 className="guide-name" id={guides.monster_id}>name: {guides.name}</h3>
+        <p className="guide-note" >note: {guides.note}</p>
+        <button value={guides.id} onClick={(ev) => this.handleDelete(ev)}>
+          Delete
         </button>
-        {this.state.showModal 
+        <button value={guides.monster_id} onClick={(ev) => this.handleClick(ev)}>
+        {this.state.showMon ? 'Close' : 'Open Below' } 
+        </button>
+        {this.state.showMon 
         ? <SingleItemView monster_id={this.state.monster_id} /> 
         : ''}
       </div>
@@ -37,4 +56,4 @@ class Guides extends Component {
   }
 }
 
-export default Guides
+export default withRouter(Guides)

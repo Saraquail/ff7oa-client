@@ -12,7 +12,7 @@ class Nav extends Component {
   handleLogoutClick = () => {
     TokenService.clearAuthToken()
   }
-  
+
   render() {
     return (
   <nav>
@@ -38,7 +38,7 @@ class Nav extends Component {
       <Link 
         onClick={this.handleLogoutClick} 
         to='/'>
-        Logout
+        {TokenService.hasAuthToken() ? 'Logout' : 'Login' }
       </Link>
       </li>
     </ul>
