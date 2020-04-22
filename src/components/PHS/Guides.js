@@ -39,19 +39,21 @@ class Guides extends Component {
       return <p>Loading Guides</p>
     }
     return(
-      <div className="guides-list">
-        <h3 className="guide-name" id={guides.monster_id}>name: {guides.name}</h3>
-        <p className="guide-note" >note: {guides.note}</p>
-        <button value={guides.id} onClick={(ev) => this.handleDelete(ev)}>
-          Delete
-        </button>
-        <button value={guides.monster_id} onClick={(ev) => this.handleClick(ev)}>
-        {this.state.showMon ? 'Close' : 'Open Below' } 
-        </button>
-        {this.state.showMon 
-        ? <SingleItemView monster_id={this.state.monster_id} /> 
-        : ''}
-      </div>
+      <section className="guides">
+        <div className="guides-list">
+          <h3 className="guide-name" id={guides.monster_id}>name: {guides.name}</h3>
+          <p className="guide-note" >note: {guides.note}</p>
+          <button value={guides.id} onClick={(ev) => this.handleDelete(ev)}>
+            Delete
+          </button>
+          <button value={guides.monster_id} onClick={(ev) => this.handleClick(ev)}>
+          {this.state.showMon ? 'Close' : 'Open Below' } 
+          </button>
+          </div>
+          {this.state.showMon 
+          ? <SingleItemView monster_id={this.state.monster_id} /> 
+          : ''}
+      </section>
     )
   }
 }

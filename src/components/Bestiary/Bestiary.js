@@ -125,13 +125,15 @@ class Bestiary extends Component {
     return (
       <div>
         <Nav />
-        <OptionsForm handleReset={this.handleReset} handleSort={this.handleSort} handleSearch={this.handleSearch} />
-        <div className="page-title">
-          <img src={holy} alt="a pale green orb of holy materia from final fantasy 7" className="materia-img holy-left" />
-          <h1>Bestiary</h1>
-          <img src={holy} alt="a pale green orb of holy materia from final fantasy 7" className="materia-img holy-right" />
-        </div>
+        <section className="bestiary">
+          <OptionsForm handleReset={this.handleReset} handleSort={this.handleSort} handleSearch={this.handleSearch} />
+          <div className="page-title">
+            <img src={holy} alt="a pale green orb of holy materia from final fantasy 7" className="materia-img holy-left" />
+            <h1>Bestiary</h1>
+            <img src={holy} alt="a pale green orb of holy materia from final fantasy 7" className="materia-img holy-right" />
+          </div>
           {this.renderMonsters()}
+        </section>
       </div>
     )
   }

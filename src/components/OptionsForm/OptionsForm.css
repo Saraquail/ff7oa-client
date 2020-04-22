@@ -13,10 +13,16 @@ form {
 input, select, button {
   width: 10em;
   align-self: center;
+  font-size: 14px;
 }
 
 #add-monster-button {
-  font-size: 12px;
   width: 7em;
+  font-size: 14px;
+}
+
+select {
+  background: rgb(14,51,95);
   color: whitesmoke;
+  font-size: 14px;
 }

@@ -11,6 +11,10 @@ class SaveGuideForm extends Component {
     message: ''
   }
 
+  // componentDidMount() {
+  //   this.nickname.focus()
+  // }
+
   clearForm = () => {
     document.getElementById("add-guide-form").reset();
   }
@@ -53,7 +57,7 @@ class SaveGuideForm extends Component {
         <div className="overlay modal" >
           <form name="add-guide-form" id="add-guide-form" onSubmit={this.handleSubmit}>
             <label htmlFor="nickname">Nickname</label>
-              <input type="text" name="nickname" id="nickname" required onChange={this.handleInputChange}/>
+              <input autoFocus type="text" name="nickname" id="nickname" required onChange={this.handleInputChange}/>
             <label htmlFor="note">Note</label>
               <input type="text" name="note" id="note" required onChange={this.handleInputChange}/>
             <button className="add-guide-button" type="submit">OK, add it</button>

@@ -3,9 +3,12 @@
 }
 
 #expand {
-  font-size: 12px;
+  font-size: 14px;
   width: 15em;
-  color: whitesmoke;
+}
+
+#expand:hover, #expand:focus {
+  color: #26437a;
 }
 
 .monster {
@@ -16,3 +19,4 @@
   padding: 1em;
   width: 50%
 }
+
