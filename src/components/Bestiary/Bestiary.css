@@ -14,9 +14,19 @@
   margin-right: 1em;
 }
 
+.materia-img {
+  transition: transform 1s ease-out
+}
+
+.materia-img:hover {
+  transform: rotate(360deg);
+}
+
 .holy-right {
   transform: scaleX(-1);
 }
+
+
 
 .bestiary {
   background-image: linear-gradient(to bottom right,  rgb(14,51,95), rgb(121,172,229), rgb(30,103,187), rgb(14,51,95));

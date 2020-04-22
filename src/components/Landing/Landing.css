@@ -7,8 +7,9 @@ font-family: 'Athiti', sans-serif; */
 
 }
 
+
 .landing-page {
-  background-color: #26437a;
+  background-image: linear-gradient(to bottom, #26437a, #88a6dd);
   height: 100vh;
   color: whitesmoke;
   padding-top: .5em;
@@ -32,7 +33,7 @@ font-family: 'Athiti', sans-serif; */
 }
 
 .login-button {
-  background-color: #234177;
+  background-color: #284883;
   color: whitesmoke;
 }
 
@@ -40,6 +41,7 @@ font-family: 'Athiti', sans-serif; */
   margin: 2em;
   background-image: linear-gradient(to bottom, rgb(128, 47, 94), rgb(90, 35, 67));
   padding: .25em;
+  text-shadow: 1px -1px #333;
   border-radius: .5em;
   border: solid 1px #424542;
   box-shadow: 1px 2px #e7dfe7,
@@ -62,9 +64,17 @@ button {
 
 }
 
+.materia-img {
+  transition: transform 1s ease-out
+}
+
+.materia-img:hover {
+  transform: rotate(360deg);
+}
+
 button:hover , button:focus {
   background-color: whitesmoke;
-  color: #234177;
+  color: #284883;
 }
 
 .lets-mosey {
