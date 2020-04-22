@@ -3,7 +3,7 @@
 .single-monster {
   position: relative;
   left: 25%;
-  background-image: linear-gradient(to bottom right, rgba(4,0,157,1), rgba(4, 3, 44, 0.7));
+  background-image: linear-gradient(to bottom right, rgba(14,51,95,.7), rgba(4, 3, 44, 0.7));
   border-radius: 1em;
   border: solid 1px #424542;
   box-shadow: 1px 2px #e7dfe7,
@@ -13,5 +13,6 @@
               -2px 0 #7b757b, */
               0 2px #424542;
   width: 50%;
-  color: whitesmoke  
+  color: whitesmoke;
+  margin-bottom: 1em; 
 }

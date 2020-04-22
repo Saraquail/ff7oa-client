@@ -1,12 +1,12 @@
 button {
-  background-color: #234177;
+  background-color: #284883;
   color: whitesmoke;
 }
 
 
 
 .register-container, .login-container, .LoginOrRegister {
-  background-color: #26437a;
+  background-image: linear-gradient(to bottom,#88a6dd, #26437a);
   height: 100vh;
   color: whitesmoke;
   padding-top: .5em;

@@ -14,15 +14,17 @@ input, select, button {
   width: 10em;
   align-self: center;
   font-size: 14px;
+  margin-top: .5em;
 }
 
 #add-monster-button {
   width: 7em;
   font-size: 14px;
+  margin-left: 1em;
 }
 
 select {
-  background: rgb(14,51,95);
+  background: #284883;
   color: whitesmoke;
   font-size: 14px;
 }
