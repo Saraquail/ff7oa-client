@@ -1,32 +1,12 @@
 /* font-family: 'Almarai', sans-serif;
 font-family: 'Amiko', sans-serif;
 font-family: 'Athiti', sans-serif; */
-* {
-  text-align: center;
-  font-family: 'Athiti', sans-serif; 
-}
-
-body {
-  background-image: linear-gradient(to bottom right, 
-    rgb(14,51,95), rgb(121,172,229), 
-    rgb(30,103,187), rgb(14,51,95));
-  color: whitesmoke;
-  padding-top: 2em;
-  min-height: 100%;
-  text-shadow: 1px -.5px #333;
-
-}
 
 
 .landing-page {
   color: whitesmoke;
-  font-family: 'Athiti', sans-serif; 
+  font-family: 'Amiko', sans-serif; 
   font-weight: bolder;
-}
-
-.materia-img {
-  width: 5em;
-  height: 5em;
 }
 
 .welcome {
@@ -37,11 +17,6 @@ body {
   box-shadow: 1px 1px #e7dfe7,
   -1px -2px #e7dfe7,
 
-}
-
-.login-button {
-  background-color: #284883;
-  color: whitesmoke;
 }
 
 .onboarding  {
@@ -57,26 +32,6 @@ body {
               -1px 1px #e7dfe7, */
               -2px 0 #7b757b,
               0 2px #424542;
-}
-
-button {
-  border-radius: 1em;
-  transition-duration: .3s;
-  font-size: 14px;
-}
-
-button:hover , button:focus {
-  background-color: whitesmoke;
-  color: #284883;
-
-}
-
-.materia-img {
-  transition: transform 1s ease-out
-}
-
-.materia-img:hover {
-  transform: rotate(360deg);
 }
 
 

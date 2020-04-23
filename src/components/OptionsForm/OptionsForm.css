@@ -25,4 +25,9 @@ select {
   background: #284883;
   color: whitesmoke;
   font-size: 14px;
+  margin-right: 1em;
+}
+
+#search {
+  margin-right: 1em;
 }
