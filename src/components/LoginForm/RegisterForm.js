@@ -83,8 +83,8 @@ validatePassword(str) {
     return (
       <div className="register-container">
         <h2 id="register-header">Register a new account:</h2>
-        <form 
-          className="register-form"
+        <form name="login-form"
+          className="login-form"
           onSubmit={this.handleSubmitRegisterJWT}
         > <p className="password-instructions onboarding">Your password must be longer than 6 characters, and include at least one of the following: lowercase letter, uppercase letter number. </p>
           <label htmlFor="user_name">Username</label>

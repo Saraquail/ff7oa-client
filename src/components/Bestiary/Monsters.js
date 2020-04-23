@@ -49,7 +49,7 @@ class Monsters extends Component {
               > Add to My PHS</button>
             <Link to={'#' + mon.id} id="expand">
               <button id="expand" onClick={this.handleExpand}>
-              Click here for more/less info
+              Click for more/less info
               </button>
             </Link> 
             <p> Level: {mon.level} </p>

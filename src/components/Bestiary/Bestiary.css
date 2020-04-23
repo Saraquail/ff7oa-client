@@ -1,7 +1,4 @@
-body {
-  background-image: linear-gradient(to bottom right,  rgb(14,51,95), rgb(121,172,229), rgb(30,103,187), rgb(14,51,95));
-  padding-bottom: 5em;
-}
+
 
 .page-title {
   display: flex;
@@ -22,9 +19,3 @@ body {
   transform: scaleX(-1);
 }
 
-/* 
-
-.bestiary {
-  background-image: linear-gradient(to bottom right,  rgb(14,51,95), rgb(121,172,229), rgb(30,103,187), rgb(14,51,95));
-  padding-bottom: 5em;
-} */

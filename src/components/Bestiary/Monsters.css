@@ -4,7 +4,8 @@
 
 #expand {
   font-size: 14px;
-  width: 15em;
+  width: 13em;
+  margin: auto;
 }
 
 #expand:hover, #expand:focus {
@@ -17,6 +18,8 @@
   margin: auto;
   margin-bottom: 2em;
   padding: 1em;
-  width: 50%
+  width: 50%;
+  font-weight: 700;
+  text-shadow: 1px -.5px #333;
 }
 
