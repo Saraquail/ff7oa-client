@@ -31,7 +31,7 @@ class SaveGuideForm extends Component {
 
     MonsterApiService.postGuide(user_name, guide)
       .then(this.clearForm)
-      .then(this.props.handleCloseModal)
+      .then(res => res.ok? this.props.handleCloseModal : '')
       .catch(e => this.setState({ message: e.error }))
   }
 
@@ -58,7 +58,9 @@ class SaveGuideForm extends Component {
               <input type="text" name="note" id="note" required onChange={this.handleInputChange}/>
             <button className="add-guide-button" type="submit">OK, add it</button>
             <button className="add-guide-button" onClick={this.props.handleCloseModal}>Not Interested</button>
-            <p id="message">{this.state.message}</p>
+            {this.state.message 
+            ? <p id="message">{this.state.message}</p>
+            : '' }
           </form>
         </div>
       </div>

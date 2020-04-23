@@ -16,7 +16,6 @@ class Guides extends Component {
 
   handleClick = ev => {
     let id = ev.target.value
-    console.log(id)
     this.setState(prevState => ({
       showMon: !prevState.showMon,
       monster_id: id
@@ -26,7 +25,6 @@ class Guides extends Component {
   handleDelete = ev => {
     let guide_id = ev.target.value
     let user_name = TokenService.getUserName()
-    console.log(guide_id)
     // let guides = this.props
     MonsterApiService.deleteGuide(user_name, guide_id)
       .then(this.props.deleteGuide(guide_id))
