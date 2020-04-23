@@ -10,7 +10,7 @@ class OptionsForm extends Component {
 
       <form name="search-form" id="search-form" onSubmit={this.props.handleSearch}>
       <label htmlFor="filter-by">Search by:</label>
-      <select defaultValue="" name="filter-by" id="filter-by">
+      <select defaultValue="" name="filter-by" id="filter-by" >
         <option>-select-</option>
         <option>Location</option>
         <option>Name</option>

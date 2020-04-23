@@ -47,9 +47,10 @@ class LoginForm extends Component {
             <input type="text" name="user_name" id="user_name" required="" defaultValue="test" />
           <label htmlFor="password">Password</label>
             <input type="password" name="password" id="password" required="" defaultValue="testuser" />
-            <p className="message">
-              {this.state.message}
-            </p>
+            {this.state.message 
+              ? <p className="message"> {this.state.message} </p> 
+              : '' 
+            }
           <button 
             type="submit" className="lets-mosey">
               Let's Mosey

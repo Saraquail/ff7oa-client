@@ -10,7 +10,8 @@ class Bestiary extends Component {
   state = {
     monsters: [],
     sort: '',
-    param: ''
+    param: '',
+    message: ''
   }
 
   componentDidMount() {
@@ -69,6 +70,7 @@ class Bestiary extends Component {
       return allMonsters
     }
 
+
     if(term) {
       param = param.toLowerCase()
       term = term.toLowerCase()
@@ -115,6 +117,11 @@ class Bestiary extends Component {
     ev.preventDefault()
     let term = ev.target.search.value
     let param = ev.target['filter-by'].value
+    if (!param) {
+      this.setState({
+        message: 'Please select a field to search by'
+      })
+    }
     this.setState({
       param: param,
       term: term
@@ -126,7 +133,7 @@ class Bestiary extends Component {
       <div>
         <Nav />
         <section className="bestiary">
-          <OptionsForm handleReset={this.handleReset} handleSort={this.handleSort} handleSearch={this.handleSearch} />
+          <OptionsForm requiredMessage={this.state.message} handleReset={this.handleReset} handleSort={this.handleSort} handleSearch={this.handleSearch} />
           <div className="page-title">
             <img src={holy} alt="a pale green orb of holy materia from final fantasy 7" className="holy-left" />
             <h1>Bestiary</h1>

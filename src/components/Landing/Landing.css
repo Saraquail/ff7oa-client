@@ -61,7 +61,7 @@ button {
   border-radius: 1em;
   transition-duration: .3s;
   font-size: 14px;
-
+  
 }
 
 .materia-img {
@@ -75,6 +75,7 @@ button {
 button:hover , button:focus {
   background-color: whitesmoke;
   color: #284883;
+
 }
 
 .lets-mosey {
