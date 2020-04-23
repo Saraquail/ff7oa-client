@@ -4,8 +4,6 @@ button {
   margin: .5em
 }
 
-
-
 .register-container, .login-container, .LoginOrRegister {
   color: whitesmoke;
   padding-top: .5em;
@@ -17,23 +15,11 @@ button {
   flex-direction: column;
 }
 
-
 .password-instructions {
   margin: auto;
   margin-bottom: 1em;
 }
 
-#message {
-  font-family: 'Almarai', sans-serif;
-  margin: auto;
-  margin-bottom: .5em;
-  color: #b043b0;
-  font-weight: 800;
-  padding: .5em;
-  background-color: rgb(9, 9, 59);
-  width: fit-content;
-  border-radius: 10px;
-}
 
 
 .lets-mosey {

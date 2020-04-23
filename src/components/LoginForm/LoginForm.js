@@ -48,7 +48,7 @@ class LoginForm extends Component {
           <label htmlFor="password">Password</label>
             <input type="password" name="password" id="password" required="" defaultValue="testuser" />
             {this.state.message 
-              ? <p className="message"> {this.state.message} </p> 
+              ? <p id="message"> {this.state.message} </p> 
               : '' 
             }
           <button 

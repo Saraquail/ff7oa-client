@@ -1,2 +1,56 @@
+* {
+  text-align: center;
+  font-family: 'Athiti', sans-serif; 
+}
+
 html, body {min-height: 100%;}
+
+body {
+  background-image: linear-gradient(to bottom right, 
+    rgb(14,51,95), rgb(121,172,229), 
+    rgb(30,103,187), rgb(14,51,95));
+  color: whitesmoke;
+  min-height: 100%;
+  text-shadow: 1px -.5px #333;
+}
+
+button {
+  border-radius: 1em;
+  transition-duration: .3s;
+  font-size: 14px;
+  background-color: #284883;
+  color: whitesmoke;
+}
+
+button:hover , button:focus {
+  background-color: whitesmoke;
+  color: #284883;
+} 
+
+#message {
+  font-family: 'Almarai', sans-serif;
+  margin: auto;
+  margin-bottom: .5em;
+  margin-top: 1em;
+  color: #b043b0;
+  font-weight: 800;
+  padding: .5em;
+  background-color: rgb(17, 17, 56,0.8);
+  width: fit-content;
+  border-radius: 10px;
+}
+
+.materia-img {
+  width: 5em;
+  height: 5em;
+  padding: .5em;
+}
+
+.materia-img {
+  transition: transform 1s ease-out
+}
+
+.materia-img:hover {
+  transform: rotate(360deg);
+}
 

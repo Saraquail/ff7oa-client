@@ -9,7 +9,7 @@
   max-width: 70%;
   min-height: 10em;
   max-height: 30em;
-  background-image: linear-gradient(to bottom right, rgb(14, 9, 160,0.9), rgba(4, 3, 44, 0.9));
+  background-image: linear-gradient(to bottom right, rgba(14,51,95,.9), rgba(4, 3, 44, 0.9));
   border-radius: 1em;
   transform: translate(-50%, -50%);
   border: solid 1px #e7dfe7;
@@ -46,6 +46,8 @@
 }
 
 #add-guide-form input {
+  margin: auto;
   margin-bottom: .5em;
+  display: block;
 }
 

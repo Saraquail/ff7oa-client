@@ -5,6 +5,8 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  font-size: 20px;
+  
 }
 
 .holy-left, .holy-right {
@@ -18,4 +20,5 @@
 .holy-right {
   transform: scaleX(-1);
 }
+
 
