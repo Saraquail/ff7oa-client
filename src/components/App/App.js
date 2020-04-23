@@ -5,6 +5,7 @@ import Bestiary from '../Bestiary/Bestiary'
 import AddMonsterForm from '../AddMonsterForm/AddMonsterForm'
 import SaveGuideForm from '../SaveGuideForm/SaveGuideForm'
 import PHS from '../PHS/PHS'
+import NotFoundPage from '../NotFoundPage'
 import './App.css'
 
 class App extends Component {
@@ -28,6 +29,9 @@ class App extends Component {
           component={SaveGuideForm} />
           <Route path={'/PHS'}
           component={PHS} />
+          <Route
+              component={NotFoundPage}
+            />
         </Switch>
       </main>
     );
