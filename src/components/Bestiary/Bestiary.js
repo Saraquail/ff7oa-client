@@ -66,18 +66,20 @@ class Bestiary extends Component {
     let allMonsters = this.state.monsters
     let mons = []
 
+    //if the user hits search without filling either field, returns all results
     if(!term || !param) {
       return allMonsters
     }
 
-
     if(term) {
       param = param.toLowerCase()
       term = term.toLowerCase()
-
+      //iterates through the array of monsters
       for(let i=0; i < allMonsters.length; i++) {
+        //searches for the key that matches the param (searchby) and then checks to see if the corresponding value matches the term (string input by user)
         for (let [key, value] of Object.entries(allMonsters[i])) {
           if(key === param && value.toLowerCase().includes(term)) {
+            //returns any object that meets the above criteria
             mons.push(allMonsters[i])
             return mons
           }
@@ -90,11 +92,13 @@ class Bestiary extends Component {
   let allMonsters = this.state.monsters
   let sortby = sort.toLowerCase()
 
+  //if the sort parameter is a string value, sorts alphabetically
   if(sortby === 'location' || sortby === 'name') {
       allMonsters.sort((a, b) => {
         return a[sortby] > b[sortby] ? 1 : a[sortby] < b[sortby] ? -1 : 0
     })
   }
+  //if the sort parameter is a number value, sorts by number in descending order (the above returns ascending order)
   else if (sortby === 'gil' || sortby === 'exp') {
     allMonsters.sort((a, b) => {
       return a[sortby] < b[sortby] ? 1 : a[sortby] > b[sortby] ? -1 : 0
@@ -125,11 +129,7 @@ class Bestiary extends Component {
     ev.preventDefault()
     let term = ev.target.search.value
     let param = ev.target['filter-by'].value
-    if (!param) {
-      this.setState({
-        message: 'Please select a field to search by'
-      })
-    }
+
     this.setState({
       param: param,
       term: term

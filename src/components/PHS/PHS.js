@@ -4,9 +4,7 @@ import MonsterApiService from '../../services/monster-api-service'
 import TokenService from '../../services/token-service'
 import Guides from './Guides'
 import holy from '../../images/White_Materia.png'
-
 import './PHS.css'
-
 
 class PHS extends Component {
   state = {
@@ -32,7 +30,9 @@ class PHS extends Component {
 
   deleteGuide = id => {
     let prevGuides = this.state.guides
+    // != instead of !== because one is a number and one is a string
     let filtered = prevGuides.filter(item => item.id != id)
+
     this.setState({
       guides: filtered
     })
@@ -54,7 +54,6 @@ class PHS extends Component {
   }
 
   render() {
-
     return (
       <div>
         <Nav></Nav>

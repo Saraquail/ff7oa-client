@@ -55,28 +55,26 @@ class RegisterForm extends Component {
     }
   }
 
-validatePassword(str) {
-  if (str.length === 0) {
-    return 'Password is required'
-  } 
-  else if (str.length < 6 || str.length > 72) {
-    return 'Password must be between 6 and 72 characters'
-  } 
-  else if (!str.match(/(?=.*[0-9])/)) {
-    return 'Password must contain at least one number'
-  } 
-  else if (!str.match(/(?=.*[a-z])/)) {
-    return 'Password must contain at least one lowercase letter'
+  validatePassword(str) {
+    if (str.length === 0) {
+      return 'Password is required'
+    } 
+    else if (str.length < 6 || str.length > 72) {
+      return 'Password must be between 6 and 72 characters'
+    } 
+    else if (!str.match(/(?=.*[0-9])/)) {
+      return 'Password must contain at least one number'
+    } 
+    else if (!str.match(/(?=.*[a-z])/)) {
+      return 'Password must contain at least one lowercase letter'
+    }
+    else if (!str.match(/(?=.*[A-Z])/)) {
+      return 'Password must contain at least one uppercase letter'
+    }
+    else {
+      return ''
+    }
   }
-  else if (!str.match(/(?=.*[A-Z])/)) {
-    return 'Password must contain at least one uppercase letter'
-  }
-  else {
-    return ''
-  }
-}
-
-
 
   render () {
 
