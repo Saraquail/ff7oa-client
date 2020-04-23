@@ -45,6 +45,7 @@ class AddMonsterForm extends Component {
     this.validateMonster(user, monster)
     }
 
+    //makes sure all the values are in range of what is possible in the game
     validateMonster = (user, monster) => {
       let { hp, mp, gil, exp, level }  = this.state
       

@@ -19,6 +19,7 @@ class Landing extends Component {
       <img src={summoning} alt="red orb of summoning materia from final fantasy 7" className="materia-img" />
 
         <h1 id="welcome">Welcome to the unofficial FFVII Companion App!</h1>
+        {/* instructions for how to use the app */}
         <p className="onboarding">This is a bestiary which lists monsters with their stats and information.</p>
 
         <p className="onboarding">If you sign in as a test user, you can test out the add monsters and PHS features, but they will be cleared periodically.</p>

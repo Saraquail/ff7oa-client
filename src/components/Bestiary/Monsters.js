@@ -32,7 +32,6 @@ class Monsters extends Component {
   }
 
   renderAllMons = () => {
-
     const mon = this.props
     let id = this.state.selectedid
     if(!mon) {

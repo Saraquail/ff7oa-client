@@ -3,7 +3,6 @@ import TokenService from '../../services/token-service'
 import MonsterApiService from '../../services/monster-api-service'
 import './SaveGuideForm.css'
 
-
 class SaveGuideForm extends Component {
   state = {
     nickname: '',
@@ -21,7 +20,6 @@ class SaveGuideForm extends Component {
     let name = this.state.nickname
     let note = this.state.note
     const user_name = TokenService.getUserName()
-
     const guide = {
       monster_id: id,
       name: name, 
@@ -37,7 +35,6 @@ class SaveGuideForm extends Component {
 
   handleInputChange = (ev) => {
     ev.preventDefault()
-
     const target = ev.target;
     const value = target.value 
     const name = target.name;

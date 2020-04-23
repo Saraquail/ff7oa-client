@@ -7,7 +7,6 @@ class SingleItemView extends Component {
     mon: {}
   }
 
-
   componentDidMount() {
     this.getItem()
   }
@@ -47,7 +46,6 @@ class SingleItemView extends Component {
       </div>
     )
   }
-
 }
 
 export default SingleItemView
