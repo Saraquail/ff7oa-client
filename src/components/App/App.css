@@ -32,10 +32,10 @@ button:hover , button:focus {
   margin: auto;
   margin-bottom: .5em;
   margin-top: 1em;
-  color: #b043b0;
+  color: #0ccaf8;
   font-weight: 800;
   padding: .5em;
-  background-color: rgb(17, 17, 56,0.8);
+  background-color: rgba(15, 36, 131, 0.8);
   width: fit-content;
   border-radius: 10px;
 }
