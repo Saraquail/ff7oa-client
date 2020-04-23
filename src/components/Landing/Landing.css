@@ -4,15 +4,22 @@ font-family: 'Athiti', sans-serif; */
 * {
   text-align: center;
   font-family: 'Athiti', sans-serif; 
+}
+
+body {
+  background-image: linear-gradient(to bottom right, 
+    rgb(14,51,95), rgb(121,172,229), 
+    rgb(30,103,187), rgb(14,51,95));
+  color: whitesmoke;
+  padding-top: 2em;
+  min-height: 100%;
+  text-shadow: 1px -.5px #333;
 
 }
 
 
 .landing-page {
-  background-image: linear-gradient(to bottom, #26437a, #88a6dd);
-  height: 100vh;
   color: whitesmoke;
-  padding-top: .5em;
   font-family: 'Athiti', sans-serif; 
   font-weight: bolder;
 }
@@ -52,16 +59,16 @@ font-family: 'Athiti', sans-serif; */
               0 2px #424542;
 }
 
-a {
-  color: lightblue;
-  text-decoration: underline;
-}
-
 button {
   border-radius: 1em;
   transition-duration: .3s;
   font-size: 14px;
-  
+}
+
+button:hover , button:focus {
+  background-color: whitesmoke;
+  color: #284883;
+
 }
 
 .materia-img {
@@ -72,13 +79,4 @@ button {
   transform: rotate(360deg);
 }
 
-button:hover , button:focus {
-  background-color: whitesmoke;
-  color: #284883;
-
-}
-
-.lets-mosey {
-  font-size: 16px;
-}
 

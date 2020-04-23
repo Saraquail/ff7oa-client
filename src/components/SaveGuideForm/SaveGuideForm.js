@@ -11,10 +11,6 @@ class SaveGuideForm extends Component {
     message: ''
   }
 
-  // componentDidMount() {
-  //   this.nickname.focus()
-  // }
-
   clearForm = () => {
     document.getElementById("add-guide-form").reset();
   }

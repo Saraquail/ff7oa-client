@@ -9,7 +9,7 @@
   max-width: 70%;
   min-height: 10em;
   max-height: 30em;
-  background-image: linear-gradient(to bottom right, rgba(4,0,157,1), rgba(4, 3, 44, 0.7));
+  background-image: linear-gradient(to bottom right, rgb(14, 9, 160,0.9), rgba(4, 3, 44, 0.9));
   border-radius: 1em;
   transform: translate(-50%, -50%);
   border: solid 1px #e7dfe7;
@@ -40,7 +40,12 @@
 .add-guide-button {
   background-color: #04009d;
   margin-bottom: .5em;
+  margin-top: 1em;
   color: white;
   font-size: 14px;
+}
+
+#add-guide-form input {
+  margin-bottom: .5em;
 }
 

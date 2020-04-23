@@ -27,7 +27,6 @@ class Landing extends Component {
 
         <p className="onboarding">If you login or register for an account, you can add new monsters as well as bookmark monsters to your own personal list for quick reference. You can find this by going to My PHS. When you add a monster, the field "Added by" will be added to your monster with your username.</p>
 
-        <h5>Please fill out this survey! <a href="https://forms.gle/CSgMdqyqkMYMb4wv6" rel="noopener noreferrer" target="_blank">Click Here</a></h5>
         <LoginorRegister />
       </section>
     )

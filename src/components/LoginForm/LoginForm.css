@@ -1,16 +1,20 @@
 button {
   background-color: #284883;
   color: whitesmoke;
+  margin: .5em
 }
 
 
 
 .register-container, .login-container, .LoginOrRegister {
-  background-image: linear-gradient(to bottom,#88a6dd, #26437a);
-  height: 100vh;
   color: whitesmoke;
   padding-top: .5em;
   padding-bottom: 10em;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -30,14 +34,9 @@ button {
   width: fit-content;
   border-radius: 10px;
 }
-/* 
-.sword-img {
-  transform: rotate(240deg);
-  position: relative;
-  right: 50%;
-} */
 
-.login-button {
+
+.lets-mosey {
   margin: 1em;
   font-size: 16px;
 }
