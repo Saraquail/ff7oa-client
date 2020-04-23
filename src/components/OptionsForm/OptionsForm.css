@@ -12,7 +12,7 @@ input, select, button {
   width: 10em;
   align-self: center;
   font-size: 14px;
-  margin-top: .5em;
+  margin-top: 1em;
 }
 
 #add-monster-button {
