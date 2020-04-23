@@ -90,33 +90,75 @@ class AddMonsterForm extends Component {
           All fields are required. If monster has no weakness/strength/drop/steal, simply put N/A as the value for that field.
         </div>
           <button type="reset" onClick={this.handleCancelForm}>Not Interested</button>
-          <label htmlFor="name">Name</label>
-          <input type="text" name="name" id="name" required onChange={this.handleInputChange} />
-          <label htmlFor="hp">HP (number)</label>
-          <input type="number" name="hp" id="hp" required onChange={this.handleInputChange} />
-          <label htmlFor="mp">MP (number)</label>
-          <input type="number" name="mp" id="mp" required onChange={this.handleInputChange} />
-          <label htmlFor="exp">EXP (number)</label>
-          <input type="number" name="exp" id="exp" required onChange={this.handleInputChange} />
-          <label htmlFor="gil">GIL (number)</label>
-          <input type="number" name="gil" id="gil" required onChange={this.handleInputChange} />
-          <label htmlFor="weakness">Weakness</label>
-          <input type="text" name="weakness" id="weakness" defaultValue = 'N/A' required onChange={this.handleInputChange} />
-          <label htmlFor="strength">Strength</label>
-          <input type="text" name="strength" id="strength" defaultValue = 'N/A' required onChange={this.handleInputChange} />
-          <label htmlFor="location">Location</label>
-          <input type="text" name="location" id="location" required onChange={this.handleInputChange} />
-          <label htmlFor="level">Level (number)</label>
-          <input type="number" name="level" id="level" required onChange={this.handleInputChange} />
-          <label htmlFor="steal">Steal</label>
-          <input type="text" name="steal" id="steal" defaultValue = 'N/A' required onChange={this.handleInputChange} />
-          <label htmlFor="drops">Drops</label>
-          <input type="text" name="drops" id="drops" defaultValue = 'N/A' 
-          required onChange={this.handleInputChange} />
-          <label htmlFor="enemy_skill">Enemy Skill</label>
-          <input type="text" name="enemy_skill" id="enemy_skill" defaultValue = 'N/A' required onChange={this.handleInputChange} />
-          <p id="message">{this.state.message}</p>
+        <div className="all-the-inputs">
+          <div className="input-w-label">
+            <label htmlFor="name">Name</label>
+            <input type="text" name="name" id="name" required onChange={this.handleInputChange} />
+          </div>
+
+          <div className="input-w-label">
+            <label htmlFor="hp">HP (number)</label>
+            <input type="number" name="hp" id="hp" required onChange={this.handleInputChange} />
+          </div>
+
+          <div className="input-w-label">
+            <label htmlFor="mp">MP (number)</label>
+            <input type="number" name="mp" id="mp" required onChange={this.handleInputChange} />
+          </div>
+
+          <div className="input-w-label">
+            <label htmlFor="exp">EXP (number)</label>
+            <input type="number" name="exp" id="exp" required onChange={this.handleInputChange} />
+          </div>
+
+          <div className="input-w-label">
+            <label htmlFor="gil">GIL (number)</label>
+            <input type="number" name="gil" id="gil" required onChange={this.handleInputChange} />
+          </div>
+
+          <div className="input-w-label">
+            <label htmlFor="weakness">Weakness</label>
+            <input type="text" name="weakness" id="weakness" defaultValue = 'N/A' required onChange={this.handleInputChange} />
+          </div>
+
+          <div className="input-w-label">
+            <label htmlFor="strength">Strength</label>
+            <input type="text" name="strength" id="strength" defaultValue = 'N/A' required onChange={this.handleInputChange} />
+          </div>
+
+          <div className="input-w-label">
+            <label htmlFor="location">Location</label>
+            <input type="text" name="location" id="location" required onChange={this.handleInputChange} />
+          </div>
+
+          <div className="input-w-label">
+            <label htmlFor="level">Level (number)</label>
+            <input type="number" name="level" id="level" required onChange={this.handleInputChange} />
+          </div>
+
+          <div className="input-w-label">
+            <label htmlFor="steal">Steal</label>
+            <input type="text" name="steal" id="steal" defaultValue = 'N/A' required onChange={this.handleInputChange} />
+          </div>
+
+          <div className="input-w-label">
+            <label htmlFor="drops">Drops</label>
+            <input type="text" name="drops" id="drops" defaultValue = 'N/A' 
+            required onChange={this.handleInputChange} />
+          </div>
+
+          <div className="input-w-label">
+            <label htmlFor="enemy_skill">Enemy Skill</label>
+            <input type="text" name="enemy_skill" id="enemy_skill" defaultValue = 'N/A' required onChange={this.handleInputChange} />
+          </div>
+        </div>
+
+          {this.state.message 
+          ? <p id="message">{this.state.message}</p>
+          : '' }
+
           <button type="submit">OK, add it</button>
+
           <button type="reset" onClick={this.handleCancelForm}>Not Interested</button>
         </form>
       </div>

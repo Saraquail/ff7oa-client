@@ -91,9 +91,10 @@ validatePassword(str) {
             <input type="text" name="user_name" id="user_name" required="" />
           <label htmlFor="password">Password</label>
             <input type="password" name="password" id="password" required="" onChange={this.handlePassword}/>
-            <p id="message">
-              {this.state.message}
-            </p>
+            {this.state.message 
+              ? <p className="message"> {this.state.message} </p> 
+              : '' 
+            }
           <button 
             type="submit" className="lets-mosey">
               Let's Mosey

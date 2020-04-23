@@ -5,6 +5,7 @@ import Bestiary from '../Bestiary/Bestiary'
 import AddMonsterForm from '../AddMonsterForm/AddMonsterForm'
 import SaveGuideForm from '../SaveGuideForm/SaveGuideForm'
 import PHS from '../PHS/PHS'
+import './App.css'
 
 class App extends Component {
   state = {

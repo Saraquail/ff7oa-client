@@ -26,6 +26,9 @@ button {
   color: #b043b0;
   font-weight: 800;
   padding: .5em;
+  background-color: rgb(9, 9, 59);
+  width: fit-content;
+  border-radius: 10px;
 }
 /* 
 .sword-img {

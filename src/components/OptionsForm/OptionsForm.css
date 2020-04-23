@@ -1,7 +1,5 @@
-form {
-  display: flex;
-  flex-direction: row;
-  align-content: flex-start;
+#searchform{
+margin-left: 1em;
 }
 
 .sort-and-add {

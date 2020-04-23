@@ -4,7 +4,7 @@ color: whitesmoke;
 padding-top: 2em;
 }
 
-form {
+#add-monster-form {
   display: flex;
   flex-direction: column;
   margin-left: 20%;
@@ -12,8 +12,15 @@ form {
   font-size: 16px;
 }
 
+
+#add-monster-form button {
+  margin-bottom: 1em;
+  margin-top: 0;
+}
+
 input {
   margin-bottom: 1.5em;
+  margin-left: .5em;
   margin-top: .5em;
   width: 10em;
   background-color: #696969;
@@ -32,13 +39,11 @@ input:focus {
   color:  rgb(90, 35, 67);
 }
 
-.add-monster-container #message {
-  border: none;
-}
 
 .form-description {
   margin: 2em;
   margin-bottom: .5em;
+  width: fit-content;
   background-image: linear-gradient(to bottom, rgb(128, 47, 94), rgb(90, 35, 67));
   padding: .25em;
   border-radius: .5em;
@@ -49,9 +54,4 @@ input:focus {
               -1px 1px #e7dfe7, */
               -2px 0 #7b757b,
               0 2px #424542;
-}
-
-.add-monster-container button {
-  margin-bottom: 1em;
-  margin-top: 0;
 }
