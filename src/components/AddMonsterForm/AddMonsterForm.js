@@ -113,6 +113,7 @@ class AddMonsterForm extends Component {
         <div className='form-description'>
           All fields are required. If monster has no weakness/strength/drop/steal, simply put N/A as the value for that field.
         </div>
+        <p className="form-description" > When you add a monster, the field "Added by" will be added to your monster with your username.</p>
           <button type="reset" onClick={this.handleCancelForm}>Not Interested</button>
         <div className="all-the-inputs">
           {this.renderInputs()}
@@ -121,9 +122,7 @@ class AddMonsterForm extends Component {
           {this.state.message 
           ? <p id="message">{this.state.message}</p>
           : '' }
-
           <button type="submit">OK, add it</button>
-
           <button type="reset" onClick={this.handleCancelForm}>Not Interested</button>
         </form>
       </div>

@@ -39,10 +39,11 @@ class LoginForm extends Component {
     return (
       <div className="login-container">
         <h2 id="login-header">Login to an existing or guest account:</h2>
+        <p className="onboarding">If you sign in as a test user, you can test out the add monsters and PHS features, but they will be cleared periodically.</p>
+        <p className="onboarding">If you'd like to log in as a test user, simply hit Let's Mosey without changing the text in the fields.</p>
         <form 
           className="login-form"
           onSubmit={this.handleSubmitLoginJWT}>
-          <p className="onboarding">If you'd like to log in as a test user, simply hit Let's Mosey without changing the text in the fields.</p>
           <label htmlFor="user_name">Username</label>
             <input type="text" name="user_name" id="user_name" required="" defaultValue="test" />
           <label htmlFor="password">Password</label>
