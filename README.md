@@ -13,7 +13,7 @@ You can search the database, and sort the results.
 You can register for a new account, sign in as a test user, or sign in with another existing account.
 You can also continue without logging in, to peruse the site with limited functionality.
 
-<img width="919" alt="Screen Shot 2020-04-24 at 12 26 13 PM" src="https://user-images.githubusercontent.com/59511008/80238370-515db480-862c-11ea-8679-a6658714c245.png">
+<img width="590" alt="Screen Shot 2020-04-24 at 1 03 53 PM" src="https://user-images.githubusercontent.com/59511008/80238669-cfba5680-862c-11ea-9516-b09ee3037de8.png">
 
 You can add a monster to a quick-reference list, called My PHS. The acronym PHS comes from the game, and stands for Personal Handheld System. In this app, it is your dashboard where you can view monsters you've saved. You can open up these to see the monster you have saved, and delete it when you are done.
 
