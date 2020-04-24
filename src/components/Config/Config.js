@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Nav from '../Nav/Nav'
 import './Config.css'
 // this component is for a future goal of user configuring theme settings based on the menu config in the game
-// it works as is, and is a fun nostaligic experience for people who are familiar the Final Fantasy 7.
+// it works as is, and is a fun nostaligic experience for people who are familiar with Final Fantasy 7.
 
 const INITIAL_STATE = {
   URC_open: false,
@@ -112,21 +112,22 @@ const Config = () => {
       in the original game! Have fun, and come back soon to see this implemented around the site. 
     </p>
     <button className="input-group" value="URC" onClick={handleClick}>
-      Adjust Upper Right Corner
+      {state.URC_open ? 'Close Upper Right Corner' : 'Adjust Upper Right Corner' }
     </button>
       {state.URC_open ? input[0] : '' }
+      
     <button className="input-group" value="ULC" onClick={handleClick}>  
-      Adjust Upper Left Corner
+      {state.ULC_open ? 'Close Upper Left Corner' : 'Adjust Upper Left Corner' }
     </button>
       {state.ULC_open ? input[1] : ''}
 
     <button className="input-group" value="LRC" onClick={handleClick}>
-      Adjust Lower Right Corner
+      {state.LRC_open ? 'Close Lower Right Corner' : 'Adjust Lower Right Corner' }
     </button>
       {state.LRC_open ? input[2] : ''}
 
     <button className="input-group" value="LLC" onClick={handleClick}>
-      Adjust Lower Left Corner
+      {state.LLC_open ? 'Close Lower Left Corner' : 'Adjust Lower Left Corner' }
     </button>
       {state.LLC_open ? input[3] : ''}
     </div>
