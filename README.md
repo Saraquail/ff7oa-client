@@ -6,6 +6,7 @@
 
 This app is mainly a bestiary, a database of monsters from the game Final Fantasy 7, with their stats/information.
 
+<img width="919" alt="Screen Shot 2020-04-24 at 12 26 13 PM" src="https://user-images.githubusercontent.com/59511008/80238106-d6949980-862b-11ea-830c-314b38a6aa9c.png">
 
 
 You can register for a new account, sign in as a test user, or sign in with another existing account.
