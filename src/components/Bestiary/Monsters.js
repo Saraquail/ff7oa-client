@@ -50,7 +50,8 @@ class Monsters extends Component {
               <button id="expand" onClick={this.handleExpand}>
               Click for more/less info
               </button>
-            </Link> 
+            </Link> <br/>
+            {/* <img src='https://66.media.tumblr.com/2c12f6702e81040442542df3110ee3b1/tumblr_mxu0tmvYpk1qdr9u0o1_1280.jpg' alt="a thing"/> */}
             <p> Level: {mon.level} </p>
             <p> Added By: {mon.user_name} </p>
             <p> HP: {mon.hp} MP: {mon.mp} </p>

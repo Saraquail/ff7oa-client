@@ -36,14 +36,14 @@
   flex-direction: column;
   margin: 0;
 }
-
+/* 
 .add-guide-button {
   background-color: #04009d;
   margin-bottom: .5em;
   margin-top: 1em;
   color: white;
   font-size: 14px;
-}
+} */
 
 #add-guide-form input {
   margin: auto;
