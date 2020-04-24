@@ -18,3 +18,12 @@
   padding: 1em;
   width: 30%
 }
+
+.guides button {
+  width: 8em;
+  margin: auto;
+  margin-bottom: .75em;
+  margin-right: .25em;
+  margin-left: .25em;
+  padding: 0
+}

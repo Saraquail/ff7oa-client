@@ -3,16 +3,16 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom'
 import renderer from 'react-test-renderer';
 
-import Landing from './Landing.js'
+import Config from './Config.js'
 
-describe('<Landing/>', () => {
+describe('<Config/>', () => {
 
   it('renders without crashing', () => {
   const div = document.createElement('div')
 
   ReactDOM.render(
   <BrowserRouter>
-    <Landing />
+    <Config />
   </BrowserRouter>, div)
 
   ReactDOM.unmountComponentAtNode(div)
@@ -22,7 +22,7 @@ describe('<Landing/>', () => {
     const tree = renderer
   .create(
     <BrowserRouter>
-      <Landing/>
+      <Config/>
     </BrowserRouter>
   )
   .toJSON();

@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SingleItemView/> renders the UI as expected 1`] = `
+<div>
+  <div
+    className="single-monster"
+  >
+    <h2 />
+    <p>
+       Level: 
+       
+    </p>
+    <p>
+       Added By: 
+       
+    </p>
+    <p>
+       HP: 
+       MP: 
+       
+    </p>
+    <p>
+       Exp: 
+       Gil: 
+       
+    </p>
+    <p>
+       Strength: 
+    </p>
+    <p>
+       Weakness: 
+    </p>
+    <p>
+       Location: 
+       
+    </p>
+    <p>
+       Steal: 
+       
+    </p>
+    <p>
+       Drop: 
+       
+    </p>
+    <p>
+       Enemy_skill: 
+       
+    </p>
+  </div>
+</div>
+`;

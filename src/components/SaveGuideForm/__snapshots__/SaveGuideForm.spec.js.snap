@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SaveGuideForm/> renders the UI as expected 1`] = `
+<div
+  className="overlay-container"
+>
+  <div
+    className="overlay modal"
+  >
+    <form
+      id="add-guide-form"
+      name="add-guide-form"
+      onSubmit={[Function]}
+    >
+      <label
+        htmlFor="nickname"
+      >
+        Nickname
+      </label>
+      <input
+        autoFocus={true}
+        id="nickname"
+        name="nickname"
+        onChange={[Function]}
+        required={true}
+        type="text"
+      />
+      <label
+        htmlFor="note"
+      >
+        Note
+      </label>
+      <input
+        id="note"
+        name="note"
+        onChange={[Function]}
+        required={true}
+        type="text"
+      />
+      <button
+        className="add-guide-button"
+        type="submit"
+      >
+        OK, add it
+      </button>
+      <button
+        className="add-guide-button"
+      >
+        Not Interested
+      </button>
+      
+    </form>
+  </div>
+</div>
+`;

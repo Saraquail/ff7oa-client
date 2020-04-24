@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LoginorRegister/> renders the UI as expected 1`] = `
+<section
+  className="LoginOrRegister"
+>
+  <div>
+    <a
+      href="/bestiary"
+      onClick={[Function]}
+    >
+      <button>
+        Continue as a guest
+      </button>
+    </a>
+  </div>
+  <a
+    href="/#register-header"
+    onClick={[Function]}
+  >
+    <button
+      className="login-button"
+      onClick={[Function]}
+    >
+      Register
+    </button>
+  </a>
+  <a
+    href="/#login-header"
+    onClick={[Function]}
+  >
+    <button
+      className="login-button"
+      onClick={[Function]}
+    >
+      Login
+    </button>
+  </a>
+  
+  
+</section>
+`;

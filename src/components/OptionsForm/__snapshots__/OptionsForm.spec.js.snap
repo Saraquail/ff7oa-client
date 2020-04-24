@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<OptionsForm/> renders the UI as expected 1`] = `
+<section
+  id="bestiary-options"
+>
+  <form
+    id="search-form"
+    name="search-form"
+  >
+    <label
+      htmlFor="filter-by"
+    >
+      Search by:
+    </label>
+    <select
+      defaultValue=""
+      id="filter-by"
+      name="filter-by"
+    >
+      <option>
+        -select-
+      </option>
+      <option>
+        Location
+      </option>
+      <option>
+        Name
+      </option>
+      <option>
+        Drops
+      </option>
+      <option>
+        Steal
+      </option>
+      <option>
+        Enemy Skill
+      </option>
+    </select>
+    <label
+      htmlFor="search"
+    >
+      Search:
+    </label>
+    <input
+      id="search"
+      name="search"
+      type="text"
+    />
+    <button
+      type="submit"
+    >
+      Search
+    </button>
+    <button>
+      Reset
+    </button>
+  </form>
+  <div
+    className="sort-and-add"
+  >
+    <label
+      htmlFor="sort-by"
+    >
+      Sort by:
+    </label>
+    <select
+      defaultValue=""
+      id="sort-by"
+      name="sort-by"
+    >
+      <option>
+        -select-
+      </option>
+      <option>
+        Name
+      </option>
+      <option>
+        GIL
+      </option>
+      <option>
+        Location
+      </option>
+      <option>
+        EXP
+      </option>
+    </select>
+    <a
+      href="/monster-form"
+      id="add-monster-button"
+      onClick={[Function]}
+    >
+      <button
+        id="add-monster-button"
+      >
+        Add New
+      </button>
+    </a>
+  </div>
+</section>
+`;

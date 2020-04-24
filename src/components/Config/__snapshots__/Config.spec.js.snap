@@ -1,0 +1,286 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Config/> renders the UI as expected 1`] = `
+<div
+  className="config-menu"
+  style={
+    Object {
+      "--LLC-Blue": "88",
+      "--LLC-Green": "0",
+      "--LLC-Red": "0",
+      "--LRC-Blue": "32",
+      "--LRC-Green": "0",
+      "--LRC-Red": "0",
+      "--ULC-Blue": "173",
+      "--ULC-Green": "0",
+      "--ULC-Red": "0",
+      "--URC-Blue": "128",
+      "--URC-Green": "0",
+      "--URC-Red": "0",
+    }
+  }
+>
+  <nav>
+    <div
+      className="header-image-container"
+    >
+      <img
+        alt="green orb of magic materia from final fantasy 7"
+        className="materia-img"
+        src="Magic_Materia.png"
+      />
+      <img
+        alt="purple orb of complete materia from final fantasy 7"
+        className="materia-img"
+        src="Complete_Materia.png"
+      />
+      <img
+        alt="yellow orb of command materia from final fantasy 7"
+        className="materia-img"
+        src="Command_Materia.png"
+      />
+      <img
+        alt="blue orb of support materia from final fantasy 7"
+        className="materia-img"
+        src="Support_Materia.png"
+      />
+      <img
+        alt="red orb of summoning materia from final fantasy 7"
+        className="materia-img"
+        src="Summoning_Materia.png"
+      />
+    </div>
+    <ul>
+      <li>
+        <a
+          href="/bestiary"
+          onClick={[Function]}
+        >
+          Bestiary
+        </a>
+      </li>
+      <li>
+        <a
+          href="/PHS"
+          onClick={[Function]}
+        >
+          My PHS
+        </a>
+      </li>
+      <li>
+        <a
+          href="/Config"
+          onClick={[Function]}
+        >
+          Config
+        </a>
+      </li>
+      <li>
+        <a
+          href="/"
+          onClick={[Function]}
+        >
+          Login
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <p
+    className="onboarding"
+  >
+    This is an experimental feature. Play around as you like and adjust the background color for this page just like in the original game! Have fun, and come back soon to see this implemented around the site.
+  </p>
+  <div>
+    <label
+      htmlFor="URCRed"
+    >
+      Upper Right Corner Red value
+    </label>
+    <input
+      id="URCRed"
+      max="255"
+      min="0"
+      name="URCRed"
+      onChange={[Function]}
+      type="range"
+    />
+    0
+  </div>
+  <div>
+    <label
+      htmlFor="URCGreen"
+    >
+      Upper Right Corner Green value
+    </label>
+    <input
+      id="URCGreen"
+      max="255"
+      min="0"
+      name="URCGreen"
+      onChange={[Function]}
+      type="range"
+    />
+    0
+  </div>
+  <div>
+    <label
+      htmlFor="URCBlue"
+    >
+      Upper Right Corner Blue value
+    </label>
+    <input
+      id="URCBlue"
+      max="255"
+      min="0"
+      name="URCBlue"
+      onChange={[Function]}
+      type="range"
+    />
+    128
+  </div>
+  <div>
+    <label
+      htmlFor="ULCRed"
+    >
+      Upper Left Corner Red value
+    </label>
+    <input
+      id="ULCRed"
+      max="255"
+      min="0"
+      name="ULCRed"
+      onChange={[Function]}
+      type="range"
+    />
+    0
+  </div>
+  <div>
+    <label
+      htmlFor="ULCGreen"
+    >
+      Upper Left Corner Green value
+    </label>
+    <input
+      id="ULCGreen"
+      max="255"
+      min="0"
+      name="ULCGreen"
+      onChange={[Function]}
+      type="range"
+    />
+    0
+  </div>
+  <div>
+    <label
+      htmlFor="ULCBlue"
+    >
+      Upper Left Corner Blue value
+    </label>
+    <input
+      id="ULCBlue"
+      max="255"
+      min="0"
+      name="ULCBlue"
+      onChange={[Function]}
+      type="range"
+    />
+    173
+  </div>
+  <div>
+    <label
+      htmlFor="LRCRed"
+    >
+      Lower Right Corner Red value
+    </label>
+    <input
+      id="LRCRed"
+      max="255"
+      min="0"
+      name="LRCRed"
+      onChange={[Function]}
+      type="range"
+    />
+    0
+  </div>
+  <div>
+    <label
+      htmlFor="LRCGreen"
+    >
+      Lower Right Corner Green value
+    </label>
+    <input
+      id="LRCGreen"
+      max="255"
+      min="0"
+      name="LRCGreen"
+      onChange={[Function]}
+      type="range"
+    />
+    0
+  </div>
+  <div>
+    <label
+      htmlFor="LRCBlue"
+    >
+      Lower Right Corner Blue value
+    </label>
+    <input
+      id="LRCBlue"
+      max="255"
+      min="0"
+      name="LRCBlue"
+      onChange={[Function]}
+      type="range"
+    />
+    32
+  </div>
+  <div>
+    <label
+      htmlFor="LLCRed"
+    >
+      Lower Left Corner Red value
+    </label>
+    <input
+      id="LLCRed"
+      max="255"
+      min="0"
+      name="LLCRed"
+      onChange={[Function]}
+      type="range"
+    />
+    0
+  </div>
+  <div>
+    <label
+      htmlFor="LLCGreen"
+    >
+      Lower Left Corner Green value
+    </label>
+    <input
+      id="LLCGreen"
+      max="255"
+      min="0"
+      name="LLCGreen"
+      onChange={[Function]}
+      type="range"
+    />
+    0
+  </div>
+  <div>
+    <label
+      htmlFor="LLCBlue"
+    >
+      Lower Left Corner Blue value
+    </label>
+    <input
+      id="LLCBlue"
+      max="255"
+      min="0"
+      name="LLCBlue"
+      onChange={[Function]}
+      type="range"
+    />
+    88
+  </div>
+</div>
+`;

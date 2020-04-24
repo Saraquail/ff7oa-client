@@ -1,6 +1,8 @@
-import React, { Component, useState } from 'react'
+import React, { useState } from 'react'
+import Nav from '../Nav/Nav'
 import './Config.css'
 // this component is for a future goal of user configuring theme settings based on the menu config in the game
+// it works as is, and is a fun nostaligic experience for people who are familiar the Final Fantasy 7.
 
 const INITIAL_STATE = {
   URC: {
@@ -38,17 +40,17 @@ const Config = () => {
   const corners = ['URC', 'ULC', 'LRC', 'LLC']
   const colors = ['Red', 'Green', 'Blue']
   const labels = {
-    URC: 'upper right corner',
-    ULC: 'upper left corner',
-    LRC: 'lower right corner',
-    LLC: 'lower left corner'
+    URC: 'Upper Right Corner',
+    ULC: 'Upper Left Corner',
+    LRC: 'Lower Right Corner',
+    LLC: 'Lower Left Corner'
   }
 
   let input = corners.map(corner => 
     colors.map(color => 
       <div key={`${corner}${color}`}>
         <label htmlFor={`${corner}${color}`}>
-          {`${color} value for ${labels[corner]}`}
+          {`${labels[corner]} ${color} value`}
         </label>
         <input 
           name={`${corner}${color}`}
@@ -62,7 +64,6 @@ const Config = () => {
       </div>
     )
   );
-
 
   //creates CSS custom prop for each corner and color
   //then creates an array - 1st value is property name, second value is the corner and colors
@@ -91,6 +92,12 @@ const Config = () => {
 
   return (
     <div className="config-menu" style={styles}>
+    <Nav />
+    <p className="onboarding">
+      This is an experimental feature. Play around as you like and adjust the background color for this page just like
+      in the original game! Have fun, and come back soon to see this implemented around the site. 
+    </p>
+
       {input}
     </div>
   );
