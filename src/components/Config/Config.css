@@ -1,0 +1,52 @@
+:root {
+  --URC-Red: 0;
+  --URC-Green: 0;
+  --URC-Blue: 0;
+  --ULC-Red: 0;
+  --ULC-Green: 0;
+  --ULC-Blue: 0;
+  --LRC-Red: 0;
+  --LRC-Green: 0;
+  --LRC-Blue: 0;
+  --LLC-Red: 0;
+  --LLC-Green: 0;
+  --LLC-Blue: 0;
+}
+
+.config-menu {
+  --opacity: 0.5;
+
+  --URC: rgba(
+    var(--URC-Red),
+    var(--URC-Green),
+    var(--URC-Blue),
+    var(--opacity)
+  );
+  --ULC: rgba(
+    var(--ULC-Red),
+    var(--ULC-Green),
+    var(--ULC-Blue),
+    var(--opacity)
+  );
+  --LRC: rgba(
+    var(--LRC-Red),
+    var(--LRC-Green),
+    var(--LRC-Blue),
+    var(--opacity)
+  );
+  --LLC: rgba(
+    var(--LLC-Red),
+    var(--LLC-Green),
+    var(--LLC-Blue),
+    var(--opacity)
+  );
+
+  background-color: black;
+  background: 
+    radial-gradient(ellipse at top left, var(--ULC), transparent),
+    radial-gradient(ellipse at bottom right, var(--LRC), transparent),
+    radial-gradient(ellipse at top right, var(--URC), transparent),
+    radial-gradient(ellipse at bottom left, var(--LLC), transparent),
+    black;
+
+}

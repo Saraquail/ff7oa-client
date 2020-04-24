@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { Router, Route, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import Landing from '../Landing/Landing'
 import Bestiary from '../Bestiary/Bestiary'
 import AddMonsterForm from '../AddMonsterForm/AddMonsterForm'
 import SaveGuideForm from '../SaveGuideForm/SaveGuideForm'
 import PHS from '../PHS/PHS'
 import NotFoundPage from '../NotFoundPage'
+import Config from '../Config/Config'
 import './App.css'
 
 class App extends Component {
@@ -29,6 +30,7 @@ class App extends Component {
             component={SaveGuideForm} />
             <Route path={'/PHS'}
             component={PHS} />
+            <Route path={'/Config' }component={Config} />
             <Route
                 component={NotFoundPage}
               />

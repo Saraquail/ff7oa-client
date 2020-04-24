@@ -26,11 +26,10 @@ class AddMonsterForm extends Component {
     ev.preventDefault()
 
     const target = ev.target;
-    const value = target.value 
-    const name = target.name;
+    const { value, name, type } = target;
 
     this.setState({
-      [name]: value
+      [name]: type === 'number' ? parseInt(value) : value
     });
   }
 
@@ -82,6 +81,30 @@ class AddMonsterForm extends Component {
       }
     }
 
+    renderInputs = () => {
+      const FIELDS = [
+        { name: 'name', label: 'Name' },
+        { name: 'hp', label: 'HP', type: 'number', min: 0, max: 1000000 },
+        { name: 'mp', label: 'MP', type: 'number', min: 0, max: 20000},
+        { name: 'exp', label: 'EXP', type: 'number', min: 0, max: 500000 },
+        { name: 'gil', label: 'GIL', type: 'number', min: 0, max: 200000 },
+        { name: 'strength', label: 'Strength', defaultValue:"N/A" },
+        { name: 'weakness', label: 'Weakness', defaultValue:"N/A" },
+        { name: 'location', label: 'Location' },
+        { name: 'level', label: 'Level', type: 'number', min: 0, max: 99},
+        { name: 'drops', label: 'Drops', defaultValue:"N/A" },
+        { name: 'steal', label: 'Steal', defaultValue:"N/A" },
+        { name: 'enemy_skill', label:'Enemy Skill', defaultValue:"N/A" },
+      ]
+
+      return FIELDS.map(({ label, ...field }) => 
+        <div key={field.name} className="input-w-label">
+          <label htmlFor={field.name}>{label || field.name}</label>
+          <input {...field} id={field.name} required onChange={this.handleInputChange} autoComplete="none" />
+        </div>
+      )
+    }
+
   render () {
     return (
       <div className="add-monster-container">
@@ -92,66 +115,7 @@ class AddMonsterForm extends Component {
         </div>
           <button type="reset" onClick={this.handleCancelForm}>Not Interested</button>
         <div className="all-the-inputs">
-          <div className="input-w-label">
-            <label htmlFor="name">Name</label>
-            <input type="text" name="name" id="name" required onChange={this.handleInputChange} />
-          </div>
-
-          <div className="input-w-label">
-            <label htmlFor="hp">HP (number)</label>
-            <input type="number" name="hp" id="hp" required onChange={this.handleInputChange} />
-          </div>
-
-          <div className="input-w-label">
-            <label htmlFor="mp">MP (number)</label>
-            <input type="number" name="mp" id="mp" required onChange={this.handleInputChange} />
-          </div>
-
-          <div className="input-w-label">
-            <label htmlFor="exp">EXP (number)</label>
-            <input type="number" name="exp" id="exp" required onChange={this.handleInputChange} />
-          </div>
-
-          <div className="input-w-label">
-            <label htmlFor="gil">GIL (number)</label>
-            <input type="number" name="gil" id="gil" required onChange={this.handleInputChange} />
-          </div>
-
-          <div className="input-w-label">
-            <label htmlFor="weakness">Weakness</label>
-            <input type="text" name="weakness" id="weakness" defaultValue = 'N/A' required onChange={this.handleInputChange} />
-          </div>
-
-          <div className="input-w-label">
-            <label htmlFor="strength">Strength</label>
-            <input type="text" name="strength" id="strength" defaultValue = 'N/A' required onChange={this.handleInputChange} />
-          </div>
-
-          <div className="input-w-label">
-            <label htmlFor="location">Location</label>
-            <input type="text" name="location" id="location" required onChange={this.handleInputChange} />
-          </div>
-
-          <div className="input-w-label">
-            <label htmlFor="level">Level (number)</label>
-            <input type="number" name="level" id="level" required onChange={this.handleInputChange} />
-          </div>
-
-          <div className="input-w-label">
-            <label htmlFor="steal">Steal</label>
-            <input type="text" name="steal" id="steal" defaultValue = 'N/A' required onChange={this.handleInputChange} />
-          </div>
-
-          <div className="input-w-label">
-            <label htmlFor="drops">Drops</label>
-            <input type="text" name="drops" id="drops" defaultValue = 'N/A' 
-            required onChange={this.handleInputChange} />
-          </div>
-
-          <div className="input-w-label">
-            <label htmlFor="enemy_skill">Enemy Skill</label>
-            <input type="text" name="enemy_skill" id="enemy_skill" defaultValue = 'N/A' required onChange={this.handleInputChange} />
-          </div>
+          {this.renderInputs()}
         </div>
 
           {this.state.message 
