@@ -23,7 +23,7 @@ font-family: 'Athiti', sans-serif; */
   margin: 2em;
   background-image: linear-gradient(to bottom, rgb(128, 47, 94), rgb(90, 35, 67));
   padding: .25em;
-  text-shadow: 1px -1px #333;
+  text-shadow: 2px 2px 1px #333;
   border-radius: .5em;
   border: solid 1px #424542;
   box-shadow: 1px 2px #e7dfe7,

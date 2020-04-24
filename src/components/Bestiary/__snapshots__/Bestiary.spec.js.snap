@@ -1,0 +1,185 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Bestiary/> renders the UI as expected 1`] = `
+<div>
+  <nav>
+    <div
+      className="header-image-container"
+    >
+      <img
+        alt="green orb of magic materia from final fantasy 7"
+        className="materia-img"
+        src="Magic_Materia.png"
+      />
+      <img
+        alt="purple orb of complete materia from final fantasy 7"
+        className="materia-img"
+        src="Complete_Materia.png"
+      />
+      <img
+        alt="yellow orb of command materia from final fantasy 7"
+        className="materia-img"
+        src="Command_Materia.png"
+      />
+      <img
+        alt="blue orb of support materia from final fantasy 7"
+        className="materia-img"
+        src="Support_Materia.png"
+      />
+      <img
+        alt="red orb of summoning materia from final fantasy 7"
+        className="materia-img"
+        src="Summoning_Materia.png"
+      />
+    </div>
+    <ul>
+      <li>
+        <a
+          href="/bestiary"
+          onClick={[Function]}
+        >
+          Bestiary
+        </a>
+      </li>
+      <li>
+        <a
+          href="/PHS"
+          onClick={[Function]}
+        >
+          My PHS
+        </a>
+      </li>
+      <li>
+        <a
+          href="/"
+          onClick={[Function]}
+        >
+          Login
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <section
+    className="bestiary"
+  >
+    <section
+      id="bestiary-options"
+    >
+      <form
+        id="search-form"
+        name="search-form"
+        onSubmit={[Function]}
+      >
+        <label
+          htmlFor="filter-by"
+        >
+          Search by:
+        </label>
+        <select
+          defaultValue=""
+          id="filter-by"
+          name="filter-by"
+        >
+          <option>
+            -select-
+          </option>
+          <option>
+            Location
+          </option>
+          <option>
+            Name
+          </option>
+          <option>
+            Drops
+          </option>
+          <option>
+            Steal
+          </option>
+          <option>
+            Enemy Skill
+          </option>
+        </select>
+        <label
+          htmlFor="search"
+        >
+          Search:
+        </label>
+        <input
+          id="search"
+          name="search"
+          type="text"
+        />
+        <button
+          type="submit"
+        >
+          Search
+        </button>
+        <button
+          onClick={[Function]}
+        >
+          Reset
+        </button>
+      </form>
+      <div
+        className="sort-and-add"
+      >
+        <label
+          htmlFor="sort-by"
+        >
+          Sort by:
+        </label>
+        <select
+          defaultValue=""
+          id="sort-by"
+          name="sort-by"
+          onChange={[Function]}
+        >
+          <option>
+            -select-
+          </option>
+          <option>
+            Name
+          </option>
+          <option>
+            GIL
+          </option>
+          <option>
+            Location
+          </option>
+          <option>
+            EXP
+          </option>
+        </select>
+        <a
+          href="/monster-form"
+          id="add-monster-button"
+          onClick={[Function]}
+        >
+          <button
+            id="add-monster-button"
+          >
+            Add New
+          </button>
+        </a>
+      </div>
+    </section>
+    <div
+      className="page-title"
+    >
+      <img
+        alt="a pale green orb of holy materia from final fantasy 7"
+        className="holy-left"
+        src="White_Materia.png"
+      />
+      <h1>
+        Bestiary
+      </h1>
+      <img
+        alt="a pale green orb of holy materia from final fantasy 7"
+        className="holy-right"
+        src="White_Materia.png"
+      />
+    </div>
+  </section>
+</div>
+`;
