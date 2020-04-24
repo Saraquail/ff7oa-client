@@ -10,6 +10,7 @@ font-family: 'Athiti', sans-serif; */
 }
 
 .welcome {
+  font-family: 'Press Start 2P', cursive; 
   border-top: solid 2px #e7dfe7;
   border-bottom: solid 2px #e7dfe7;
   padding: .3em;
