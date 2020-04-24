@@ -1,8 +1,10 @@
 * {
   text-align: center;
   font-family: 'Athiti', sans-serif; 
+  /* font-family: 'Press Start 2P', cursive; */
 }
 
+/* font-family: 'Press Start 2P', cursive; */
 html, body {min-height: 100%;}
 
 body {
@@ -11,7 +13,7 @@ body {
     rgb(30,103,187), rgb(14,51,95));
   color: whitesmoke;
   min-height: 100%;
-  text-shadow: 1px -.5px #333;
+  text-shadow: 0.0625em -0.03125em #333;
 }
 
 button {

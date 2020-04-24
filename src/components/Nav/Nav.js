@@ -33,6 +33,10 @@ class Nav extends Component {
             <Link to='/PHS'>
               My PHS
             </Link>
+          </li>          <li>
+            <Link to='/Config'>
+              Config
+            </Link>
           </li>
           <li>
           <Link 
