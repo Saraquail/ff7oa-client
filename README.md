@@ -1,68 +1,29 @@
+# Unofficial Final Fantasy 7 Companion App
+
+## Link to live app: https://ff7-companion-app.saraquail.now.sh/
+
+### Summary
+
+This app is mainly a bestiary, a database of monsters from the game Final Fantasy 7, with their stats/information.
 
 
-## Available Scripts
 
-In the project directory, you can run:
+You can register for a new account, sign in as a test user, or sign in with another existing account.
+You can also continue without logging in, to peruse the site with limited functionality.
 
-### `npm start`
+You can search the database, and sort the results.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+You can add a monster to a quick-reference list, called My PHS. The acronym PHS comes from the game, and stands for Personal Handheld System. In this app, it is your dashboard where you can view monsters you've saved. You can open up these to see the monster you have saved, and delete it when you are done.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+When you add a monster to this list, you will give it a nickname, and a note.
 
-### `npm test`
+You can also add monsters to the database. Clicking on "Add new" sends you to the appropriate form. When you add a monster, your user name will be displayed in the entry for that monster under "Added by".
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Lastly, the Config page is experimental, but is open for you to enjoy. In the original game, you could configure the background of your menu in a similar fashion. This is inluded now simply for nostalgia, and will be further implemented into the app in the future.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Technologies
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This app was built using React, CSS3, and HTML5
+The server was built using Node.js, Express, and Knex
+The database was built using PostgreSQL
