@@ -5,6 +5,10 @@ import './Config.css'
 // it works as is, and is a fun nostaligic experience for people who are familiar the Final Fantasy 7.
 
 const INITIAL_STATE = {
+  URC_open: false,
+  ULC_open: false,
+  LRC_open: false,
+  LLC_open: false,
   URC: {
     Red: '0',
     Green: '0',
@@ -37,6 +41,14 @@ const Config = () => {
     setState({ ...state, [corner]: { ...newValues } });
   };
 
+  const handleClick = (ev) => {
+    const toggleCorner = ev.target.value
+    const toggleKey = `${toggleCorner}_open`
+    setState(prevState => ({ ...state,
+      [toggleKey]: !prevState[toggleKey]
+    }))
+  };
+
   const corners = ['URC', 'ULC', 'LRC', 'LLC']
   const colors = ['Red', 'Green', 'Blue']
   const labels = {
@@ -66,8 +78,6 @@ const Config = () => {
       </div>
     )
   );
-
-  console.log(input)
 
   //creates CSS custom prop for each corner and color
   //then creates an array - 1st value is property name, second value is the corner and colors
@@ -101,10 +111,24 @@ const Config = () => {
       This is an experimental feature. Play around as you like and adjust the background color for this page just like
       in the original game! Have fun, and come back soon to see this implemented around the site. 
     </p>
-      {input[0]}
-      {input[1]}
-      {input[2]}
-      {input[3]}
+    <button className="input-group" value="URC" onClick={handleClick}>
+      Adjust Upper Right Corner
+    </button>
+      {state.URC_open ? input[0] : '' }
+    <button className="input-group" value="ULC" onClick={handleClick}>  
+      Adjust Upper Left Corner
+    </button>
+      {state.ULC_open ? input[1] : ''}
+
+    <button className="input-group" value="LRC" onClick={handleClick}>
+      Adjust Lower Right Corner
+    </button>
+      {state.LRC_open ? input[2] : ''}
+
+    <button className="input-group" value="LLC" onClick={handleClick}>
+      Adjust Lower Left Corner
+    </button>
+      {state.LLC_open ? input[3] : ''}
     </div>
   );
 }
