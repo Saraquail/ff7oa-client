@@ -48,11 +48,13 @@ const Config = () => {
 
   let input = corners.map(corner => 
     colors.map(color => 
-      <div key={`${corner}${color}`}>
+      <div className={`${corner}`}
+      key={`${corner}${color}`}>
         <label htmlFor={`${corner}${color}`}>
           {`${labels[corner]} ${color} value`}
         </label>
         <input 
+          className={`${corner}`}
           name={`${corner}${color}`}
           id={`${corner}${color}`}
           type="range"
@@ -64,6 +66,8 @@ const Config = () => {
       </div>
     )
   );
+
+  console.log(input)
 
   //creates CSS custom prop for each corner and color
   //then creates an array - 1st value is property name, second value is the corner and colors
@@ -97,8 +101,10 @@ const Config = () => {
       This is an experimental feature. Play around as you like and adjust the background color for this page just like
       in the original game! Have fun, and come back soon to see this implemented around the site. 
     </p>
-
-      {input}
+      {input[0]}
+      {input[1]}
+      {input[2]}
+      {input[3]}
     </div>
   );
 }

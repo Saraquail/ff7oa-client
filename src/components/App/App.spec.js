@@ -12,7 +12,7 @@ describe('<App/>', () => {
 
   ReactDOM.render(
   <BrowserRouter>
-  <App />
+    <App />
   </BrowserRouter>, div)
 
   ReactDOM.unmountComponentAtNode(div)
