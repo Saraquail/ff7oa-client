@@ -51,6 +51,14 @@ exports[`<Bestiary/> renders the UI as expected 1`] = `
       </li>
       <li>
         <a
+          href="/Config"
+          onClick={[Function]}
+        >
+          Config
+        </a>
+      </li>
+      <li>
+        <a
           href="/"
           onClick={[Function]}
         >

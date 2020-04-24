@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LoginForm/> renders the UI as expected 1`] = `
+<div
+  className="login-container"
+>
+  <h2
+    id="login-header"
+  >
+    Login to an existing or guest account:
+  </h2>
+  <form
+    className="login-form"
+    onSubmit={[Function]}
+  >
+    <p
+      className="onboarding"
+    >
+      If you'd like to log in as a test user, simply hit Let's Mosey without changing the text in the fields.
+    </p>
+    <label
+      htmlFor="user_name"
+    >
+      Username
+    </label>
+    <input
+      defaultValue="test"
+      id="user_name"
+      name="user_name"
+      required=""
+      type="text"
+    />
+    <label
+      htmlFor="password"
+    >
+      Password
+    </label>
+    <input
+      defaultValue="testuser"
+      id="password"
+      name="password"
+      required=""
+      type="password"
+    />
+    
+    <button
+      className="lets-mosey"
+      type="submit"
+    >
+      Let's Mosey
+    </button>
+  </form>
+</div>
+`;

@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Guides/> renders the UI as expected 1`] = `
+<section
+  className="guides"
+>
+  <div
+    className="guides-list"
+  >
+    <h3
+      className="guide-name"
+    >
+      name: 
+    </h3>
+    <p
+      className="guide-note"
+    >
+      note: 
+    </p>
+    <button
+      onClick={[Function]}
+    >
+      Delete
+    </button>
+    <button
+      onClick={[Function]}
+    >
+      Open Below
+    </button>
+  </div>
+  
+</section>
+`;

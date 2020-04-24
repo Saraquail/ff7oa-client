@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RegisterForm/> renders the UI as expected 1`] = `
+<div
+  className="register-container"
+>
+  <h2
+    id="register-header"
+  >
+    Register a new account:
+  </h2>
+  <form
+    className="login-form"
+    name="login-form"
+    onSubmit={[Function]}
+  >
+     
+    <p
+      className="password-instructions onboarding"
+    >
+      Your password must be longer than 6 characters, and include at least one of the following: lowercase letter, uppercase letter number. 
+    </p>
+    <label
+      htmlFor="user_name"
+    >
+      Username
+    </label>
+    <input
+      id="user_name"
+      name="user_name"
+      required=""
+      type="text"
+    />
+    <label
+      htmlFor="password"
+    >
+      Password
+    </label>
+    <input
+      id="password"
+      name="password"
+      onChange={[Function]}
+      required=""
+      type="password"
+    />
+    
+    <button
+      className="lets-mosey"
+      type="submit"
+    >
+      Let's Mosey
+    </button>
+  </form>
+</div>
+`;

@@ -2,16 +2,20 @@ ul {
   display: flex;
   justify-content: space-evenly;
   list-style-type: none;
+  text-align: center;
+  padding: .5em;
 }
 
 li{
   display: inline;
+  padding: .25em
 }
 
 a {
   text-decoration: none;
   font-size: 20px;
   cursor: pointer;
+
 }
 
 div.header-image-container {
@@ -20,17 +24,19 @@ div.header-image-container {
 
 button a{
   color: black;
-}
+} 
 
 nav a{
   color: whitesmoke;
   cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 14px
+
 }
 
 nav {
   background-color: #234177;
   background-image: linear-gradient(to bottom right, rgb(14, 9, 160,0.9), rgba(4, 3, 44, 0.9));
-
   padding: .5em;
   margin-top: 0;
 }

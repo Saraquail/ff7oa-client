@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Nav/> renders the UI as expected 1`] = `
+<nav>
+  <div
+    className="header-image-container"
+  >
+    <img
+      alt="green orb of magic materia from final fantasy 7"
+      className="materia-img"
+      src="Magic_Materia.png"
+    />
+    <img
+      alt="purple orb of complete materia from final fantasy 7"
+      className="materia-img"
+      src="Complete_Materia.png"
+    />
+    <img
+      alt="yellow orb of command materia from final fantasy 7"
+      className="materia-img"
+      src="Command_Materia.png"
+    />
+    <img
+      alt="blue orb of support materia from final fantasy 7"
+      className="materia-img"
+      src="Support_Materia.png"
+    />
+    <img
+      alt="red orb of summoning materia from final fantasy 7"
+      className="materia-img"
+      src="Summoning_Materia.png"
+    />
+  </div>
+  <ul>
+    <li>
+      <a
+        href="/bestiary"
+        onClick={[Function]}
+      >
+        Bestiary
+      </a>
+    </li>
+    <li>
+      <a
+        href="/PHS"
+        onClick={[Function]}
+      >
+        My PHS
+      </a>
+    </li>
+    <li>
+      <a
+        href="/Config"
+        onClick={[Function]}
+      >
+        Config
+      </a>
+    </li>
+    <li>
+      <a
+        href="/"
+        onClick={[Function]}
+      >
+        Login
+      </a>
+    </li>
+  </ul>
+</nav>
+`;

@@ -12,7 +12,7 @@ describe('<Bestiary/>', () => {
 
   ReactDOM.render(
   <BrowserRouter>
-  <Bestiary />
+    <Bestiary />
   </BrowserRouter>, div)
 
   ReactDOM.unmountComponentAtNode(div)
