@@ -17,6 +17,11 @@ exports[`<AddMonsterForm/> renders the UI as expected 1`] = `
     >
       All fields are required. If monster has no weakness/strength/drop/steal, simply put N/A as the value for that field.
     </div>
+    <p
+      className="form-description"
+    >
+       When you add a monster, the field "Added by" will be added to your monster with your username.
+    </p>
     <button
       onClick={[Function]}
       type="reset"
