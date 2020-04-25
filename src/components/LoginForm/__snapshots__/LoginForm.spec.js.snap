@@ -9,15 +9,20 @@ exports[`<LoginForm/> renders the UI as expected 1`] = `
   >
     Login to an existing or guest account:
   </h2>
+  <p
+    className="onboarding"
+  >
+    If you sign in as a test user, you can test out the add monsters and PHS features, but they will be cleared periodically.
+  </p>
+  <p
+    className="onboarding"
+  >
+    If you'd like to log in as a test user, simply hit Let's Mosey without changing the text in the fields.
+  </p>
   <form
     className="login-form"
     onSubmit={[Function]}
   >
-    <p
-      className="onboarding"
-    >
-      If you'd like to log in as a test user, simply hit Let's Mosey without changing the text in the fields.
-    </p>
     <label
       htmlFor="user_name"
     >
