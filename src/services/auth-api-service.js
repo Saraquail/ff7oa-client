@@ -1,7 +1,7 @@
-import config from '../config'
+import config from '../config';
 
 const AuthApiService = {
-  //login with existing user
+  // login with existing user
 
   postLogin(credentials) {
     return fetch(`${config.API_ENDPOINT}/auth/login`, {
@@ -11,13 +11,11 @@ const AuthApiService = {
       },
       body: JSON.stringify(credentials),
     })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
-      )
+      .then((res) => ((!res.ok)
+        ? res.json().then((e) => Promise.reject(e))
+        : res.json()));
   },
-//create a new user
+  // create a new user
   postUser(user) {
     return fetch(`${config.API_ENDPOINT}/users`, {
       method: 'POST',
@@ -26,13 +24,11 @@ const AuthApiService = {
       },
       body: JSON.stringify(user),
     })
-      .then(res => 
-        (!res.ok)
-          ? res.json()
-            .then(e => Promise.reject(e))
-          : res.json()
-        )
-  }
-}
+      .then((res) => ((!res.ok)
+        ? res.json()
+          .then((e) => Promise.reject(e))
+        : res.json()));
+  },
+};
 
-export default AuthApiService
+export default AuthApiService;

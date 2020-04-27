@@ -1,61 +1,89 @@
-import React, { Component } from 'react'
-import SingleItemView from '../SingleItemView/SingleItemView'
-import TokenService from '../../services/token-service'
-import MonsterApiService from '../../services/monster-api-service'
-import { withRouter } from 'react-router-dom'
-import './Guides.css'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
+import SingleItemView from '../SingleItemView/SingleItemView';
+import TokenService from '../../services/token-service';
+import MonsterApiService from '../../services/monster-api-service';
+import './Guides.css';
 
 class Guides extends Component {
   state = {
     showMon: false,
     monster_id: '',
     message: '',
-    guides: this.props
+    // add in when making these dismissable
+    // guides: this.props,
   }
 
-  handleClick = ev => {
-    let id = ev.target.value
-    this.setState(prevState => ({
+  handleClick = (ev) => {
+    const id = ev.target.value;
+    this.setState((prevState) => ({
       showMon: !prevState.showMon,
-      monster_id: id
-    }))
+      monster_id: id,
+    }));
   }
 
-  handleDelete = ev => {
-    let guide_id = ev.target.value
-    let user_name = TokenService.getUserName()
+  handleDelete = (ev) => {
+    const guide_id = ev.target.value;
+    const user_name = TokenService.getUserName();
+    const { deleteGuide } = this.props;
 
     MonsterApiService.deleteGuide(user_name, guide_id)
-      .then(this.props.deleteGuide(guide_id))
-      .catch(e => this.setState({ message: e.error }))
+      .then(deleteGuide(guide_id))
+      .catch((e) => this.setState({ message: e.error }));
   }
 
-  render () {
-    const guides = this.props
+  render() {
+    const { guides } = this.props;
+    const { showMon, monster_id } = this.state;
 
-    if(!guides) {
-      return <p>Loading Guides</p>
+    if (!guides) {
+      return <p>Loading Guides</p>;
     }
-    return(
+
+    const { message } = this.state;
+    return (
       <section className="guides">
+        {message ? { message } : ''}
         <div className="guides-list">
-          <h3 className="guide-name" id={guides.monster_id}>name: {guides.name}</h3>
-          <p className="guide-note" >note: {guides.note}</p>
-          <button value={guides.id} 
-          onClick={(ev) => this.handleDelete(ev)}>
+          <h3 className="guide-name" id={guides.monster_id}>
+            name:
+            {guides.name}
+          </h3>
+          <p className="guide-note">
+            note:
+            {guides.note}
+          </p>
+          <button
+            type="button"
+            value={guides.id}
+            onClick={(ev) => this.handleDelete(ev)}
+          >
             Delete
           </button>
-          <button value={guides.monster_id} 
-          onClick={(ev) => this.handleClick(ev)}>
-          {this.state.showMon ? 'Close' : 'Open Below' } 
+          <button
+            type="button"
+            value={guides.monster_id}
+            onClick={(ev) => this.handleClick(ev)}
+          >
+            {showMon ? 'Close' : 'Open Below' }
           </button>
         </div>
-        {this.state.showMon 
-        ? <SingleItemView monster_id={this.state.monster_id} /> 
-        : ''}
+        {showMon
+          ? <SingleItemView monster_id={monster_id} />
+          : ''}
       </section>
-    )
+    );
   }
 }
 
-export default withRouter(Guides)
+Guides.propTypes = {
+  id: PropTypes.string,
+  guides: PropTypes.arrayOf(PropTypes.string),
+  monster_id: PropTypes.string,
+  name: PropTypes.string,
+  note: PropTypes.string,
+  deleteGuide: PropTypes.func.isRequired,
+};
+
+export default withRouter(Guides);

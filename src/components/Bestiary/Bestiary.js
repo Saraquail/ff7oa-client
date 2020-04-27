@@ -1,47 +1,50 @@
-import React, { Component } from 'react'
-import Nav from '../Nav/Nav'
-import OptionsForm from '../OptionsForm/OptionsForm'
-import MonsterApiService from '../../services/monster-api-service'
-import Monsters from './Monsters'
-import holy from '../../images/White_Materia.png'
-import './Bestiary.css'
+import React, { Component } from 'react';
+import Nav from '../Nav/Nav';
+import OptionsForm from '../OptionsForm/OptionsForm';
+import MonsterApiService from '../../services/monster-api-service';
+import Monsters from './Monsters';
+import holy from '../../images/White_Materia.png';
+import { sortBy } from '../../utils';
+import './Bestiary.css';
 
 class Bestiary extends Component {
   state = {
     monsters: [],
     sort: '',
     param: '',
-    message: ''
+    message: '',
   }
 
   componentDidMount() {
     MonsterApiService.getMonsters()
-      .then (data => {
-        this.setState({ monsters: data })
+      .then((data) => {
+        this.setState({ monsters: data });
       })
-      .catch()
+      .catch();
   }
 
   renderMonsters = () => {
-    let { sort, param, term } = this.state    
-    let allMonsters = this.state.monsters
-    if(!sort && !term) {
-      allMonsters = this.state.monsters
+    const {
+      sort, param, term, monsters,
+    } = this.state;
+    let allMonsters = monsters;
+    if (!sort && !term) {
+      allMonsters = monsters;
     }
 
-    if(sort) {
-      allMonsters = this.renderSorted(sort)
+    if (sort) {
+      allMonsters = this.renderSorted(sort);
     }
 
-    if(term) {
-      allMonsters = this.renderSearched(param, term)
+    if (term) {
+      allMonsters = this.renderSearched(param, term);
     }
 
-    if(!allMonsters) {
-      return 'No Results Found'
+    if (!allMonsters) {
+      return 'No Results Found';
     }
 
-    return allMonsters.map(mon =>
+    return allMonsters.map((mon) => (
       <Monsters
         id={mon.id}
         key={mon.id}
@@ -59,89 +62,83 @@ class Bestiary extends Component {
         enemy_skill={mon.enemy_skill}
         user_name={mon.user_name}
       />
-    )
+    ));
   }
 
   renderSearched = (param, term) => {
-    let allMonsters = this.state.monsters
-    let mons = []
+    const { monsters: allMonsters } = this.state;
 
-    //if the user hits search without filling either field, returns all results
-    if(!term || !param) {
-      return allMonsters
+
+    // if the user hits search without filling either field, returns all results
+    if (!term || !param) {
+      return allMonsters;
     }
 
-    if(term) {
-      param = param.toLowerCase()
-      term = term.toLowerCase()
-      //iterates through the array of monsters
-      for(let i=0; i < allMonsters.length; i++) {
-        //searches for the key that matches the param (searchby) and then checks to see if the corresponding value matches the term (string input by user)
-        for (let [key, value] of Object.entries(allMonsters[i])) {
-          if(key === param && value.toLowerCase().includes(term)) {
-            //returns any object that meets the above criteria
-            mons.push(allMonsters[i])
-            return mons
-          }
-        }
-      }
+    if (term) {
+      const contains = (monster) => monster[param.toLowerCase()]
+        .toLowerCase()
+        .indexOf(term.toLowerCase()) !== -1;
+      return allMonsters.filter(contains);
     }
+    return null;
   }
 
   renderSorted = (sort) => {
-  let allMonsters = this.state.monsters
-  let sortby = sort.toLowerCase()
+    const { monsters: allMonsters } = this.state;
+    const sortby = sort.toLowerCase();
 
-  //if the sort parameter is a string value, sorts alphabetically
-  if(sortby === 'location' || sortby === 'name') {
-      allMonsters.sort((a, b) => {
-        return a[sortby] > b[sortby] ? 1 : a[sortby] < b[sortby] ? -1 : 0
-    })
-  }
-  //if the sort parameter is a number value, sorts by number in descending order (the above returns ascending order)
-  else if (sortby === 'gil' || sortby === 'exp') {
-    allMonsters.sort((a, b) => {
-      return a[sortby] < b[sortby] ? 1 : a[sortby] > b[sortby] ? -1 : 0
-  })
-  }
+    // if the sort parameter is a string value, sorts alphabetically
+    if (sortby === 'location' || sortby === 'name') {
+      allMonsters.sort(sortBy(sortby));
+    }
+    // if the sort parameter is a number value, sorts by
+    // number in descending order (the above returns ascending order)
+    else if (sortby === 'gil' || sortby === 'exp') {
+      allMonsters.sort(sortBy(sortby, true));
+    }
 
-    return allMonsters
+    return allMonsters;
   }
 
-  handleSort = ev => {
-    let sort = ev.target.value
+  handleSort = (ev) => {
+    const sort = ev.target.value;
     this.setState({
-      sort: sort
-    })
+      sort,
+    });
   }
 
   handleReset = () => {
     this.setState({
-      params: '',
-      sort: ''
-    })
-    this.renderMonsters()
-    document.getElementById("search-form").reset();
-
+      param: '',
+      sort: '',
+    });
+    this.renderMonsters();
+    document.getElementById('search-form').reset();
   }
 
-  handleSearch = ev => {
-    ev.preventDefault()
-    let term = ev.target.search.value
-    let param = ev.target['filter-by'].value
+  handleSearch = (ev) => {
+    ev.preventDefault();
+    const term = ev.target.search.value;
+    const param = ev.target['filter-by'].value;
 
     this.setState({
-      param: param,
-      term: term
-    })
+      param,
+      term,
+    });
   }
 
   render() {
+    const { message } = this.state;
     return (
       <div>
         <Nav />
         <section className="bestiary">
-          <OptionsForm requiredMessage={this.state.message} handleReset={this.handleReset} handleSort={this.handleSort} handleSearch={this.handleSearch} />
+          <OptionsForm
+            requiredMessage={message}
+            handleReset={this.handleReset}
+            handleSort={this.handleSort}
+            handleSearch={this.handleSearch}
+          />
           <div className="page-title">
             <img src={holy} alt="a pale green orb of holy materia from final fantasy 7" className="holy-left" />
             <h1>Bestiary</h1>
@@ -150,8 +147,8 @@ class Bestiary extends Component {
           {this.renderMonsters()}
         </section>
       </div>
-    )
+    );
   }
 }
 
-export default Bestiary
+export default Bestiary;

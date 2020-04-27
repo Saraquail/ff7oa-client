@@ -48,7 +48,7 @@ exports[`<RegisterForm/> renders the UI as expected 1`] = `
       className="lets-mosey"
       type="submit"
     >
-      Let's Mosey
+      Let’s Mosey
     </button>
   </form>
 </div>

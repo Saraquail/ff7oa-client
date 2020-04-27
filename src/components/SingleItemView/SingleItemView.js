@@ -1,51 +1,101 @@
-import React, { Component } from 'react'
-import MonsterApiService from '../../services/monster-api-service'
-import './SingleItemView.css'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import MonsterApiService from '../../services/monster-api-service';
+import './SingleItemView.css';
 
 class SingleItemView extends Component {
   state = {
-    mon: {}
+    mon: {},
   }
 
   componentDidMount() {
-    this.getItem()
+    this.getItem();
   }
 
   getItem =() => {
-    let id = this.props.monster_id
+    const { monster_id: id } = this.props;
+
     MonsterApiService.getMonsterById(id)
-      .then(data => 
-        this.setState({ mon: data })
-        )
+      .then((data) => this.setState({ mon: data }));
   }
 
   renderMonster = () => {
-    let mon = this.state.mon
-    
+    const { mon } = this.state;
+
     return (
-      <div  className="single-monster">
+      <div className="single-monster">
         <h2>{mon.name}</h2>
-        <p> Level: {mon.level} </p>
-        <p> Added By: {mon.user_name} </p>
-        <p> HP: {mon.hp} MP: {mon.mp} </p>
-        <p> Exp: {mon.exp} Gil: {mon.gil} </p>
-        <p> Strength: {mon.strength}</p>
-        <p> Weakness: {mon.weakness}</p>
-        <p> Location: {mon.location} </p>
-        <p> Steal: {mon.steal} </p>
-        <p> Drop: {mon.drops} </p>
-        <p> Enemy_skill: {mon.enemy_skill} </p>
+        <p>
+          {' '}
+          Level:
+          {mon.level}
+        </p>
+        <p>
+          {' '}
+          Added By:
+          {mon.user_name}
+        </p>
+        <p>
+          {' '}
+          HP:
+          {mon.hp}
+          {' '}
+          MP:
+          {mon.mp}
+        </p>
+        <p>
+          {' '}
+          Exp:
+          {mon.exp}
+          {' '}
+          Gil:
+          {mon.gil}
+        </p>
+        <p>
+          {' '}
+          Strength:
+          {mon.strength}
+        </p>
+        <p>
+          {' '}
+          Weakness:
+          {mon.weakness}
+        </p>
+        <p>
+          {' '}
+          Location:
+          {mon.location}
+        </p>
+        <p>
+          {' '}
+          Steal:
+          {mon.steal}
+        </p>
+        <p>
+          {' '}
+          Drop:
+          {mon.drops}
+        </p>
+        <p>
+          {' '}
+          Enemy_skill:
+          {mon.enemy_skill}
+        </p>
       </div>
-    )
+    );
   }
 
-  render () {
+  render() {
     return (
       <div>
-      {this.renderMonster()}
+        {this.renderMonster()}
       </div>
-    )
+    );
   }
 }
 
-export default SingleItemView
+SingleItemView.propTypes = {
+  monster_id: PropTypes.string,
+};
+
+export default SingleItemView;
