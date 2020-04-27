@@ -1,94 +1,185 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { HashLink as Link } from 'react-router-hash-link';
-import SaveGuideForm from '../SaveGuideForm/SaveGuideForm'
-import './Monsters.css'
+import SaveGuideForm from '../SaveGuideForm/SaveGuideForm';
+import './Monsters.css';
 
 class Monsters extends Component {
   state = {
     showModal: false,
     selectedid: '',
     expanded: false,
-    sort: ''
+    // sort: '',
   }
 
   handleExpand = () => {
-    this.setState(prevState => ({
-      expanded: !prevState.expanded
-    }))
+    this.setState((prevState) => ({
+      expanded: !prevState.expanded,
+    }));
   }
 
   handleOpenModal = (e) => {
-    let id = e.target.value
+    const id = e.target.value;
     this.setState({
       showModal: true,
-      selectedid: id
-    })
+      selectedid: id,
+    });
   }
 
   handleCloseModal = () => {
     this.setState({
-      showModal: false
-    })
+      showModal: false,
+    });
   }
 
   renderAllMons = () => {
-    const mon = this.props
-    let id = this.state.selectedid
-    if(!mon) {
-      return <p>Loading Monsters</p>
+    const { selectedid: id } = this.state;
+    const {
+      name,
+      hp,
+      mp,
+      exp,
+      gil,
+      weakness,
+      strength,
+      location,
+      level,
+      drops,
+      steal,
+      enemy_skill,
+      user_name,
+    } = this.props;
+    if (!name) {
+      return <p>Loading Monsters</p>;
     }
 
-    return(
-      <section className="monsterList" >
+    const { expanded, showModal } = this.state;
+
+    return (
+      <section className="monsterList">
         <div className="monster">
-          <div className="collapsed">    
-            <h2 id={mon.id}>{mon.name}</h2>
-            <button value={mon.id}
-              onClick={e => this.handleOpenModal(e)}
-              > Add to My PHS</button>
-            <Link to={'#' + mon.id} id="expand">
-              <button id="expand" onClick={this.handleExpand}>
-              Click for more/less info
+          <div className="collapsed">
+            <h2 id={id}>{name}</h2>
+            <button
+              type="button"
+              value={id}
+              onClick={(e) => this.handleOpenModal(e)}
+            >
+              {' '}
+              Add to My PHS
+            </button>
+            <Link to={`#${id}`} id="expand">
+              <button type="button" id="expand" onClick={this.handleExpand}>
+                Click for more/less info
               </button>
-            </Link> <br/>
-            {/* <img src='https://66.media.tumblr.com/2c12f6702e81040442542df3110ee3b1/tumblr_mxu0tmvYpk1qdr9u0o1_1280.jpg' alt="a thing"/> */}
-            <p> Level: {mon.level} </p>
-            <p> Added By: {mon.user_name} </p>
-            <p> HP: {mon.hp} MP: {mon.mp} </p>
-            <p> Exp: {mon.exp} Gil: {mon.gil} </p>
-            <p> Strength: {mon.strength}</p>
-            <p> Weakness: {mon.weakness}</p>
+            </Link>
+            {' '}
+            <p>
+              {' '}
+              Level:
+              {level}
+            </p>
+            <p>
+              {' '}
+              Added By:
+              {user_name}
+            </p>
+            <p>
+              {' '}
+              HP:
+              {hp}
+              {' '}
+              MP:
+              {mp}
+              {' '}
+            </p>
+            <p>
+              {' '}
+              Exp:
+              {exp}
+              {' '}
+              Gil:
+              {gil}
+            </p>
+            <p>
+              {' '}
+              Strength:
+              {strength}
+            </p>
+            <p>
+              {' '}
+              Weakness:
+              {weakness}
+            </p>
           </div>
-          {this.state.expanded 
-            ? <div className="expanded">
-              <p> Location: {mon.location} </p>
-              <p> Steal: {mon.steal} </p>
-              <p> Drop: {mon.drops} </p>
-              <p> Enemy_skill: {mon.enemy_skill} </p>
-            </div>
+          {expanded
+            ? (
+              <div className="expanded">
+                <p>
+                  {' '}
+                  Location:
+                  {location}
+                </p>
+                <p>
+                  {' '}
+                  Steal:
+                  {steal}
+                </p>
+                <p>
+                  {' '}
+                  Drop:
+                  {drops}
+                </p>
+                <p>
+                  {' '}
+                  Enemy_skill:
+                  {enemy_skill}
+                </p>
+              </div>
+            )
             : ''}
         </div>
-      {this.state.showModal ?
-        <SaveGuideForm className="modal overlay"  selectedid={id} handleCloseModal={this.handleCloseModal}   onRequestClose={this.handleCloseModal}
-        />
-      : ''}
+        {showModal
+          ? (
+            <SaveGuideForm
+              className="modal overlay"
+              selectedid={id}
+              handleCloseModal={this.handleCloseModal}
+              onRequestClose={this.handleCloseModal}
+            />
+          )
+          : ''}
       </section>
 
-    )
+    );
   }
 
 
-  render () {
-
+  render() {
     return (
       <div>
-      
-      {this.renderAllMons()}
-      </div>
-    )
-    
 
+        {this.renderAllMons()}
+      </div>
+    );
   }
 }
 
-export default Monsters
+Monsters.propTypes = {
+  // id: PropTypes.string,
+  name: PropTypes.string,
+  hp: PropTypes.string,
+  mp: PropTypes.string,
+  exp: PropTypes.string,
+  gil: PropTypes.string,
+  weakness: PropTypes.string,
+  strength: PropTypes.string,
+  location: PropTypes.string,
+  level: PropTypes.string,
+  drops: PropTypes.string,
+  steal: PropTypes.string,
+  enemy_skill: PropTypes.string,
+  user_name: PropTypes.string,
+};
+
+export default Monsters;

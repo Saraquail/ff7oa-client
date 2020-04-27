@@ -9,7 +9,9 @@ exports[`<LoginorRegister/> renders the UI as expected 1`] = `
       href="/bestiary"
       onClick={[Function]}
     >
-      <button>
+      <button
+        type="button"
+      >
         Continue as a guest
       </button>
     </a>
@@ -21,6 +23,7 @@ exports[`<LoginorRegister/> renders the UI as expected 1`] = `
     <button
       className="login-button"
       onClick={[Function]}
+      type="button"
     >
       Register
     </button>
@@ -32,6 +35,7 @@ exports[`<LoginorRegister/> renders the UI as expected 1`] = `
     <button
       className="login-button"
       onClick={[Function]}
+      type="button"
     >
       Login
     </button>

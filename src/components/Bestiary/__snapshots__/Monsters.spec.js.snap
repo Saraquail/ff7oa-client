@@ -2,63 +2,8 @@
 
 exports[`<Monsters/> renders the UI as expected 1`] = `
 <div>
-  <section
-    className="monsterList"
-  >
-    <div
-      className="monster"
-    >
-      <div
-        className="collapsed"
-      >
-        <h2 />
-        <button
-          onClick={[Function]}
-        >
-           Add to My PHS
-        </button>
-        <a
-          href="/#undefined"
-          id="expand"
-          onClick={[Function]}
-        >
-          <button
-            id="expand"
-            onClick={[Function]}
-          >
-            Click for more/less info
-          </button>
-        </a>
-         
-        <br />
-        <p>
-           Level: 
-           
-        </p>
-        <p>
-           Added By: 
-           
-        </p>
-        <p>
-           HP: 
-           MP: 
-           
-        </p>
-        <p>
-           Exp: 
-           Gil: 
-           
-        </p>
-        <p>
-           Strength: 
-        </p>
-        <p>
-           Weakness: 
-        </p>
-      </div>
-      
-    </div>
-    
-  </section>
+  <p>
+    Loading Monsters
+  </p>
 </div>
 `;

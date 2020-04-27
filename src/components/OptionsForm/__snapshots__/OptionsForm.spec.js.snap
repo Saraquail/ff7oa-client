@@ -52,7 +52,9 @@ exports[`<OptionsForm/> renders the UI as expected 1`] = `
     >
       Search
     </button>
-    <button>
+    <button
+      type="button"
+    >
       Reset
     </button>
   </form>
@@ -92,6 +94,7 @@ exports[`<OptionsForm/> renders the UI as expected 1`] = `
     >
       <button
         id="add-monster-button"
+        type="button"
       >
         Add New
       </button>

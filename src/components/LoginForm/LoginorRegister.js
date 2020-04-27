@@ -1,56 +1,62 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { HashLink } from 'react-router-hash-link';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
-import LoginForm from './LoginForm'
-import RegisterForm from './RegisterForm'
+import LoginForm from './LoginForm';
+import RegisterForm from './RegisterForm';
 
 class LoginorRegister extends Component {
   state = {
     login: false,
-    register: false
+    register: false,
   }
 
-  handleLogin = ev => {
+  handleLogin = () => {
     this.setState({
       login: true,
-      register: false
-    })
+      register: false,
+    });
   }
 
-  handleRegister = ev => {
+  handleRegister = () => {
     this.setState({
       register: true,
-      login: false
-    })
+      login: false,
+    });
   }
 
-  render () {
-    return(
+  render() {
+    const { login, register } = this.state;
+    return (
       <section className="LoginOrRegister">
         <div>
-        <Link to="/bestiary">
-          <button>Continue as a guest</button>
-        </Link>
+          <Link to="/bestiary">
+            <button type="button">Continue as a guest</button>
+          </Link>
         </div>
         <HashLink to="#register-header">
-        <button className="login-button"
-        onClick={this.handleRegister}>
-        Register
-        </button>
+          <button
+            type="button"
+            className="login-button"
+            onClick={this.handleRegister}
+          >
+            Register
+          </button>
         </HashLink>
         <HashLink to="#login-header">
-          <button className="login-button"
-            onClick={this.handleLogin}>
+          <button
+            type="button"
+            className="login-button"
+            onClick={this.handleLogin}
+          >
             Login
           </button>
         </HashLink>
-        {this.state.login ? <LoginForm /> : ''}
-        {this.state.register ? <RegisterForm /> : ''}
+        {login ? <LoginForm /> : ''}
+        {register ? <RegisterForm /> : ''}
       </section>
-    
-    )
+    );
   }
 }
 
-export default LoginorRegister
+export default LoginorRegister;

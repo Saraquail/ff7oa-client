@@ -93,6 +93,7 @@ exports[`<Config/> renders the UI as expected 1`] = `
   <button
     className="input-group"
     onClick={[Function]}
+    type="button"
     value="URC"
   >
     Adjust Upper Right Corner
@@ -101,6 +102,7 @@ exports[`<Config/> renders the UI as expected 1`] = `
   <button
     className="input-group"
     onClick={[Function]}
+    type="button"
     value="ULC"
   >
     Adjust Upper Left Corner
@@ -109,6 +111,7 @@ exports[`<Config/> renders the UI as expected 1`] = `
   <button
     className="input-group"
     onClick={[Function]}
+    type="button"
     value="LRC"
   >
     Adjust Lower Right Corner
@@ -117,6 +120,7 @@ exports[`<Config/> renders the UI as expected 1`] = `
   <button
     className="input-group"
     onClick={[Function]}
+    type="button"
     value="LLC"
   >
     Adjust Lower Left Corner

@@ -7,44 +7,48 @@ exports[`<SingleItemView/> renders the UI as expected 1`] = `
   >
     <h2 />
     <p>
-       Level: 
        
+      Level:
     </p>
     <p>
-       Added By: 
        
+      Added By:
     </p>
     <p>
-       HP: 
-       MP: 
        
-    </p>
-    <p>
-       Exp: 
-       Gil: 
+      HP:
        
+      MP:
     </p>
     <p>
-       Strength: 
-    </p>
-    <p>
-       Weakness: 
-    </p>
-    <p>
-       Location: 
        
+      Exp:
+       
+      Gil:
     </p>
     <p>
-       Steal: 
        
+      Strength:
     </p>
     <p>
-       Drop: 
        
+      Weakness:
     </p>
     <p>
-       Enemy_skill: 
        
+      Location:
+    </p>
+    <p>
+       
+      Steal:
+    </p>
+    <p>
+       
+      Drop:
+    </p>
+    <p>
+       
+      Enemy_skill:
     </p>
   </div>
 </div>

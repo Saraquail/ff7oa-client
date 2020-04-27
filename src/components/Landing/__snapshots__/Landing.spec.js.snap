@@ -57,7 +57,9 @@ exports[`<Landing/> renders the UI as expected 1`] = `
         href="/bestiary"
         onClick={[Function]}
       >
-        <button>
+        <button
+          type="button"
+        >
           Continue as a guest
         </button>
       </a>
@@ -69,6 +71,7 @@ exports[`<Landing/> renders the UI as expected 1`] = `
       <button
         className="login-button"
         onClick={[Function]}
+        type="button"
       >
         Register
       </button>
@@ -80,6 +83,7 @@ exports[`<Landing/> renders the UI as expected 1`] = `
       <button
         className="login-button"
         onClick={[Function]}
+        type="button"
       >
         Login
       </button>

@@ -124,6 +124,7 @@ exports[`<Bestiary/> renders the UI as expected 1`] = `
         </button>
         <button
           onClick={[Function]}
+          type="button"
         >
           Reset
         </button>
@@ -165,6 +166,7 @@ exports[`<Bestiary/> renders the UI as expected 1`] = `
         >
           <button
             id="add-monster-button"
+            type="button"
           >
             Add New
           </button>

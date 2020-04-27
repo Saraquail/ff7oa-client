@@ -1,27 +1,26 @@
-import config from '../config'
+import config from '../config';
 
 const TokenService = {
   saveAuthToken(token) {
-    window.localStorage.setItem(config.TOKEN_KEY, token)
+    window.localStorage.setItem(config.TOKEN_KEY, token);
   },
   getAuthToken() {
-    return window.localStorage.getItem(config.TOKEN_KEY)
+    return window.localStorage.getItem(config.TOKEN_KEY);
   },
   clearAuthToken() {
-    window.localStorage.removeItem(config.TOKEN_KEY)
-    window.localStorage.removeItem('user')
-
+    window.localStorage.removeItem(config.TOKEN_KEY);
+    window.localStorage.removeItem('user');
   },
   hasAuthToken() {
-    return !!TokenService.getAuthToken()
+    return !!TokenService.getAuthToken();
   },
-  saveUserName(user_name) { 
-    window.localStorage.setItem('user', user_name)
+  saveUserName(userName) {
+    window.localStorage.setItem('user', userName);
   },
   getUserName() {
-    return window.localStorage.getItem('user')
-  }
+    return window.localStorage.getItem('user');
+  },
 
-}
+};
 
-export default TokenService
+export default TokenService;

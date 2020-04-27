@@ -20,11 +20,11 @@ exports[`<AddMonsterForm/> renders the UI as expected 1`] = `
     <p
       className="form-description"
     >
-       When you add a monster, the field "Added by" will be added to your monster with your username.
+       When you add a monster, the field “Added by” will be added to your monster with your username.
     </p>
     <button
       onClick={[Function]}
-      type="reset"
+      type="button"
     >
       Not Interested
     </button>
@@ -252,7 +252,7 @@ exports[`<AddMonsterForm/> renders the UI as expected 1`] = `
     </button>
     <button
       onClick={[Function]}
-      type="reset"
+      type="button"
     >
       Not Interested
     </button>

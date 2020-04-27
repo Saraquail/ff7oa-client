@@ -17,7 +17,7 @@ exports[`<LoginForm/> renders the UI as expected 1`] = `
   <p
     className="onboarding"
   >
-    If you'd like to log in as a test user, simply hit Let's Mosey without changing the text in the fields.
+    If you’d like to log in as a test user, simply hit Let’s Mosey without changing the text in the fields.
   </p>
   <form
     className="login-form"
@@ -52,7 +52,7 @@ exports[`<LoginForm/> renders the UI as expected 1`] = `
       className="lets-mosey"
       type="submit"
     >
-      Let's Mosey
+      Let’s Mosey
     </button>
   </form>
 </div>

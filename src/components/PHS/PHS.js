@@ -1,47 +1,48 @@
-import React, { Component } from 'react'
-import Nav from '../Nav/Nav'
-import MonsterApiService from '../../services/monster-api-service'
-import TokenService from '../../services/token-service'
-import Guides from './Guides'
-import holy from '../../images/White_Materia.png'
-import './PHS.css'
+import React, { Component } from 'react';
+import Nav from '../Nav/Nav';
+import MonsterApiService from '../../services/monster-api-service';
+import TokenService from '../../services/token-service';
+import Guides from './Guides';
+import holy from '../../images/White_Materia.png';
+import './PHS.css';
 
 class PHS extends Component {
   state = {
     guides: [],
-    message: ''
+    message: '',
   }
 
   componentDidMount() {
-    const user_name = TokenService.getUserName()
-    
+    const user_name = TokenService.getUserName();
+
     MonsterApiService.getUserGuides(user_name)
-      .then(data => {
+      .then((data) => {
         this.setState({
-          guides: data
-        })
+          guides: data,
+        });
       })
-      .catch(e => {
+      .catch((e) => {
         this.setState({
-          message: e.error
-        })
-      })
+          message: e.error,
+        });
+      });
   }
 
-  deleteGuide = id => {
-    let prevGuides = this.state.guides
+  deleteGuide = (id) => {
+    const { guides: prevGuides } = this.state;
     // != instead of !== because one is a number and one is a string
-    let filtered = prevGuides.filter(item => item.id != id)
+    /* eslint-disable-next-line eqeqeq */
+    const filtered = prevGuides.filter((item) => item.id != id);
 
     this.setState({
-      guides: filtered
-    })
+      guides: filtered,
+    });
   }
 
   renderGuides() {
-    let guides = this.state.guides
+    const { guides } = this.state;
 
-    return guides.map(guide => 
+    return guides.map((guide) => (
       <Guides
         deleteGuide={this.deleteGuide}
         id={guide.id}
@@ -50,29 +51,30 @@ class PHS extends Component {
         name={guide.name}
         note={guide.note}
       />
-      )
+    ));
   }
 
   render() {
+    const { message } = this.state;
     return (
       <div>
-        <Nav></Nav>
+        <Nav />
         <section className="PHS">
           <div className="page-title">
             <img src={holy} alt="a pale green orb of holy materia from final fantasy 7" className="holy-left" />
             <h1>My PHS</h1>
             <img src={holy} alt="a pale green orb of holy materia from final fantasy 7" className="holy-right" />
           </div>
-          <p className="onboarding">In FF7, your PHS is your Personal Handheld System. This is basically a cellphone you can use to interact with your party members. Here, your PHS is a list of monsters you've saved for quick reference. </p>
+          <p className="onboarding">In FF7, your PHS is your Personal Handheld System. This is basically a cellphone you can use to interact with your party members. Here, your PHS is a list of monsters you’ve saved for quick reference. </p>
           <h2>My Saved Guides:</h2>
-          {this.state.message 
-            ? <p id="message">{this.state.message}</p> 
+          {message
+            ? <p id="message">{message}</p>
             : '' }
           {this.renderGuides()}
         </section>
       </div>
-    )
+    );
   }
 }
 
-export default PHS
+export default PHS;
