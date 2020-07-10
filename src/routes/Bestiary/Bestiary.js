@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Nav from '../../components/Nav/Nav';
 import OptionsForm from '../../components/OptionsForm/OptionsForm';
 import MonsterApiService from '../../services/monster-api-service';
 import Monsters from '../../components/Monsters/Monsters';
@@ -137,7 +136,6 @@ or if the current search is also not returning results.
     const { message } = this.state;
     return (
       <div>
-        <Nav />
         <section className="bestiary">
           <OptionsForm
             requiredMessage={message}

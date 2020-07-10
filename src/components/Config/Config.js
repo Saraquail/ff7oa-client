@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Nav from '../Nav/Nav';
 import './Config.css';
 // this component is for a future goal of user configuring
 // theme settings based on the menu config in the game
@@ -106,7 +105,6 @@ const Config = () => {
 
   return (
     <div className="config-menu" style={styles}>
-      <Nav />
       <p className="onboarding">
         This is an experimental feature.
         Play around as you like and adjust the background

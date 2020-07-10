@@ -8,17 +8,17 @@ import './Guides.css';
 class Guides extends Component {
   state = {
     showMon: false,
-    walkthrough_id: '',
+    // walkthrough_id: '',
     message: '',
     // add in when making these dismissable
     // guides: this.props,
   }
 
-  handleClick = (ev) => {
-    const id = ev.target.value;
+  handleClick = () => {
+    // const id = ev.target.value;
     this.setState((prevState) => ({
       showMon: !prevState.showMon,
-      walkthrough_id: id,
+      // walkthrough_id: id,
     }));
   }
 

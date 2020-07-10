@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
+
 import Landing from '../../routes/Landing/Landing';
+import Nav from '../Nav/Nav';
 import Bestiary from '../../routes/Bestiary/Bestiary';
 import Weapons from '../../routes/Weapons/Weapons';
 import Limits from '../../routes/Limits/Limits';
@@ -20,6 +22,7 @@ class App extends Component {
     return (
       <main className="App">
         {displayError && <p className="error">Something went wrong</p>}
+        <Nav />
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route path="/weapons" component={Weapons} />

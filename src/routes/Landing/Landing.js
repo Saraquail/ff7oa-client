@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import LoginorRegister from '../../components/LoginForm/LoginorRegister';
 import './Landing.css';
-import Nav from '../../components/Nav/Nav';
 // import summoning from '../../images/Summoning_Materia.png';
 // import command from '../../images/Command_Materia.png';
 // import magic from '../../images/Magic_Materia.png';
@@ -27,7 +26,6 @@ function Landing() {
         alt="red orb of summoning materia from final fantasy 7"
         className="materia-img" /> */}
 
-      <Nav />
       <h1 id="welcome">Welcome to the unofficial FFVII Companion App!</h1>
       {/* instructions for how to use the app
       <p className="onboarding">
@@ -47,21 +45,26 @@ function Landing() {
       </p> */}
 
       <LoginorRegister />
-
-      <article className="weapons-btn">
-        <p>Weapons</p>
-      </article>
-      <article className="weapons-btn">
+      <Link to="/weapons">
+        <article className="select-page-btn">
+          <p>Weapons</p>
+        </article>
+      </Link>
+      <article className="select-page-btn">
         <Link to="/bestiary">
           <p>Bestiary</p>
         </Link>
       </article>
-      <article className="weapons-btn">
-        <p>Limit Breaks</p>
-      </article>
-      <article className="weapons-btn">
-        <p>Materia</p>
-      </article>
+      <Link to="/limits">
+        <article className="select-page-btn">
+          <p>Limit Breaks</p>
+        </article>
+      </Link>
+      <Link to="/materia">
+        <article className="select-page-btn">
+          <p>Materia</p>
+        </article>
+      </Link>
     </section>
   );
 }

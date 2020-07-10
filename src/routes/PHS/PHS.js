@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Nav from '../../components/Nav/Nav';
 import MonsterApiService from '../../services/monster-api-service';
 import Guides from '../../components/Guides/Guides';
 import holy from '../../images/White_Materia.png';
@@ -55,7 +54,6 @@ class PHS extends Component {
     const { message } = this.state;
     return (
       <div>
-        <Nav />
         <section className="PHS">
           <div className="page-title">
             <img src={holy} alt="a pale green orb of holy materia from final fantasy 7" className="holy-left" />
