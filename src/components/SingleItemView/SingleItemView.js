@@ -32,11 +32,6 @@ class SingleItemView extends Component {
         </p>
         <p>
           {' '}
-          Added By:
-          {mon.user_name}
-        </p>
-        <p>
-          {' '}
           HP:
           {mon.hp}
           {' '}
@@ -47,6 +42,11 @@ class SingleItemView extends Component {
           {' '}
           Exp:
           {mon.exp}
+          {' '}
+          Ap:
+          {mon.ap}
+        </p>
+        <p>
           {' '}
           Gil:
           {mon.gil}
@@ -75,6 +75,9 @@ class SingleItemView extends Component {
           {' '}
           Drop:
           {mon.drops}
+          {' '}
+          Morph:
+          {mon.morph}
         </p>
         <p>
           {' '}

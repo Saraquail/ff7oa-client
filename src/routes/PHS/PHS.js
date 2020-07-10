@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import Nav from '../Nav/Nav';
+import Nav from '../../components/Nav/Nav';
 import MonsterApiService from '../../services/monster-api-service';
-import TokenService from '../../services/token-service';
-import Guides from './Guides';
+import Guides from '../../components/Guides/Guides';
 import holy from '../../images/White_Materia.png';
 import './PHS.css';
 
@@ -13,9 +12,7 @@ class PHS extends Component {
   }
 
   componentDidMount() {
-    const user_name = TokenService.getUserName();
-
-    MonsterApiService.getUserGuides(user_name)
+    MonsterApiService.getUserGuides()
       .then((data) => {
         this.setState({
           guides: data,
@@ -46,7 +43,7 @@ class PHS extends Component {
       <Guides
         deleteGuide={this.deleteGuide}
         id={guide.id}
-        monster_id={guide.monster_id}
+        walkthrough_id={guide.walkthrough_id}
         key={guide.id}
         name={guide.name}
         note={guide.note}

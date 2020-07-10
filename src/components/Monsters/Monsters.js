@@ -20,6 +20,7 @@ class Monsters extends Component {
 
   handleOpenModal = (e) => {
     const id = e.target.value;
+    console.log(e.target.value);
     this.setState({
       showModal: true,
       selectedid: id,
@@ -33,12 +34,13 @@ class Monsters extends Component {
   }
 
   renderAllMons = () => {
-    const { selectedid: id } = this.state;
     const {
+      id,
       name,
       hp,
       mp,
       exp,
+      ap,
       gil,
       weakness,
       strength,
@@ -46,8 +48,8 @@ class Monsters extends Component {
       level,
       drops,
       steal,
+      morph,
       enemy_skill,
-      user_name,
     } = this.props;
     if (!name) {
       return <p>Loading Monsters</p>;
@@ -81,11 +83,6 @@ class Monsters extends Component {
             </p>
             <p>
               {' '}
-              Added By:
-              {user_name}
-            </p>
-            <p>
-              {' '}
               HP:
               {hp}
               {' '}
@@ -98,6 +95,10 @@ class Monsters extends Component {
               Exp:
               {exp}
               {' '}
+              Ap:
+              {ap}
+            </p>
+            <p>
               Gil:
               {gil}
             </p>
@@ -129,6 +130,9 @@ class Monsters extends Component {
                   {' '}
                   Drop:
                   {drops}
+                  {' '}
+                  Morph:
+                  {morph}
                 </p>
                 <p>
                   {' '}
@@ -166,20 +170,21 @@ class Monsters extends Component {
 }
 
 Monsters.propTypes = {
-  // id: PropTypes.string,
+  id: PropTypes.number,
   name: PropTypes.string,
-  hp: PropTypes.string,
-  mp: PropTypes.string,
-  exp: PropTypes.string,
-  gil: PropTypes.string,
+  hp: PropTypes.number,
+  mp: PropTypes.number,
+  exp: PropTypes.number,
+  ap: PropTypes.number,
+  gil: PropTypes.number,
   weakness: PropTypes.string,
   strength: PropTypes.string,
   location: PropTypes.string,
-  level: PropTypes.string,
+  level: PropTypes.number,
   drops: PropTypes.string,
   steal: PropTypes.string,
+  morph: PropTypes.string,
   enemy_skill: PropTypes.string,
-  user_name: PropTypes.string,
 };
 
 export default Monsters;

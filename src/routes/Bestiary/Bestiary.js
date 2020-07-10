@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Nav from '../Nav/Nav';
-import OptionsForm from '../OptionsForm/OptionsForm';
+import Nav from '../../components/Nav/Nav';
+import OptionsForm from '../../components/OptionsForm/OptionsForm';
 import MonsterApiService from '../../services/monster-api-service';
-import Monsters from './Monsters';
+import Monsters from '../../components/Monsters/Monsters';
 import holy from '../../images/White_Materia.png';
 import { sortBy } from '../../utils';
 import './Bestiary.css';
@@ -52,6 +52,7 @@ class Bestiary extends Component {
         hp={mon.hp}
         mp={mon.mp}
         exp={mon.exp}
+        ap={mon.ap}
         gil={mon.gil}
         weakness={mon.weakness}
         strength={mon.strength}
@@ -59,14 +60,14 @@ class Bestiary extends Component {
         level={mon.level}
         steal={mon.steal}
         drops={mon.drops}
+        morph={mon.morph}
         enemy_skill={mon.enemy_skill}
-        user_name={mon.user_name}
       />
     ));
   }
 
   renderSearched = (param, term) => {
-  /* When searching,  give the user feedback that their query is being executed on the backend
+    /* When searching,  give the user feedback that their query is being executed on the backend
 especially  for cases in which no results were returned. I
 t's not clear if that message is left from the previous search,
 or if the current search is also not returning results.

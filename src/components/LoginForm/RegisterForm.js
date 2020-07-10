@@ -39,7 +39,6 @@ class RegisterForm extends Component {
     })
       .then((res) => {
         TokenService.saveAuthToken(res.authToken);
-        TokenService.saveUserName(res.user_name);
         history.push('/bestiary');
       })
       .catch((res) => {

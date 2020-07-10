@@ -24,8 +24,8 @@ const MonsterApiService = {
         : res.json()));
   },
 
-  getUserGuides(user_name) {
-    return fetch(`${config.API_ENDPOINT}/guides/${user_name}`, {
+  getUserGuides() {
+    return fetch(`${config.API_ENDPOINT}/guides`, {
       headers: {
         Authorization: `Bearer ${TokenService.getAuthToken()}`,
       },
@@ -35,8 +35,8 @@ const MonsterApiService = {
         : res.json()));
   },
 
-  postGuide(user_name, guide) {
-    return fetch(`${config.API_ENDPOINT}/guides/${user_name}`, {
+  postGuide(guide) {
+    return fetch(`${config.API_ENDPOINT}/guides`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -51,8 +51,8 @@ const MonsterApiService = {
         : res.json()));
   },
 
-  deleteGuide(user_name, guide_id) {
-    return fetch(`${config.API_ENDPOINT}/guides/${user_name}/${guide_id}`, {
+  deleteGuide(guide_id) {
+    return fetch(`${config.API_ENDPOINT}/guides/${guide_id}`, {
       method: 'DELETE',
       headers: {
         Authorization: `Bearer ${TokenService.getAuthToken()}`,
@@ -60,7 +60,7 @@ const MonsterApiService = {
     });
   },
 
-  postMonster(user_name, monster) {
+  postMonster(monster) {
     return fetch(`${config.API_ENDPOINT}/monsters`, {
       method: 'POST',
       headers: {
@@ -68,7 +68,6 @@ const MonsterApiService = {
         Authorization: `Bearer ${TokenService.getAuthToken()}`,
       },
       body: JSON.stringify({
-        user_name,
         monster,
       }),
     })
