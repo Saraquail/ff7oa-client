@@ -31,6 +31,6 @@ Lastly, the Config page is experimental, but is open for you to enjoy. In the or
 
 ### Technologies
 
-This app was built using React, CSS3, and HTML5.  
+This app was built using JavaScript, React, CSS, and HTML.  
 The server was built using Node.js, Express, and Knex.  
-The database was built using PostgreSQL.  
+The database was built using PostgreSQL.

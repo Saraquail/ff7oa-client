@@ -66,6 +66,11 @@ class Bestiary extends Component {
   }
 
   renderSearched = (param, term) => {
+  /* When searching,  give the user feedback that their query is being executed on the backend
+especially  for cases in which no results were returned. I
+t's not clear if that message is left from the previous search,
+or if the current search is also not returning results.
+*/
     const { monsters: allMonsters } = this.state;
 
 
