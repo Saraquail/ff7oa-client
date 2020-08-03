@@ -26,7 +26,7 @@ class LoginForm extends Component {
         user_name.value = '';
         password.value = '';
         TokenService.saveAuthToken(res.authToken);
-        history.push('/bestiary');
+        history.push('/');
       })
       .catch((res) => {
         this.setState({ message: res.error });

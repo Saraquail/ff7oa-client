@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import Landing from '../../routes/Landing/Landing';
+import Login from '../../routes/Login/Login';
 import Nav from '../Nav/Nav';
 import Bestiary from '../../routes/Bestiary/Bestiary';
 import Weapons from '../../routes/Weapons/Weapons';
@@ -25,6 +26,7 @@ class App extends Component {
         <Nav />
         <Switch>
           <Route exact path="/" component={Landing} />
+          <Route path="/login" component={Login} />
           <Route path="/weapons" component={Weapons} />
           <Route path="/bestiary" component={Bestiary} />
           <Route path="/materia" component={Materia} />

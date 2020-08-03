@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import MonsterApiService from '../../services/monster-api-service';
+import GuideApiService from '../../services/guide-api-service';
 import './SaveGuideForm.css';
 
 class SaveGuideForm extends Component {
@@ -24,7 +24,7 @@ class SaveGuideForm extends Component {
       note,
     };
 
-    MonsterApiService.postGuide(guide)
+    GuideApiService.postGuide(guide)
       .then(this.clearForm)
       .then(handleCloseModal)
       .catch((e) => this.setState({ message: e.error }));

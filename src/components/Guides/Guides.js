@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import SingleItemView from '../SingleItemView/SingleItemView';
-import MonsterApiService from '../../services/monster-api-service';
+import GuideApiService from '../../services/guide-api-service';
 import './Guides.css';
 
 class Guides extends Component {
@@ -26,7 +26,7 @@ class Guides extends Component {
     const guide_id = ev.target.value;
     const { deleteGuide } = this.props;
 
-    MonsterApiService.deleteGuide(guide_id)
+    GuideApiService.deleteGuide(guide_id)
       .then(deleteGuide(guide_id))
       .catch((e) => this.setState({ message: e.error }));
   }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MonsterApiService from '../../services/monster-api-service';
+import GuideApiService from '../../services/guide-api-service';
 import Guides from '../../components/Guides/Guides';
 import holy from '../../images/White_Materia.png';
 import './PHS.css';
@@ -11,7 +11,7 @@ class PHS extends Component {
   }
 
   componentDidMount() {
-    MonsterApiService.getUserGuides()
+    GuideApiService.getUserGuides()
       .then((data) => {
         this.setState({
           guides: data,

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import LoginorRegister from '../../components/LoginForm/LoginorRegister';
+
 import './Landing.css';
 // import summoning from '../../images/Summoning_Materia.png';
 // import command from '../../images/Command_Materia.png';
@@ -32,19 +32,8 @@ function Landing() {
       This is a bestiary which lists monsters with their stats and information.
       </p>
 
-      <p className="onboarding">
-      If you login or register for an account,
-        you can add new monsters as well as bookmark monsters to your own personal
-          list for quick reference.
-        You can find this by going to My PHS.
-      </p>
+       */}
 
-      <p className="onboarding">
-      If you choose to continue as a guest, you may browse and search/sort the bestiary,
-        but you may not add monsters or use the PHS feature.
-      </p> */}
-
-      <LoginorRegister />
       <Link to="/weapons">
         <article className="select-page-btn">
           <p>Weapons</p>

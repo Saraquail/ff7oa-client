@@ -162,7 +162,6 @@ class Monsters extends Component {
   render() {
     return (
       <div>
-
         {this.renderAllMons()}
       </div>
     );
