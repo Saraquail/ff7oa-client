@@ -51,11 +51,16 @@ class Nav extends Component {
             <Link to="/bestiary">Bestiary</Link>
           </li>
           <li>
-            <Link to="/PHS">My PHS</Link>
+            <Link to="/Materia">Materia</Link>
           </li>
+          {/* will re-implement this feature after all new content is added */}
+          {/* <li>
+            <Link to="/PHS">My PHS</Link>
+          </li> */}
           <li>
             <Link to="/Config">Config</Link>
           </li>
+
           <li>
             <Link onClick={this.handleLogoutClick} to="/login">
               {TokenService.hasAuthToken() ? 'Logout' : 'Login'}

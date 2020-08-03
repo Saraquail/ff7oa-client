@@ -16,8 +16,8 @@ class Bestiary extends Component {
 
   componentDidMount() {
     MonsterApiService.getMonsters()
-      .then((data) => {
-        this.setState({ monsters: data });
+      .then((monsters) => {
+        this.setState({ monsters });
       })
       .catch();
   }

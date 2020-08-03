@@ -10,28 +10,27 @@ class Monsters extends Component {
     selectedid: '',
     expanded: false,
     // sort: '',
-  }
+  };
 
   handleExpand = () => {
     this.setState((prevState) => ({
       expanded: !prevState.expanded,
     }));
-  }
+  };
 
   handleOpenModal = (e) => {
     const id = e.target.value;
-    console.log(e.target.value);
     this.setState({
       showModal: true,
       selectedid: id,
     });
-  }
+  };
 
   handleCloseModal = () => {
     this.setState({
       showModal: false,
     });
-  }
+  };
 
   renderAllMons = () => {
     const {
@@ -62,14 +61,15 @@ class Monsters extends Component {
         <div className="monster">
           <div className="collapsed">
             <h2 id={id}>{name}</h2>
-            <button
+            {/* will re-implement this feature after all new content is added */}
+            {/* <button
               type="button"
               value={id}
               onClick={(e) => this.handleOpenModal(e)}
             >
               {' '}
               Add to My PHS
-            </button>
+            </button> */}
             <Link to={`#${id}`} id="expand">
               <button type="button" id="expand" onClick={this.handleExpand}>
                 Click for more/less info
@@ -113,58 +113,52 @@ class Monsters extends Component {
               {weakness}
             </p>
           </div>
-          {expanded
-            ? (
-              <div className="expanded">
-                <p>
-                  {' '}
-                  Location:
-                  {location}
-                </p>
-                <p>
-                  {' '}
-                  Steal:
-                  {steal}
-                </p>
-                <p>
-                  {' '}
-                  Drop:
-                  {drops}
-                  {' '}
-                  Morph:
-                  {morph}
-                </p>
-                <p>
-                  {' '}
-                  Enemy_skill:
-                  {enemy_skill}
-                </p>
-              </div>
-            )
-            : ''}
+          {expanded ? (
+            <div className="expanded">
+              <p>
+                {' '}
+                Location:
+                {location}
+              </p>
+              <p>
+                {' '}
+                Steal:
+                {steal}
+              </p>
+              <p>
+                {' '}
+                Drop:
+                {drops}
+                {' '}
+                Morph:
+                {morph}
+              </p>
+              <p>
+                {' '}
+                Enemy_skill:
+                {enemy_skill}
+              </p>
+            </div>
+          ) : (
+            ''
+          )}
         </div>
-        {showModal
-          ? (
-            <SaveGuideForm
-              className="modal overlay"
-              selectedid={id}
-              handleCloseModal={this.handleCloseModal}
-              onRequestClose={this.handleCloseModal}
-            />
-          )
-          : ''}
+        {showModal ? (
+          <SaveGuideForm
+            className="modal overlay"
+            selectedid={id}
+            handleCloseModal={this.handleCloseModal}
+            onRequestClose={this.handleCloseModal}
+          />
+        ) : (
+          ''
+        )}
       </section>
-
     );
-  }
-
+  };
 
   render() {
-    return (
-      <div>
-        {this.renderAllMons()}
-      </div>
-    );
+    return <div>{this.renderAllMons()}</div>;
   }
 }
 
