@@ -2,9 +2,8 @@ import React from 'react';
 
 function MateriaList(props) {
   const {
-    name, type, desc, location, ap, mp, skills, sell, id, key,
+    name, type, desc, location, ap, mp, skills, sell, id,
   } = props;
-  console.log({ props }, { id }, { key });
   return (
     <section className="materiaList">
       <div>

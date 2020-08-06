@@ -4,10 +4,10 @@ import { HashLink as Link } from 'react-router-hash-link';
 import SaveGuideForm from '../SaveGuideForm/SaveGuideForm';
 import './Monsters.css';
 
-class Monsters extends Component {
+class MonstersList extends Component {
   state = {
     showModal: false,
-    selectedid: '',
+    // selectedid: '',
     expanded: false,
     // sort: '',
   };
@@ -18,11 +18,11 @@ class Monsters extends Component {
     }));
   };
 
-  handleOpenModal = (e) => {
-    const id = e.target.value;
+  handleOpenModal = () => {
+    // const id = e.target.value;
     this.setState({
       showModal: true,
-      selectedid: id,
+      // selectedid: id,
     });
   };
 
@@ -162,7 +162,7 @@ class Monsters extends Component {
   }
 }
 
-Monsters.propTypes = {
+MonstersList.propTypes = {
   id: PropTypes.number,
   name: PropTypes.string,
   hp: PropTypes.number,
@@ -180,4 +180,4 @@ Monsters.propTypes = {
   enemy_skill: PropTypes.string,
 };
 
-export default Monsters;
+export default MonstersList;

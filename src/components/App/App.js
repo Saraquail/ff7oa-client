@@ -32,7 +32,7 @@ class App extends Component {
           <Route path="/materia" component={Materia} />
           <Route path="/limits" component={Limits} />
           <Route path="/PHS" component={PHS} />
-          <Route path="/Config" component={Config} />
+          <Route path="/config" component={Config} />
           <Route component={NotFoundPage} />
         </Switch>
       </main>

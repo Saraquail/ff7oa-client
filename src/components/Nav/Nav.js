@@ -51,14 +51,20 @@ class Nav extends Component {
             <Link to="/bestiary">Bestiary</Link>
           </li>
           <li>
-            <Link to="/Materia">Materia</Link>
+            <Link to="/materia">Materia</Link>
+          </li>
+          <li>
+            <Link to="/limits">Limit Breaks</Link>
+          </li>
+          <li>
+            <Link to="/weapons">Weapons</Link>
           </li>
           {/* will re-implement this feature after all new content is added */}
           {/* <li>
             <Link to="/PHS">My PHS</Link>
           </li> */}
           <li>
-            <Link to="/Config">Config</Link>
+            <Link to="/config">Config</Link>
           </li>
 
           <li>

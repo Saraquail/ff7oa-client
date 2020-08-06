@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import OptionsForm from '../../components/OptionsForm/OptionsForm';
 import MonsterApiService from '../../services/monster-api-service';
-import Monsters from '../../components/Monsters/Monsters';
+import MonstersList from '../../components/MonstersList/MonstersList';
 import holy from '../../images/White_Materia.png';
 import { sortBy } from '../../utils';
 import './Bestiary.css';
@@ -44,7 +44,7 @@ class Bestiary extends Component {
     }
 
     return allMonsters.map((mon) => (
-      <Monsters
+      <MonstersList
         id={mon.id}
         key={mon.id}
         name={mon.name}
